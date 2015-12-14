@@ -99,19 +99,19 @@ img {
 
 <div id="TOC">
 <ul>
-<li><a href="#describing-data-central-tendency-and-dispersion"><span class="toc-section-number">1</span> Describing Data: Central Tendency and Dispersion</a><ul>
-<li><a href="#calculating-central-tendency-variability"><span class="toc-section-number">1.1</span> Calculating Central Tendency &amp; Variability</a></li>
-<li><a href="#the-coefficient-of-variation"><span class="toc-section-number">1.2</span> The Coefficient of Variation</a></li>
+<li><a href="#describing-data-central-tendency-and-dispersion"><span class="toc-section-number">1</span> - Describing Data: Central Tendency and Dispersion</a><ul>
+<li><a href="#calculating-central-tendency-variability"><span class="toc-section-number">1.1</span> - Calculating Central Tendency &amp; Variability</a></li>
+<li><a href="#the-coefficient-of-variation"><span class="toc-section-number">1.2</span> - The Coefficient of Variation</a></li>
 </ul></li>
-<li><a href="#working-with-grouped-data"><span class="toc-section-number">2</span> Working with Grouped Data</a></li>
-<li><a href="#the-speeds-of-male-tidarren-spiders-pre--and-post-amputation"><span class="toc-section-number">3</span> The Speeds of male Tidarren spiders (pre- and post-amputation)</a></li>
-<li><a href="#cumulative-frequency-distributions"><span class="toc-section-number">4</span> Cumulative Frequency Distributions</a></li>
-<li><a href="#what-if-i-have-three-or-more-groups"><span class="toc-section-number">5</span> What if I have Three or More Groups?</a></li>
+<li><a href="#working-with-grouped-data"><span class="toc-section-number">2</span> - Working with Grouped Data</a></li>
+<li><a href="#the-speeds-of-male-tidarren-spiders-pre--and-post-amputation"><span class="toc-section-number">3</span> - The Speeds of male Tidarren spiders (pre- and post-amputation)</a></li>
+<li><a href="#cumulative-frequency-distributions"><span class="toc-section-number">4</span> - Cumulative Frequency Distributions</a></li>
+<li><a href="#what-if-i-have-three-or-more-groups"><span class="toc-section-number">5</span> - What if I have Three or More Groups?</a></li>
 </ul>
 </div>
 
 <div id="describing-data-central-tendency-and-dispersion" class="section level1">
-<h1><span class="header-section-number">1</span> Describing Data: Central Tendency and Dispersion</h1>
+<h1><span class="header-section-number">1</span> - Describing Data: Central Tendency and Dispersion</h1>
 <p>Working with the data on gliding snakes’ undulation rates we will calculate the mean, median, range, interquartile range, variance, and standard deviation. We will also construct some plots in order to see a few things in action. First we read in the data-set.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">snakeData &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="kw">url</span>(<span class="st">&quot;http://whitlockschluter.zoology.ubc.ca/wp-content/data/chapter03/chap03e1GlidingSnakes.csv&quot;</span>))
 <span class="kw">head</span>(snakeData)</code></pre></div>
@@ -136,7 +136,7 @@ img {
 
 </div>
 <div id="calculating-central-tendency-variability" class="section level2">
-<h2><span class="header-section-number">1.1</span> Calculating Central Tendency &amp; Variability</h2>
+<h2><span class="header-section-number">1.1</span> - Calculating Central Tendency &amp; Variability</h2>
 <p>Calculating the mean, median, variance, and standard deviation is pretty straightforward:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(snakeData$undulationRate)</code></pre></div>
 <pre><code>## [1] 1.375</code></pre>
@@ -157,7 +157,7 @@ img {
 <p><strong>Note:</strong> <span class="math inline">\(IQR = Q_3 - Q_1 = 1.5 - 1.2 = 0.3\)</span></p>
 </div>
 <div id="the-coefficient-of-variation" class="section level2">
-<h2><span class="header-section-number">1.2</span> The Coefficient of Variation</h2>
+<h2><span class="header-section-number">1.2</span> - The Coefficient of Variation</h2>
 <p>The Coefficient of Variation tells us something about how a variable is distributed about its mean. Given that it is a ratio, the higher is the coefficient of variation the more dispersed are the values of the variable. Why is it a useful measure if we have others to choose from? Because it is not influenced by the units of measurement. For example, if you are measuring heights in inches and calculate the variance and standard deviation, then convert height into centimeters and recompute the variance and standard deviation, the two sets of values will differ a good bit (see below):</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">height.in &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">65</span>, <span class="dv">72</span>, <span class="dv">77</span>, <span class="dv">60</span>, <span class="dv">58</span>)
 <span class="kw">mean</span>(height.in)</code></pre></div>
@@ -182,7 +182,7 @@ cov.cm</code></pre></div>
 </div>
 </div>
 <div id="working-with-grouped-data" class="section level1">
-<h1><span class="header-section-number">2</span> Working with Grouped Data</h1>
+<h1><span class="header-section-number">2</span> - Working with Grouped Data</h1>
 <p>For this exercise we’ll replicate the in-text example that uses the number of convictions data-set (see below):</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">convictionsFreq &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="kw">url</span>(<span class="st">&quot;http://whitlockschluter.zoology.ubc.ca/wp-content/data/chapter03/chap03t1_2ConvictionsFreq.csv&quot;</span>))
 <span class="kw">head</span>(convictionsFreq)</code></pre></div>
@@ -224,7 +224,7 @@ cov.cm</code></pre></div>
 </div>
 </div>
 <div id="the-speeds-of-male-tidarren-spiders-pre--and-post-amputation" class="section level1">
-<h1><span class="header-section-number">3</span> The Speeds of male Tidarren spiders (pre- and post-amputation)</h1>
+<h1><span class="header-section-number">3</span> - The Speeds of male Tidarren spiders (pre- and post-amputation)</h1>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">spiderData &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="kw">url</span>(<span class="st">&quot;http://whitlockschluter.zoology.ubc.ca/wp-content/data/chapter03/chap03e2SpiderAmputation.csv&quot;</span>))
 <span class="kw">head</span>(spiderData)</code></pre></div>
 <pre><code>##   spider speed treatment
@@ -323,7 +323,7 @@ speedAfter</code></pre></div>
 <p>This yields a value of <span class="math inline">\(1.2825\)</span> … Spider #1 in the “before” group has a speed of <span class="math inline">\(1.25\)</span> and hence is flagged as an outlier in the boxplot.</p>
 </div>
 <div id="cumulative-frequency-distributions" class="section level1">
-<h1><span class="header-section-number">4</span> Cumulative Frequency Distributions</h1>
+<h1><span class="header-section-number">4</span> - Cumulative Frequency Distributions</h1>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))
 <span class="kw">plot</span>( <span class="kw">ecdf</span>(speedBefore$speed), <span class="dt">verticals =</span> <span class="ot">TRUE</span>,  
   <span class="dt">las =</span> <span class="dv">1</span>, <span class="dt">main =</span> <span class="st">&quot;&quot;</span>, <span class="dt">do.points =</span> <span class="ot">FALSE</span>,
@@ -364,7 +364,7 @@ speedAfter</code></pre></div>
 <p>You don’t have to pick the <span class="math inline">\(0.5\)</span> point; you could have picked <span class="math inline">\(0.9\)</span> and said “90% of spiders in group so-and-so had speeds of so much or less”, so on and so forth.</p>
 </div>
 <div id="what-if-i-have-three-or-more-groups" class="section level1">
-<h1><span class="header-section-number">5</span> What if I have Three or More Groups?</h1>
+<h1><span class="header-section-number">5</span> - What if I have Three or More Groups?</h1>
 <p>The <code>psych</code> package (install it before you use it) is very handy here to calculate a number of statistics. We will see it in use with the data-set on sticklebacks:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">sticklebackData &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="kw">url</span>(<span class="st">&quot;http://whitlockschluter.zoology.ubc.ca/wp-content/data/chapter03/chap03e3SticklebackPlates.csv&quot;</span>))
 <span class="kw">head</span>(sticklebackData)</code></pre></div>
