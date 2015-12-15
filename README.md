@@ -1,4 +1,1 @@
-# avsr
-Basecamp
-
-My attempts at gettng to grips with git, commits from RStudio, and markdown.
+First attempt at moving my website to github so I can push from RStudio. 
