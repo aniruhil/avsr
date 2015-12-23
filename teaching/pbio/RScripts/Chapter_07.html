@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+<meta name="author" content="ani" />
+
+<meta name="date" content="2015-01-30" />
+
+<title>R Script for Chapter 7</title>
+
+<script src="Chapter_07_files/jquery-1.11.0/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="Chapter_07_files/bootstrap-3.3.1/css/flatly.min.css" rel="stylesheet" />
+<script src="Chapter_07_files/bootstrap-3.3.1/js/bootstrap.min.js"></script>
+<script src="Chapter_07_files/bootstrap-3.3.1/shim/html5shiv.min.js"></script>
+<script src="Chapter_07_files/bootstrap-3.3.1/shim/respond.min.js"></script>
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; background-color: #f8f8f8; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+pre, code { background-color: #f8f8f8; }
+code > span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code > span.dt { color: #204a87; } /* DataType */
+code > span.dv { color: #0000cf; } /* DecVal */
+code > span.bn { color: #0000cf; } /* BaseN */
+code > span.fl { color: #0000cf; } /* Float */
+code > span.ch { color: #4e9a06; } /* Char */
+code > span.st { color: #4e9a06; } /* String */
+code > span.co { color: #8f5902; font-style: italic; } /* Comment */
+code > span.ot { color: #8f5902; } /* Other */
+code > span.al { color: #ef2929; } /* Alert */
+code > span.fu { color: #000000; } /* Function */
+code > span.er { color: #a40000; font-weight: bold; } /* Error */
+code > span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #000000; } /* Constant */
+code > span.sc { color: #000000; } /* SpecialChar */
+code > span.vs { color: #4e9a06; } /* VerbatimString */
+code > span.ss { color: #4e9a06; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #000000; } /* Variable */
+code > span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code > span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code > span.ex { } /* Extension */
+code > span.at { color: #c4a000; } /* Attribute */
+code > span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code > span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+
+<link rel="stylesheet" href="https://aniruhil.github.io/avsr/stylesheets/stylesheet2.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img { 
+  max-width:100%; 
+  height: auto; 
+}
+</style>
+<div class="container-fluid main-container">
+
+
+<div id="header">
+<h1 class="title">R Script for Chapter 7</h1>
+<h4 class="author"><em>ani</em></h4>
+<h4 class="date"><em>January 30, 2015</em></h4>
+</div>
+
+<div id="TOC">
+<ul>
+<li><a href="#the-normal-distribution"><span class="toc-section-number">1</span> - The Normal Distribution</a></li>
+<li><a href="#the-standard-normal-distribution"><span class="toc-section-number">2</span> - The Standard Normal Distribution</a></li>
+<li><a href="#linking-confidence-intervals-to-significance-levels"><span class="toc-section-number">3</span> - Linking Confidence Intervals to Significance Levels</a></li>
+<li><a href="#the-binomial-distribution"><span class="toc-section-number">4</span> - The Binomial Distribution</a></li>
+<li><a href="#some-worked-problems"><span class="toc-section-number">5</span> - Some Worked Problems</a><ul>
+<li><a href="#problem-3"><span class="toc-section-number">5.1</span> - Problem 3</a></li>
+<li><a href="#radiologists-and-missing-sons"><span class="toc-section-number">5.2</span> - Radiologists and Missing Sons</a></li>
+<li><a href="#problem-5"><span class="toc-section-number">5.3</span> - Problem 5</a></li>
+<li><a href="#problem-14"><span class="toc-section-number">5.4</span> - Problem 14</a></li>
+<li><a href="#problem-15"><span class="toc-section-number">5.5</span> - Problem 15</a></li>
+<li><a href="#problem-19"><span class="toc-section-number">5.6</span> - Problem 19</a></li>
+</ul></li>
+</ul>
+</div>
+
+<div id="the-normal-distribution" class="section level1">
+<h1><span class="header-section-number">1</span> - The Normal Distribution</h1>
+<p>The Normal distribution is expressed as: <span class="math display">\[\sim N(): f(Y)=\dfrac{1}{\sigma{\sqrt{2\pi}}}e^{-(Y-\mu)^{2}/2\sigma^{2}}\]</span> where <span class="math inline">\(\mu=\)</span> mean; <span class="math inline">\(\sigma=\)</span> s.d., <span class="math inline">\(\pi=3.14159\)</span>, and; <span class="math inline">\(e=2.71828\)</span></p>
+<p>Two parameters <span class="math inline">\((\mu; \sigma)\)</span> describe a Normal distribution. The Normal distribution is symmetric, with the tails extending from <span class="math inline">\(-\infty\)</span> to <span class="math inline">\(+\infty\)</span>. Note that <span class="math inline">\(\mu\)</span> can be positive, negative, or zero while <span class="math inline">\(\sigma\)</span> dictates how wide or flat the curve is. The total area under the Normal curve is <span class="math inline">\(1\)</span>, and the area to the left of <span class="math inline">\(\mu\)</span> is 0.5; the area to the right of <span class="math inline">\(\mu\)</span> is 0.5</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>,<span class="dv">100</span>,<span class="dt">length=</span><span class="dv">200</span>)
+y &lt;-<span class="st"> </span><span class="kw">dnorm</span>(x,<span class="dt">mean=</span><span class="dv">50</span>,<span class="dt">sd=</span><span class="dv">10</span>)
+<span class="kw">plot</span>(x, y, <span class="dt">type=</span><span class="st">&quot;l&quot;</span>, <span class="dt">lwd=</span><span class="dv">2</span>, <span class="dt">col=</span><span class="st">&quot;red&quot;</span>, 
+     <span class="dt">bty=</span><span class="st">&quot;n&quot;</span>, <span class="dt">yaxt=</span><span class="st">&quot;no&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;&quot;</span>)
+<span class="kw">polygon</span>(<span class="kw">c</span>(<span class="dv">0</span>,x,<span class="dv">100</span>),<span class="kw">c</span>(<span class="dv">0</span>,y,<span class="dv">0</span>),<span class="dt">col=</span><span class="st">&quot;tomato1&quot;</span>)
+<span class="kw">abline</span>(<span class="dt">v=</span><span class="kw">c</span>(<span class="dv">40</span>,<span class="dv">60</span>), <span class="dt">col=</span><span class="st">&quot;white&quot;</span>)
+<span class="kw">abline</span>(<span class="dt">v=</span><span class="kw">c</span>(<span class="dv">30</span>,<span class="dv">70</span>), <span class="dt">col=</span><span class="st">&quot;white&quot;</span>)
+<span class="kw">abline</span>(<span class="dt">v=</span><span class="kw">c</span>(<span class="dv">20</span>,<span class="dv">80</span>), <span class="dt">col=</span><span class="st">&quot;white&quot;</span>)
+<span class="kw">abline</span>(<span class="dt">v=</span><span class="kw">c</span>(<span class="dv">50</span>), <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)</code></pre></div>
+<div class="figure">
+<img src="Chapter_07_files/figure-html/1a-1.png" alt="" />
+
+</div>
+<p>Now we can sketch some Normal distributions with the same mean but different variability.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Same Mean, different Variance #</span>
+x=<span class="kw">seq</span>(-<span class="dv">8</span>,<span class="dv">8</span>,<span class="dt">length=</span><span class="dv">500</span>)
+y3=<span class="kw">dnorm</span>(x,<span class="dt">mean=</span><span class="dv">0</span>,<span class="dt">sd=</span><span class="dv">1</span>/<span class="dv">2</span>)
+<span class="kw">plot</span>(x,y3,<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">col=</span><span class="st">&quot;green&quot;</span>, <span class="dt">bty=</span><span class="st">&quot;n&quot;</span>, <span class="dt">xaxt=</span><span class="st">&quot;no&quot;</span>, <span class="dt">yaxt=</span><span class="st">&quot;no&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;&quot;</span>)
+y2=<span class="kw">dnorm</span>(x,<span class="dt">mean=</span><span class="dv">0</span>,<span class="dt">sd=</span><span class="dv">2</span>)
+<span class="kw">lines</span>(x,y2,<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)
+y1=<span class="kw">dnorm</span>(x,<span class="dt">mean=</span><span class="dv">0</span>,<span class="dt">sd=</span><span class="dv">1</span>)
+<span class="kw">lines</span>(x,y1,<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</code></pre></div>
+<div class="figure">
+<img src="Chapter_07_files/figure-html/1b-1.png" alt="" />
+
+</div>
+<p>And now with different means but the same variability.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Different Mean, different Variance #</span>
+x=<span class="kw">seq</span>(-<span class="dv">8</span>,<span class="dv">8</span>,<span class="dt">length=</span><span class="dv">500</span>)
+y3=<span class="kw">dnorm</span>(x,<span class="dt">mean=</span><span class="dv">0</span>,<span class="dt">sd=</span><span class="dv">1</span>/<span class="dv">2</span>)
+<span class="kw">plot</span>(x,y3,<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">col=</span><span class="st">&quot;green&quot;</span>, <span class="dt">bty=</span><span class="st">&quot;n&quot;</span>, <span class="dt">xaxt=</span><span class="st">&quot;no&quot;</span>, <span class="dt">yaxt=</span><span class="st">&quot;no&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;&quot;</span>)
+y2=<span class="kw">dnorm</span>(x,<span class="dt">mean=</span><span class="dv">1</span>,<span class="dt">sd=</span><span class="dv">1</span>)
+<span class="kw">lines</span>(x,y2,<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)
+y1=<span class="kw">dnorm</span>(x,<span class="dt">mean=</span><span class="dv">2</span>,<span class="dt">sd=</span><span class="fl">1.5</span>)
+<span class="kw">lines</span>(x,y1,<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</code></pre></div>
+<div class="figure">
+<img src="Chapter_07_files/figure-html/1c-1.png" alt="" />
+
+</div>
+</div>
+<div id="the-standard-normal-distribution" class="section level1">
+<h1><span class="header-section-number">2</span> - The Standard Normal Distribution</h1>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">z &lt;-<span class="st"> </span><span class="kw">seq</span>(-<span class="dv">3</span>,<span class="dv">3</span>,<span class="dt">length=</span><span class="dv">200</span>)
+y &lt;-<span class="st"> </span><span class="kw">dnorm</span>(z,<span class="dt">mean=</span><span class="dv">0</span>,<span class="dt">sd=</span><span class="dv">1</span>)
+<span class="kw">plot</span>(z, y, <span class="dt">type=</span><span class="st">&quot;l&quot;</span>, <span class="dt">lwd=</span><span class="dv">2</span>, <span class="dt">col=</span><span class="st">&quot;red&quot;</span>, 
+     <span class="dt">bty=</span><span class="st">&quot;n&quot;</span>, <span class="dt">yaxt=</span><span class="st">&quot;no&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;&quot;</span>)
+<span class="kw">polygon</span>(<span class="kw">c</span>(-<span class="dv">5</span>,z,<span class="dv">5</span>),<span class="kw">c</span>(<span class="dv">0</span>,y,<span class="dv">0</span>),<span class="dt">col=</span><span class="st">&quot;lightblue&quot;</span>)
+<span class="kw">abline</span>(<span class="dt">v=</span><span class="kw">c</span>(-<span class="dv">1</span>,<span class="dv">1</span>), <span class="dt">col=</span><span class="st">&quot;white&quot;</span>)
+<span class="kw">abline</span>(<span class="dt">v=</span><span class="kw">c</span>(-<span class="dv">2</span>,<span class="dv">2</span>), <span class="dt">col=</span><span class="st">&quot;white&quot;</span>)
+<span class="kw">abline</span>(<span class="dt">v=</span><span class="kw">c</span>(-<span class="dv">3</span>,<span class="dv">3</span>), <span class="dt">col=</span><span class="st">&quot;white&quot;</span>)
+<span class="kw">abline</span>(<span class="dt">v=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">0</span>), <span class="dt">col=</span><span class="st">&quot;firebrick&quot;</span>)</code></pre></div>
+<div class="figure">
+<img src="Chapter_07_files/figure-html/1d-1.png" alt="" />
+
+</div>
+</div>
+<div id="linking-confidence-intervals-to-significance-levels" class="section level1">
+<h1><span class="header-section-number">3</span> - Linking Confidence Intervals to Significance Levels</h1>
+<p>It is a given that for every <span class="math inline">\(z-score\)</span> distribution a specific proportion of the distributions falls within 1 standard deviation. Let us see what this is. First we will calculate the area above <span class="math inline">\(z=+1\)</span> and given the symmetry, we know this is also the area below <span class="math inline">\(z=-1\)</span> :</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pnorm</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dt">lower.tail=</span><span class="ot">FALSE</span>)</code></pre></div>
+<pre><code>## [1] 0.1586553</code></pre>
+<p>Therefore, the area between <span class="math inline">\(z-scores = \pm 1\)</span> has to be <code>0.6826895</code>. What about the area between <span class="math inline">\(z-scores = \pm 2\)</span>?</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pnorm</span>(<span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dt">lower.tail=</span><span class="ot">FALSE</span>)</code></pre></div>
+<pre><code>## [1] 0.02275013</code></pre>
+<p>The area between <span class="math inline">\(z-scores = \pm 2\)</span> has to be <code>0.9544997</code>.</p>
+<p>Okay, so thus far the <code>Empirical Rule</code> seems to be true. But what if I wanted to know what <span class="math inline">\(z-scores\)</span> trap 95% of the distribution? This can be estimated as follows:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qnorm</span>(<span class="fl">0.025</span>, <span class="dt">lower.tail=</span><span class="ot">TRUE</span>)</code></pre></div>
+<pre><code>## [1] -1.959964</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qnorm</span>(<span class="fl">0.025</span>, <span class="dt">lower.tail=</span><span class="ot">FALSE</span>)</code></pre></div>
+<pre><code>## [1] 1.959964</code></pre>
+<p>So, in essence, <span class="math inline">\(z-scores=\pm1.959964 \approx \pm 1.96\)</span> trap 95% of the distribution. What about 99% of the distribution?</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qnorm</span>(<span class="fl">0.005</span>, <span class="dt">lower.tail=</span><span class="ot">TRUE</span>)</code></pre></div>
+<pre><code>## [1] -2.575829</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qnorm</span>(<span class="fl">0.005</span>, <span class="dt">lower.tail=</span><span class="ot">FALSE</span>)</code></pre></div>
+<pre><code>## [1] 2.575829</code></pre>
+<p>Well that turns out to be <span class="math inline">\(\approx \pm 2.58\)</span></p>
+<p>We can store these two values – <span class="math inline">\(z-scores = \pm 1.96\)</span> flag the middle 95% of the distribution, and <span class="math inline">\(z-scores = \pm2.58\)</span> flag the middle 99% of the distribution.</p>
+<p>In the problems that follow you will see the 95% confidence interval being calculated with <span class="math inline">\(z=\pm 1.96\)</span>; this is where this value of <span class="math inline">\(1.96\)</span> is coming from.</p>
+</div>
+<div id="the-binomial-distribution" class="section level1">
+<h1><span class="header-section-number">4</span> - The Binomial Distribution</h1>
+<p>Given a certain number of independent trials (<span class="math inline">\(n\)</span>) with an identical probability (<span class="math inline">\(p\)</span>) of success (<span class="math inline">\(X\)</span>) in each trial we can easily calculate the probability of seeing a specific number of successes. For example, if I flip a coin 10 times, where <span class="math inline">\(X=Head\)</span> with <span class="math inline">\(p=0.5\)</span> then what is probability of seeing exactly 2 heads, exactly 4 heads, 7 heads, etc.? The answer is easily calculated as: <span class="math display">\[   P\left[X \text{ successes}\right] = \binom{n}{X}p^{X}\left(1 - p\right)^{n-X} \\
+    \text{where } \binom{n}{x} = \dfrac{n!}{X!(n-X)!} \text{ and } \\
+    n! = n \times (n-1) \times (n-2) \times \cdots \times 2 \times 1\]</span></p>
+<p>R has built-in functions to perform the calculations for us. For example, if I toss a coin 2 times, what is the probability of getting exactly 1 head? Let <span class="math inline">\(X=1\)</span>. We know for unbiased coins <span class="math inline">\(p(Heads)=0.50\)</span>. We are also conducting <span class="math inline">\(n=2\)</span> independent trials.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="dv">0</span>:<span class="dv">2</span>
+p.x &lt;-<span class="st"> </span><span class="kw">dbinom</span>(x, <span class="dv">2</span>, <span class="dt">p=</span><span class="fl">0.5</span>)
+<span class="kw">cbind</span>(x, p.x)</code></pre></div>
+<pre><code>##      x  p.x
+## [1,] 0 0.25
+## [2,] 1 0.50
+## [3,] 2 0.25</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(x, p.x, <span class="dt">type =</span> <span class="st">&quot;h&quot;</span>, <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>))</code></pre></div>
+<div class="figure">
+<img src="Chapter_07_files/figure-html/2-1.png" alt="" />
+
+</div>
+</div>
+<div id="some-worked-problems" class="section level1">
+<h1><span class="header-section-number">5</span> - Some Worked Problems</h1>
+<div id="problem-3" class="section level2">
+<h2><span class="header-section-number">5.1</span> - Problem 3</h2>
+<ol style="list-style-type: lower-alpha">
+<li><p>The observed proportion of wallets returned was <span class="math inline">\(\frac{101}{240}=\)</span> <code>0.4208333</code></p></li>
+<li><p>We know that <span class="math inline">\(p^{&#39;}=\dfrac{X+2}{n+4}\)</span> and so we can calculate this as follows:</p></li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">n &lt;-<span class="st"> </span><span class="dv">240</span>; X &lt;-<span class="st"> </span><span class="dv">101</span>
+p.prime &lt;-<span class="st"> </span>(X +<span class="st"> </span><span class="dv">2</span>)/(n +<span class="st"> </span><span class="dv">4</span>)
+p.prime</code></pre></div>
+<pre><code>## [1] 0.4221311</code></pre>
+<p>So <span class="math inline">\(p^{&#39;}=\)</span> <code>0.4221311</code></p>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>The 95% lower-bound is given by <span class="math display">\[p^{&#39;}-z{\sqrt{\dfrac{p^{&#39;}\left(1-p^{&#39;}\right)}{n+4}}}\]</span></li>
+</ol>
+<p>We have <span class="math inline">\(z \approx 1.96\)</span> as the <span class="math inline">\(z-score\)</span> to be used for the 95% confidence interval and hence the lower-bound is:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">z &lt;-<span class="st"> </span><span class="fl">1.96</span>
+z</code></pre></div>
+<pre><code>## [1] 1.96</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">se.p.prime &lt;-<span class="st"> </span><span class="kw">sqrt</span>((p.prime *<span class="st"> </span>(<span class="dv">1</span> -<span class="st"> </span>p.prime))/(n<span class="dv">+4</span>))
+p.95CI.lower &lt;-<span class="st"> </span>p.prime -<span class="st"> </span>z*(se.p.prime)
+p.95CI.upper &lt;-<span class="st"> </span>p.prime +<span class="st"> </span>z*(se.p.prime)
+p.95CI.lower; p.95CI.upper</code></pre></div>
+<pre><code>## [1] 0.3601586</code></pre>
+<pre><code>## [1] 0.4841037</code></pre>
+<p>So the lower-bound and upper-bound are <code>0.3601586</code> and <code>0.4841037</code>, respectively.</p>
+<ol start="5" style="list-style-type: lower-alpha">
+<li><p>The two values that lie within the most plausible range would be <span class="math inline">\(0.37, 0.47\)</span>, respectively, and two values that would fall outside this range would be <span class="math inline">\(0.35, 0.49\)</span>, respectively.</p></li>
+<li><p>Because the null proportion of 0.5 does not fall within the interval we would be able to reject <span class="math inline">\(H_0\)</span> if we were using a significance level of 0.05 (i.e, <span class="math inline">\(\alpha=0.05\)</span>).</p></li>
+</ol>
+<p>For completeness’ sake, note that R could do these calculations very swiftly:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(binom)
+<span class="kw">binom.test</span>(X, n, <span class="dt">p=</span><span class="fl">0.5</span>, <span class="dt">alternative=</span><span class="st">&quot;two.sided&quot;</span>, <span class="dt">conf.level=</span><span class="fl">0.95</span>)</code></pre></div>
+<pre><code>## 
+##  Exact binomial test
+## 
+## data:  X and n
+## number of successes = 101, number of trials = 240, p-value =
+## 0.01674
+## alternative hypothesis: true probability of success is not equal to 0.5
+## 95 percent confidence interval:
+##  0.3576151 0.4860318
+## sample estimates:
+## probability of success 
+##              0.4208333</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.confint</span>(X, n, <span class="dt">p=</span><span class="fl">0.5</span>, <span class="dt">alternative=</span><span class="st">&quot;two.sided&quot;</span>, <span class="dt">conf.level=</span><span class="fl">0.95</span>, <span class="dt">methods=</span><span class="st">&quot;ac&quot;</span>)</code></pre></div>
+<pre><code>##          method   x   n      mean     lower     upper
+## 1 agresti-coull 101 240 0.4208333 0.3600899 0.4840711</code></pre>
+<p>Note a couple of things. First, <code>binom.test()</code> is calculating the default <strong>Wald</strong> confidence interval whereas <code>binom.confint</code> allows us to choose what method we want and in this example you see the <strong>Agresti-Coull</strong> method being used via the <code>methods=“ac”</code> switch.</p>
+<p>The Agresti-Coull method used by R is slightly different from that listed in the text. In particular, “for a 95% confidence interval, this method does not use the concept of”adding 2 successes and 2 failures,&quot; but rather uses the formulas explicitly described in the following link: <a href="http://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval#Agresti-Coull_Interval" class="uri">http://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval#Agresti-Coull_Interval</a>.&quot; As a result our manual calculations will not synchronize 1:1 with the confidence interval generated by <code>binom.confint</code>.</p>
+<p>Remember: If <span class="math inline">\(n\)</span> is small and/or <span class="math inline">\(p\)</span> is close to <span class="math inline">\(0\)</span> or <span class="math inline">\(1\)</span> then the Agresti-Coull method is preferred.</p>
+</div>
+<div id="radiologists-and-missing-sons" class="section level2">
+<h2><span class="header-section-number">5.2</span> - Radiologists and Missing Sons</h2>
+<p>Assume that they are just as likely to have boys as girls. This then generates the following hypotheses: <span class="math display">\[H_0: \text{ Radiologsts are just as likely to have sons as daughters } (p=0.5)\]</span> <span class="math display">\[H_A: \text{ Radiologsts are not as likely to have sons as daughters } (p \neq 0.5)\]</span> Let <span class="math inline">\(\alpha=0.05\)</span></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.test</span>(<span class="dv">30</span>, <span class="dv">87</span>, <span class="dt">p=</span><span class="fl">0.5</span>, <span class="dt">alternative=</span><span class="st">&quot;two.sided&quot;</span>, <span class="dt">conf.level=</span><span class="fl">0.95</span>)</code></pre></div>
+<pre><code>## 
+##  Exact binomial test
+## 
+## data:  30 and 87
+## number of successes = 30, number of trials = 87, p-value =
+## 0.005014
+## alternative hypothesis: true probability of success is not equal to 0.5
+## 95 percent confidence interval:
+##  0.2461396 0.4544136
+## sample estimates:
+## probability of success 
+##              0.3448276</code></pre>
+<p>The <span class="math inline">\(p-value = 0.005014\)</span> so we can reject <span class="math inline">\(H_0\)</span>; the data provide sufficient evidence to conclude that radiologists are not as likely to have sons as daughters.</p>
+<p>What if we suspected, <em>a priori</em> that radiologists are less likely to have sons? In that case we would have done the following: <span class="math display">\[H_0: \text{ Radiologsts are at least as likely to have sons as daughters } (p \geq 0.5)\]</span> <span class="math display">\[H_A: \text{ Radiologsts are less likely to have sons than daughters } (p &lt; 0.5)\]</span> Let <span class="math inline">\(\alpha=0.05\)</span></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.test</span>(<span class="dv">30</span>, <span class="dv">87</span>, <span class="dt">p=</span><span class="fl">0.5</span>, <span class="dt">alternative=</span><span class="st">&quot;less&quot;</span>, <span class="dt">conf.level=</span><span class="fl">0.95</span>)</code></pre></div>
+<pre><code>## 
+##  Exact binomial test
+## 
+## data:  30 and 87
+## number of successes = 30, number of trials = 87, p-value =
+## 0.002507
+## alternative hypothesis: true probability of success is less than 0.5
+## 95 percent confidence interval:
+##  0.0000000 0.4374992
+## sample estimates:
+## probability of success 
+##              0.3448276</code></pre>
+<p>Again, the <span class="math inline">\(P-value=0.002507\)</span> and we can easily reject <span class="math inline">\(H_0\)</span>; the data provide sufficient evidence to conclude that radiologists are not at least as likely to have sons as daughters.</p>
+</div>
+<div id="problem-5" class="section level2">
+<h2><span class="header-section-number">5.3</span> - Problem 5</h2>
+<ol style="list-style-type: lower-alpha">
+<li><p>Best estimate of the proportion of $1 bills with measurable cocaine content would be <span class="math inline">\(\frac{46}{50}=\)</span> <code>0.92</code></p></li>
+<li><p>The 95% confidence interval would be</p></li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.confint</span>(<span class="dv">46</span>, <span class="dv">50</span>, <span class="dt">p=</span><span class="fl">0.5</span>, <span class="dt">alternative=</span><span class="st">&quot;two.sided&quot;</span>, <span class="dt">conf.level=</span><span class="fl">0.95</span>, <span class="dt">methods=</span><span class="st">&quot;ac&quot;</span>)</code></pre></div>
+<pre><code>##          method  x  n mean     lower     upper
+## 1 agresti-coull 46 50 0.92 0.8064694 0.9735986</code></pre>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>We can be 95% confident that the true proportion of $1 bills with measurable cocaine content falls within the interval given by 0.8064 and 0.9735</li>
+</ol>
+</div>
+<div id="problem-14" class="section level2">
+<h2><span class="header-section-number">5.4</span> - Problem 14</h2>
+<ol style="list-style-type: lower-alpha">
+<li>This is pretty straightforward:</li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">n &lt;-<span class="st"> </span><span class="dv">12028</span>
+x &lt;-<span class="st"> </span><span class="dv">6052</span>
+p.hat &lt;-<span class="st"> </span>(x/n); p.hat</code></pre></div>
+<pre><code>## [1] 0.5031593</code></pre>
+<p>The best estimate of the proportion of deaths out of this time interval that occurred in the week before Christmas is 0.5031</p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>To calculate the confidence interval we will need to use the Agresti-Coull method. This can be done as follows:</li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p.prime &lt;-<span class="st"> </span>(x +<span class="st"> </span><span class="dv">2</span>)/(n +<span class="st"> </span><span class="dv">4</span>)
+se.p.prime &lt;-<span class="st"> </span><span class="kw">sqrt</span>((p.prime *<span class="st"> </span>(<span class="dv">1</span> -<span class="st"> </span>p.prime))/(n<span class="dv">+4</span>))
+p.95CI.lower &lt;-<span class="st"> </span>p.prime -<span class="st"> </span><span class="dv">2</span>*(se.p.prime)
+p.95CI.upper &lt;-<span class="st"> </span>p.prime +<span class="st"> </span><span class="dv">2</span>*(se.p.prime)
+p.95CI.lower; p.95CI.upper</code></pre></div>
+<pre><code>## [1] 0.4940419</code></pre>
+<pre><code>## [1] 0.5122746</code></pre>
+<p>So the 95% CI is 0.4940 and 0.5122</p>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>The true value of 50%, i.e., the true proportion of 0.50, falls within the 95% confidence interval and as such the data do not support the common perception that people are able to delay their deaths from chronic illnesses until after a special event, like Christmas.</li>
+</ol>
+</div>
+<div id="problem-15" class="section level2">
+<h2><span class="header-section-number">5.5</span> - Problem 15</h2>
+<p>Given that in 13 of the 16 pairs the clade with latex/resin was found to be more diverse. Does having the clade defended by latex/resin lead to more diversity?</p>
+<p><span class="math display">\[H_0: \text{ The clade with latex/resin is likely to be just as diverse as its sister clade without latex/resin} (p=0.5)\]</span> <span class="math display">\[H_A: \text{ The clade with latex/resin is not likely to be just as diverse as its sister clade without latex/resin} (p \neq 0.5)\]</span> Let <span class="math inline">\(\alpha=0.05\)</span></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.test</span>(<span class="dv">13</span>, <span class="dv">16</span>, <span class="dt">p=</span><span class="fl">0.5</span>, <span class="dt">alternative=</span><span class="st">&quot;two.sided&quot;</span>, <span class="dt">conf.level=</span><span class="fl">0.95</span>)</code></pre></div>
+<pre><code>## 
+##  Exact binomial test
+## 
+## data:  13 and 16
+## number of successes = 13, number of trials = 16, p-value = 0.02127
+## alternative hypothesis: true probability of success is not equal to 0.5
+## 95 percent confidence interval:
+##  0.5435435 0.9595263
+## sample estimates:
+## probability of success 
+##                 0.8125</code></pre>
+<p>The <span class="math inline">\(P-value = 0.02127\)</span> so we reject <span class="math inline">\(H_0\)</span>. However, note that with <span class="math inline">\(\alpha=0.01\)</span> we would be unable to Reject <span class="math inline">\(H_0\)</span>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.test</span>(<span class="dv">13</span>, <span class="dv">16</span>, <span class="dt">p=</span><span class="fl">0.5</span>, <span class="dt">alternative=</span><span class="st">&quot;two.sided&quot;</span>, <span class="dt">conf.level=</span><span class="fl">0.99</span>)</code></pre></div>
+<pre><code>## 
+##  Exact binomial test
+## 
+## data:  13 and 16
+## number of successes = 13, number of trials = 16, p-value = 0.02127
+## alternative hypothesis: true probability of success is not equal to 0.5
+## 99 percent confidence interval:
+##  0.4656383 0.9776921
+## sample estimates:
+## probability of success 
+##                 0.8125</code></pre>
+<p>Note that the 95% confidence interval traps the Null value of <span class="math inline">\(0.5\)</span> AND the <span class="math inline">\(P-value &gt; \alpha\)</span></p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>In order for it to be a controlled experiment the authors would need to have randomly assigned the clades to the latex/resin and non-latex/resin groups. They don’t tell us this random assignment took place, and as such it seems to be an observational study.</li>
+</ol>
+</div>
+<div id="problem-19" class="section level2">
+<h2><span class="header-section-number">5.6</span> - Problem 19</h2>
+<ol style="list-style-type: lower-alpha">
+<li>Below we calculate the estimated proportion, p-prime, and the 95% confidence intervals.</li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">n &lt;-<span class="st"> </span><span class="dv">200</span>
+x &lt;-<span class="st"> </span><span class="dv">109</span>
+z &lt;-<span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.025</span>, <span class="dt">lower.tail=</span><span class="ot">FALSE</span>)
+p.hat &lt;-<span class="st"> </span>(x/n)
+p.prime &lt;-<span class="st"> </span>(x +<span class="st"> </span><span class="dv">2</span>)/(n +<span class="st"> </span><span class="dv">4</span>)
+se.p.prime &lt;-<span class="st"> </span><span class="kw">sqrt</span>((p.prime *<span class="st"> </span>(<span class="dv">1</span> -<span class="st"> </span>p.prime))/(n<span class="dv">+4</span>))
+p.95CI.lower &lt;-<span class="st"> </span>p.prime -<span class="st"> </span>z*(se.p.prime)
+p.95CI.upper &lt;-<span class="st"> </span>p.prime +<span class="st"> </span>z*(se.p.prime)
+p.95CI.lower;p.95CI.upper</code></pre></div>
+<pre><code>## [1] 0.4757728</code></pre>
+<pre><code>## [1] 0.6124625</code></pre>
+<p>The best estimate of the proportion of shoppers that have injured themselves with food or drink packaging is 0.545. The 95% confidence intervals are 0.4757 and 0.6124, respectively.</p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>We are not told if this was a random sample. One factor rendering it a non-random sample might be that the grocery stores all belonged to a particular chain that caters to a particular segment of society, or were all located in an area frequented by members of a particular socioeconomic/demographic group. Non-response – who chose to participate in the survey may be an issue as well; those more likely to have been injured may have been more or less likely to participate in the survey.</li>
+</ol>
+</div>
+</div>
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
