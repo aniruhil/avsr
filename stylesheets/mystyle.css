@@ -1,0 +1,42 @@
+<style type="text/css">
+.table {
+width:70%;
+border-top:1px solid #e5eff8;
+border-right:1px solid #e5eff8;
+margin:1em auto;
+border-collapse:collapse;
+}
+
+.centered-table {
+   margin-left: auto;
+   margin-right: auto;
+}
+
+tr {
+  font-size : 77%;
+  font-family : "Myriad Web",Verdana,Helvetica,Arial,sans-serif;
+  background : #FDF5E6 none; color : #000000; 
+}
+
+td {
+  font-size : 77%;
+  font-family : "Myriad Web",Verdana,Helvetica,Arial,sans-serif;
+  background : #FDF5E6 none; color : #000000; 
+}
+
+caption {
+  color: red;
+  font-weight: bold;
+  font-size: 1.0em;
+}  
+
+h1 {
+  font-size:21px;
+}
+
+h2, h3, h4, h5, h6 {
+  font-size: 19px;
+}
+
+
+</style>
