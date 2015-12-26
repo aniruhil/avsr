@@ -422,9 +422,9 @@ table<span class="fl">.5</span> =<span class="st"> </span>DT[, <span class="kw">
 </tr>
 </tbody>
 </table>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">kable</span>(table<span class="fl">.5</span>, <span class="dt">digits =</span> <span class="dv">2</span>, <span class="dt">booktabs =</span> <span class="ot">TRUE</span>, <span class="dt">caption =</span> <span class="st">&quot;Table 4: Mean Scores (by Subject and Race)&quot;</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">kable</span>(table<span class="fl">.5</span>, <span class="dt">digits =</span> <span class="dv">2</span>, <span class="dt">booktabs =</span> <span class="ot">TRUE</span>, <span class="dt">caption =</span> <span class="st">&quot;Table 5: Mean Scores (by Subject and Race)&quot;</span>)</code></pre></div>
 <table>
-<caption>Table 4: Mean Scores (by Subject and Race)</caption>
+<caption>Table 5: Mean Scores (by Subject and Race)</caption>
 <thead>
 <tr class="header">
 <th align="left">race</th>
@@ -475,6 +475,11 @@ table<span class="fl">.5</span> =<span class="st"> </span>DT[, <span class="kw">
 <div id="frequency-tables" class="section level1">
 <h1><span class="header-section-number">2</span> Frequency Tables</h1>
 <p>With qualitative variables such as female, race, etc. we know we can best represent their distributions via frequency tables. These can be created very easily, and then dressed up a bit. The basic command for a cross-tabulation of frequencies is <code>table(df<span class="math inline">\(x1, df\)</span>x2)</code>. This command does not create the row and column totals so we use the <code>as.data.frame(addmargins(tab.x, FUN = Total))</code> command. The <code>kable()</code> command generates the final table when we <code>knit</code> the document.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tab.6a =<span class="st"> </span><span class="kw">table</span>(hsb2$ses)
+Total =<span class="st"> </span>sum
+tab.6b =<span class="st"> </span><span class="kw">as.data.frame</span>(<span class="kw">addmargins</span>(tab.6a, <span class="dt">FUN =</span> Total))
+<span class="kw">colnames</span>(tab.6b) =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;SES Category&quot;</span>, <span class="st">&quot;Frequency&quot;</span>)
+<span class="kw">kable</span>(tab.6b, <span class="dt">booktabs =</span> <span class="ot">TRUE</span>, <span class="dt">caption =</span> <span class="st">&quot;Table 6: Frequency Table of SES&quot;</span>)</code></pre></div>
 <table>
 <caption>Table 6: Frequency Table of SES</caption>
 <thead>
@@ -503,6 +508,10 @@ table<span class="fl">.5</span> =<span class="st"> </span>DT[, <span class="kw">
 </tbody>
 </table>
 <p>Table 6 is a table of simple frequencies. What if we wanted a table of relative frequencies (as proportions or percentages)? We could build such a table as follows:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tab.6c =<span class="st"> </span><span class="kw">prop.table</span>(tab.6a) *<span class="st"> </span><span class="dv">100</span>
+tab.6d =<span class="st"> </span><span class="kw">as.data.frame</span>(<span class="kw">addmargins</span>(tab.6c, <span class="dt">FUN =</span> Total, <span class="dt">quiet =</span> <span class="ot">TRUE</span>))
+<span class="kw">colnames</span>(tab.6d) =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;SES Category&quot;</span>, <span class="st">&quot;Frequency&quot;</span>)
+<span class="kw">kable</span>(tab.6d, <span class="dt">booktabs =</span> <span class="ot">TRUE</span>, <span class="dt">caption =</span> <span class="st">&quot;Table 7: Relative Frequency Table of SES&quot;</span>)</code></pre></div>
 <table>
 <caption>Table 7: Relative Frequency Table of SES</caption>
 <thead>
@@ -531,6 +540,9 @@ table<span class="fl">.5</span> =<span class="st"> </span>DT[, <span class="kw">
 </tbody>
 </table>
 <p>These are simple frequency/relative frequency tables of a single variable. What if we wanted to cross-tabulate ses and schtyp?</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tab.6e =<span class="st"> </span><span class="kw">table</span>(hsb2$ses, hsb2$schtyp)
+tab.6f =<span class="st"> </span><span class="kw">addmargins</span>(tab.6e, <span class="dt">FUN =</span> Total, <span class="dt">quiet =</span> <span class="ot">TRUE</span>)
+<span class="kw">kable</span>(tab.6f, <span class="dt">digits =</span> <span class="dv">0</span>, <span class="dt">booktabs =</span> <span class="ot">TRUE</span>, <span class="dt">caption =</span> <span class="st">&quot;Table 8: Crosstabulation of SES &amp; School-type&quot;</span>)</code></pre></div>
 <table>
 <caption>Table 8: Crosstabulation of SES &amp; School-type</caption>
 <thead>
@@ -569,6 +581,9 @@ table<span class="fl">.5</span> =<span class="st"> </span>DT[, <span class="kw">
 </tbody>
 </table>
 <p>The result is a cross-tabulation of frequencies. We can flip this into a table of relative frequencies by modifying the code used earlier. In particular, note the use of <code>1</code> in the <code>prop.table()</code> command and then the use of <code>2</code> in the <code>addmargins()</code> command. The <strong>1</strong> in prop.table says flip each row frequency into a proportion by dividing the frequency by the row total. When we add the resulting percentages (since the proportions have been multiplied by 100) we specify that addition must occur along the rows with the <strong>2</strong> in the addmargins() command.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tab.6g =<span class="st"> </span><span class="kw">prop.table</span>(tab.6e, <span class="dv">1</span>) *<span class="st"> </span><span class="dv">100</span>
+tab.6h =<span class="st"> </span><span class="kw">addmargins</span>(tab.6g, <span class="dv">2</span>, <span class="dt">FUN =</span> Total, <span class="dt">quiet =</span> <span class="ot">TRUE</span>)
+<span class="kw">kable</span>(tab.6h, <span class="dt">digits =</span> <span class="dv">2</span>, <span class="dt">booktabs =</span> <span class="ot">TRUE</span>, <span class="dt">caption =</span> <span class="st">&quot;Table 9: Crosstabulation of SES &amp; School-type (Row Percentages)&quot;</span>)</code></pre></div>
 <table>
 <caption>Table 9: Crosstabulation of SES &amp; School-type (Row Percentages)</caption>
 <thead>
@@ -601,6 +616,9 @@ table<span class="fl">.5</span> =<span class="st"> </span>DT[, <span class="kw">
 </tbody>
 </table>
 <p>If we wanted column percentages then we would have to change things up a bit (see below):</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tab.6i =<span class="st"> </span><span class="kw">prop.table</span>(tab.6e, <span class="dv">2</span>) *<span class="st"> </span><span class="dv">100</span>
+tab.6j =<span class="st"> </span><span class="kw">addmargins</span>(tab.6i, <span class="dv">1</span>, <span class="dt">FUN =</span> Total, <span class="dt">quiet =</span> <span class="ot">TRUE</span>)
+<span class="kw">kable</span>(tab.6j, <span class="dt">digits =</span> <span class="dv">2</span>, <span class="dt">booktabs =</span> <span class="ot">TRUE</span>, <span class="dt">caption =</span> <span class="st">&quot;Table 10: Crosstabulation of SES &amp; School-type (Column Percentages)&quot;</span>)</code></pre></div>
 <table>
 <caption>Table 10: Crosstabulation of SES &amp; School-type (Column Percentages)</caption>
 <thead>
