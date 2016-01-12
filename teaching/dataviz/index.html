@@ -19,11 +19,6 @@
   ga('create', 'UA-71608489-1', 'auto');
   ga('send', 'pageview');
 
-mark {
-    background-color: black;
-    color: white;
-}
-
 </script>
 
   </head>
@@ -157,14 +152,14 @@ We use <a href="https://www.r-project.org/" target="_blank">R</a> and <a href="h
   <li>Setup a free account on shinyapps <a href="http://www.shinyapps.io/" target="_blank">from here</a>. Once your account is created, login to shinyapps. You will be greeted by a "Getting Started" page that will walk you through the R commands you need to run. Essentially, you need to execute the following code <br />
   
   
-  <code><mark>install.packages('devtools')</mark></code> <br />
-  <code><mark>devtools::install_github('rstudio/shinyapps')</mark></code> <br />
+  <code>install.packages('devtools')</code> <br />
+  <code>devtools::install_github('rstudio/shinyapps')</code> <br />
   The next step is to authorize your account. The code on shinyapps will look something like that shown below and might be easiest to use the "Copy to clipboard" button to copy-and-paste the authorization code into R and then run the code. <br /> 
-  <code>s<mark>hinyapps::setAccountInfo(name='yourshinyappsaccountname', </code> <br />
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><mark>token='yourtoken', </mark></code> <br />
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code><mark>secret='<SECRET>')</mark></code> <br />
+  <code>shinyapps::setAccountInfo(name='yourshinyappsaccountname', </code> <br />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code>token='yourtoken', </code> <br />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code>secret='<SECRET>')</code> <br /><br /> 
 	
-	Now al you need is a shiny app to deploy!
+	Now all you need is a shiny app to deploy and that is the end-goal of this course.
   </li>
 </ol> 
 
