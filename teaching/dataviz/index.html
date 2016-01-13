@@ -150,16 +150,18 @@ We use <a href="https://www.r-project.org/" target="_blank">R</a> and <a href="h
   <li>Download and install the latest daily build of RStudio for your operating system <a href="https://www.rstudio.org/download/daily/desktop/" target="_blank">from here</a> and install it on your machine.
   </li>
   <li>Setup a free account on shinyapps <a href="http://www.shinyapps.io/" target="_blank">from here</a>. Once your account is created, login to shinyapps. You will be greeted by a "Getting Started" page that will walk you through the R commands you need to run. Essentially, you need to execute the following code <br />
-  
-  
   <code>install.packages('devtools')</code> <br />
   <code>devtools::install_github('rstudio/shinyapps')</code> <br />
   The next step is to authorize your account. The code on shinyapps will look something like that shown below and might be easiest to use the "Copy to clipboard" button to copy-and-paste the authorization code into R and then run the code. <br /> 
   <code>shinyapps::setAccountInfo(name='yourshinyappsaccountname', </code> <br />
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code>token='yourtoken', </code> <br />
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code>secret='<SECRET>')</code> <br /><br /> 
-	
 	Now all you need is a shiny app to deploy and that is the end-goal of this course.
+  </li>
+  <li>You should have an OU Box account. If you don't, go ahead and activate your account <a href="https://www.ohio.edu/oit/box/" target="_blank">from here</a>. Then create a folder for this course. Make sure to save all files and data in this folder. If you want to avoid uploading/downloading your materials to the Box folder via a browser, go ahead and install the Box Sync app <a href="https://sites.box.com/sync4/" target="_blank">from here</a>. If you do this you can just run everything from the Box folder on your machine without having to worry about saving your work every now and then. 
+  	
+  </li>
+  <li>One more thing before we get started. We will be running and sharing everything via an RMarkdown file. To see how it works and to make sure it runs on your machine, go ahead and (a) download <a href="https://app.box.com/s/3a9k4fz5x3481jb08kzeddxm6te7eld7" target=_blank">this file</a>, and (b) open it in RStudio.
   </li>
 </ol> 
 
