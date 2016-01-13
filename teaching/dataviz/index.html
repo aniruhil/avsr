@@ -50,9 +50,7 @@ Independent Study in Leadership & Public Affairs (MPA 6930.105)
 <p>Think of this independent study as a hands-on workshop on "all things data" but with a special emphasis on (a) acquiring data from various sources, (b) "data munging" (a term coined by Josua Reich to describe the inescapable fact that roughly 80% of any data analyst's time is spent cleaning and organizing data in an analysis-friendly format), (c) data analysis, and of course, (d) conveying the resulting narrative by way of static and/or interactive visualizations.</p>   
 
 <b>What tools will we use?</b>
-<p>We will use R and RStudio. You can download the latest daily build of RStudio for your operating system <a title="RStudio daily build" href="https://www.rstudio.org/download/daily/desktop/" target="_blank">from here</a> and the latest stable release of R from <a title="Download R" href="http://cran.case.edu/" target="_blank"> here</a>.</p> 
-
-<p>Once we reach the stage where we are ready to build a coherent set of interactive graphics we will use <a href="http://shiny.rstudio.com/" target="_blank">Shiny</a>. To deploy your app to the web you will need a free account. Sign up at <a href="https://www.shinyapps.io/admin/#/signup"></a> and pick the "Free" plan. You can look at the various types of plans <a href="https://www.rstudio.com/pricing/" target="_blank">here</a>, and if necessary we can pay $9 for one month (but I doubt we'll need to do so so).</p>
+<p>We will use R and RStudio for all data acquisition, management, analysis, and visualizations. Once we reach the stage where we are ready to build a coherent set of interactive graphics we will use <a href="http://shiny.rstudio.com/" target="_blank">Shiny</a>. Details on where to grab software or setup your shiny account are given below.</p>
 
 <b>Do I need to buy any books?</b>
 <p>You could, if you wanted to, but my goal is to provide you with key readings and of course you'll get all the R code from this website so you shouldn't need any R-specific books. However, I have put together a list of some books (because the masters of data visualization recommend them very highly) and blogs, etc. I review every week.</p>
@@ -91,11 +89,11 @@ Independent Study in Leadership & Public Affairs (MPA 6930.105)
 <b>Technology Setup</b>
 <p>We use <a href="https://www.r-project.org/" target="_blank">R</a> and <a href="https://www.rstudio.com/" target="_blank">RStudio</a>, and then cap things off with <a href="http://shiny.rstudio.com/" target="_blank">Shiny</a>. Follow the sequence shown below to get started:
 <ol compact>
-  <li>Download the latest stable release of R for your operating system <a href="https://cran.r-project.org/bin/" target="_blank">from here</a> and install it on your machine. Acept the default settings though the installation process.
+  <li>Download the latest stable release of R for your operating system <a href="https://cran.r-project.org/bin/" target="_blank">here</a> and install it on your machine. Accept the default settings though the installation process.
   </li>
-  <li>Download and install the latest daily build of RStudio for your operating system <a href="https://www.rstudio.org/download/daily/desktop/" target="_blank">from here</a>.
+  <li>Download and install the latest daily build of RStudio for your operating system <a href="https://www.rstudio.org/download/daily/desktop/" target="_blank">here</a>.
   </li>
-  <li>Setup a free account on shinyapps <a href="http://www.shinyapps.io/" target="_blank">from here</a>. Once your account is created, login to shinyapps. You will be greeted by a "Getting Started" page that will walk you through the R commands you need to run. Essentially, you need to execute the following code <br /><br />
+  <li>Setup a free account on shinyapps <a href="http://www.shinyapps.io/" target="_blank">here</a>. Once your account is created, login to shinyapps. You will be greeted by a "Getting Started" page that will walk you through the R commands you need to run. Essentially, you need to execute the following code <br /><br />
   <code>install.packages('devtools')</code> <br />
   <code>devtools::install_github('rstudio/shinyapps')</code> <br /><br />
   The next step is to authorize your account. The code on shinyapps will look something like that shown below and might be easiest to use the "Copy to clipboard" button to copy-and-paste the authorization code into R and then run the code. <br /><br />
@@ -104,7 +102,7 @@ Independent Study in Leadership & Public Affairs (MPA 6930.105)
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code>secret='<SECRET>')</code> <br /><br /> 
 	Now all you need is a shiny app to deploy and that is the end-goal of this course.
   </li>
-  <li>You should have an OU Box account. If you don't, go ahead and activate your account <a href="https://www.ohio.edu/oit/box/" target="_blank">from here</a>. Then create a folder for this course. Make sure to save all files and data in this folder. If you want to avoid uploading/downloading your materials to the Box folder via a browser, go ahead and install the Box Sync app <a href="https://sites.box.com/sync4/" target="_blank">from here</a>. If you do this you can just run everything from the Box folder on your machine without having to worry about saving your work every now and then. 
+  <li>You should have an OU Box account. If you don't, go ahead and activate your account <a href="https://www.ohio.edu/oit/box/" target="_blank">here</a>. Then create a folder for this course. Make sure to save all files and data in this folder. If you want to avoid uploading/downloading your materials to the Box folder via a browser, go ahead and install the Box Sync app <a href="https://sites.box.com/sync4/" target="_blank">from here</a>. If you do this you can just run everything from the Box folder on your machine without having to worry about saving your work every now and then. 
   	
   </li>
   <li>One more thing before we get started. We will be running and sharing everything via an RMarkdown file. To see how it works and to make sure it runs on your machine, go ahead and (a) download <a href="https://app.box.com/s/3a9k4fz5x3481jb08kzeddxm6te7eld7" target=_blank">this file</a>, and (b) open it in RStudio.
