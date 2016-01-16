@@ -14,12 +14,12 @@
 
 <title>R Script for Chapter 3</title>
 
-<script src="Chapter03_files/jquery-1.11.0/jquery.min.js"></script>
+<script src="Chapter_03_files/jquery-1.11.0/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="Chapter03_files/bootstrap-3.3.1/css/united.min.css" rel="stylesheet" />
-<script src="Chapter03_files/bootstrap-3.3.1/js/bootstrap.min.js"></script>
-<script src="Chapter03_files/bootstrap-3.3.1/shim/html5shiv.min.js"></script>
-<script src="Chapter03_files/bootstrap-3.3.1/shim/respond.min.js"></script>
+<link href="Chapter_03_files/bootstrap-3.3.1/css/united.min.css" rel="stylesheet" />
+<script src="Chapter_03_files/bootstrap-3.3.1/js/bootstrap.min.js"></script>
+<script src="Chapter_03_files/bootstrap-3.3.1/shim/html5shiv.min.js"></script>
+<script src="Chapter_03_files/bootstrap-3.3.1/shim/respond.min.js"></script>
 
 
 <style type="text/css">code{white-space: pre;}</style>
@@ -121,11 +121,11 @@ img {
 ## 6     6              1.4</code></pre>
 <p>Drawing a histogram of these data will allow us to see how undulation rates are distributed.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">hist</span>(snakeData$undulationRateHz, <span class="dt">right =</span> <span class="ot">FALSE</span>, <span class="dt">las =</span> <span class="dv">1</span>, <span class="dt">col =</span> <span class="st">&quot;gray&quot;</span>, <span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="fl">0.8</span>,<span class="fl">2.2</span>,<span class="dt">by=</span><span class="fl">0.2</span>), <span class="dt">xlab =</span> <span class="st">&quot;Undulation rate (Hz)&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Frequency&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;Distribution of Undulation Rates (in Hz)&quot;</span>, <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">3</span>))</code></pre></div>
-<p><img src="Chapter03_files/figure-html/unnamed-chunk-2-1.png" /><br />
+<p><img src="Chapter_03_files/figure-html/unnamed-chunk-2-1.png" /><br />
 The code below constructs a similar plot albeit with the <code>ggplot2</code> package</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ggplot2)
 <span class="kw">ggplot</span>(snakeData, <span class="kw">aes</span>(undulationRateHz)) +<span class="st"> </span><span class="kw">geom_histogram</span>(<span class="dt">binwidth=</span><span class="fl">0.2</span>) +<span class="st"> </span><span class="kw">xlab</span>(<span class="st">&quot;Undulation rate (Hz)&quot;</span>)</code></pre></div>
-<p><img src="Chapter03_files/figure-html/unnamed-chunk-3-1.png" /><br />
+<p><img src="Chapter_03_files/figure-html/unnamed-chunk-3-1.png" /><br />
 ## Calculating Central Tendency &amp; Variability Calculating the mean, median, variance, and standard deviation is pretty straightforward:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(snakeData$undulationRate, <span class="dt">na.rm=</span><span class="ot">TRUE</span>)</code></pre></div>
 <pre><code>## [1] 1.375</code></pre>
@@ -205,7 +205,7 @@ cov.cm</code></pre></div>
 ##   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14 
 ## 265  49  21  19  10  10   2   2   4   2   1   4   3   1   2</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">barplot</span>(tab.c, <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">300</span>), <span class="dt">xlab=</span><span class="st">&quot;Number of Convictions&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;Frequency&quot;</span>)</code></pre></div>
-<p><img src="Chapter03_files/figure-html/unnamed-chunk-11-1.png" /><br />
+<p><img src="Chapter_03_files/figure-html/unnamed-chunk-11-1.png" /><br />
 ## The Speeds of Male Tidarren spiders (pre- and post-amputation)</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">spiderData =<span class="st"> </span><span class="kw">read.csv</span>(<span class="kw">url</span>(<span class="st">&quot;http://whitlockschluter.zoology.ubc.ca/wp-content/data/chapter03/chap03e2SpiderAmputation.csv&quot;</span>))
 <span class="kw">head</span>(spiderData)</code></pre></div>
@@ -219,10 +219,10 @@ cov.cm</code></pre></div>
 <p><strong>Note:</strong> The two variables of interest are <code>speed</code> and <code>treatment</code>. We can start by constructing histograms of speeds before and after amputation. We will then look at a different graphic … the <code>boxplot</code>, an extremely useful plot because it conveys a lot of information very simply. First the histograms</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(lattice)
 <span class="kw">histogram</span>(~<span class="st"> </span>speed |<span class="st"> </span>treatment, <span class="dt">data=</span>spiderData, <span class="dt">layout=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="dt">type=</span><span class="kw">c</span>(<span class="st">&quot;count&quot;</span>))</code></pre></div>
-<p><img src="Chapter03_files/figure-html/unnamed-chunk-13-1.png" /><br />
+<p><img src="Chapter_03_files/figure-html/unnamed-chunk-13-1.png" /><br />
 Now the box-plots:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boxplot</span>(speed ~<span class="st"> </span>treatment, <span class="dt">data=</span>spiderData, <span class="dt">horizontal=</span><span class="ot">TRUE</span>, <span class="dt">ylab=</span><span class="st">&quot;Amputation Treatment&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Speed (cm/s)&quot;</span>, <span class="dt">col=</span><span class="st">&quot;gray&quot;</span>)</code></pre></div>
-<p><img src="Chapter03_files/figure-html/unnamed-chunk-14-1.png" /><br />
+<p><img src="Chapter_03_files/figure-html/unnamed-chunk-14-1.png" /><br />
 For each group the boxplot maps a few statistics. First, the dark line inside each box is the Median for the group. Clearly the median speed is higher for the post-amputation group than for the pre-amputation group. The edges of the gray boxes reflect the first and third quartiles for each group; <span class="math inline">\(Q_1\)</span> is to the left of the Median and <span class="math inline">\(Q_3\)</span> is to the right of the Median. The “whiskers” go out to the minimum and maximum values.</p>
 <p>If a distribution is symmetric then the box should be equally wide either side of the Median and the whiskers should be of similar length on either side of the box. If you see the plot looking stretched out on one side then that tells us it is skewed towards this side. For instance, see the stretch to the right for the “after”&quot; group; these data are positively skewed (aka skewed right). For the “before” group we see the stretch to the left; this group’s speeds are negatively skewed (i.e. skewed left).</p>
 <p>We also see a lone dot at the lower extreme of the plot for the “before” group. This is an <strong>outlier</strong> … any data point that is smaller than <span class="math inline">\(Q_1 - (1.5 \times IQR)\)</span> or larger than <span class="math inline">\(Q_3 + (1.5 \times IQR)\)</span>. An outlier is essentially an extremely unusual value.</p>
@@ -309,7 +309,7 @@ speedAfter</code></pre></div>
   <span class="dt">las =</span> <span class="dv">1</span>, <span class="dt">main =</span> <span class="st">&quot;&quot;</span>, <span class="dt">do.points =</span> <span class="ot">FALSE</span>,
     <span class="dt">ylab =</span> <span class="st">&quot;Cumulative relative frequency&quot;</span>, 
     <span class="dt">xlab =</span> <span class="st">&quot;Running speed after amputation (cm/s)&quot;</span> )</code></pre></div>
-<p><img src="Chapter03_files/figure-html/unnamed-chunk-19-1.png" /><br />
+<p><img src="Chapter_03_files/figure-html/unnamed-chunk-19-1.png" /><br />
 </p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dev.off</span>()</code></pre></div>
 <pre><code>## null device 
@@ -327,7 +327,7 @@ speedAfter</code></pre></div>
     <span class="dt">ylab =</span> <span class="st">&quot;Cumulative relative frequency&quot;</span>, 
     <span class="dt">xlab =</span> <span class="st">&quot;Running speed after amputation (cm/s)&quot;</span> )
 <span class="kw">abline</span>(<span class="dt">h=</span><span class="fl">0.5</span>)</code></pre></div>
-<p><img src="Chapter03_files/figure-html/unnamed-chunk-20-1.png" /><br />
+<p><img src="Chapter_03_files/figure-html/unnamed-chunk-20-1.png" /><br />
 </p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dev.off</span>()</code></pre></div>
 <pre><code>## null device 
@@ -364,7 +364,7 @@ speedAfter</code></pre></div>
 ## 1    1 82 62.78 3.41     63   63.21 1.48  42  69    27 -3.55    17.62 0.38</code></pre>
 <p>Histograms are easily drawn as well:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">histogram</span>(~<span class="st"> </span>plates |<span class="st"> </span>genotype, <span class="dt">data=</span>sticklebackData, <span class="dt">layout=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>), <span class="dt">type=</span><span class="st">&quot;count&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Number of Plates&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;Frequency&quot;</span>)</code></pre></div>
-<p><img src="Chapter03_files/figure-html/unnamed-chunk-22-1.png" /><br />
+<p><img src="Chapter_03_files/figure-html/unnamed-chunk-22-1.png" /><br />
 Again, in a very marked fashion the <span class="math inline">\(MM\)</span> group has the most number of plates on average.</p>
 <p>Constructing a table of frequencies and proportions of the stickleback genotypes is easy as well.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tab.s1 =<span class="st"> </span><span class="kw">table</span>(sticklebackData$genotype, <span class="dt">dnn =</span> <span class="st">&quot;genotype&quot;</span>)
