@@ -91,23 +91,20 @@ th {
 	height: 40px;
 }
 		
-td { background: #FAFAFA; text-align: center; }
+/* td { background: #FAFAFA; text-align: center; } */
 
+/* Cells in even rows (2,4,6...) are one color */ 
+tr:nth-child(even) td { background: #F1F1F1; }   
+
+/* Cells in odd rows (1,3,5...) are another (excludes header cells)  */ 
+tr:nth-child(odd) td { background: #FEFEFE; }  
+
+tr td:hover { background: #666; color: #FFF; } /* Hover cell effect! */
 /* Zebra Stripe Rows */
 		
-tr:nth-child(even) td { background: #EEE; } 
+/* tr:nth-child(even) td { background: #EEE; } 
 tr:nth-child(odd) td { background: #FDFDFD; }
 
-/* First-child blank cells! */
-tr td:first-child, tr th:first-child { 
-	background: none; 
-	/* font-style: italic;
-	font-weight: bold; */
-	font-size: 14px;
-	text-align: left;
-	padding-right: 5px;
-	/* width: 80px; */
-}
 
 /* Add border-radius to specific cells! */
 tr:first-child th:nth-child(2) { 
