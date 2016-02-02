@@ -176,19 +176,20 @@ y =<span class="st"> </span><span class="kw">dnorm</span>(z,<span class="dt">mea
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pnorm</span>(-<span class="dv">2</span>, <span class="dt">mean=</span><span class="dv">0</span>, <span class="dt">sd=</span><span class="dv">1</span>, <span class="dt">lower.tail=</span><span class="ot">TRUE</span>)</code></pre></div>
 <pre><code>## [1] 0.02275013</code></pre>
 <p>The area between <span class="math inline">\(z-scores = \pm 2\)</span> has to be <code>0.9544997</code>.</p>
-<p>Okay, so thus far the <code>Empirical Rule</code> seems to be true. But what if I wanted to know what <span class="math inline">\(z-scores\)</span> trap 95% of the distribution? Here we are being asked for the z-scores that trap a certain proportion (0.95) of the distribution. Given the symmetry of the distribution we know this means a total of 5% of the distribution is then split amongst the two tails, 2.5% in the left-tail and 2.5% in the right-tail. This can be estimated as follows:</p>
+<p>Okay, so thus far the <code>Empirical Rule</code> seems to be true. But what if I wanted to know what <span class="math inline">\(z-scores\)</span> trap 95% of the distribution? Here we are being asked for the z-scores that trap a certain proportion (0.95) of the distribution. Given the symmetry of the distribution we know this means a total of 5% of the distribution is then split amongst the two tails, 2.5% in the left-tail and 2.5% in the right-tail. The corresponding z-scores can be estimated as follows:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qnorm</span>(<span class="fl">0.025</span>, <span class="dt">lower.tail=</span><span class="ot">TRUE</span>)</code></pre></div>
 <pre><code>## [1] -1.959964</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qnorm</span>(<span class="fl">0.025</span>, <span class="dt">lower.tail=</span><span class="ot">FALSE</span>)</code></pre></div>
 <pre><code>## [1] 1.959964</code></pre>
+<p>Note the command structure: <code>qnorm(proportion of the curve, lower.tail=)</code>.</p>
 <p>So, in essence, <span class="math inline">\(z-scores=\pm1.959964 \approx \pm 1.96\)</span> trap 95% of the distribution. What about 99% of the distribution?</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qnorm</span>(<span class="fl">0.005</span>, <span class="dt">lower.tail=</span><span class="ot">TRUE</span>)</code></pre></div>
 <pre><code>## [1] -2.575829</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qnorm</span>(<span class="fl">0.005</span>, <span class="dt">lower.tail=</span><span class="ot">FALSE</span>)</code></pre></div>
 <pre><code>## [1] 2.575829</code></pre>
 <p>Well that turns out to be <span class="math inline">\(\approx \pm 2.58\)</span></p>
-<p>We can store these two values – <span class="math inline">\(z-scores = \pm 1.96\)</span> flag the middle 95% of the distribution, and <span class="math inline">\(z-scores = \pm2.58\)</span> flag the middle 99% of the distribution.</p>
-<p>In the problems that follow you will see the 95% confidence interval being calculated with <span class="math inline">\(z=\pm 1.96\)</span>; this is where this value of <span class="math inline">\(1.96\)</span> is coming from.</p>
+<p>We can store these two values – <span class="math inline">\(z-scores = \pm 1.96\)</span> in our memory because these flag the middle 95% of the distribution, and similarly <span class="math inline">\(z-scores = \pm 2.58\)</span> flag the middle 99% of the distribution.</p>
+<p>In the problems that follow you will see the 95% confidence interval being calculated with <span class="math inline">\(z=\pm 1.96\)</span>; this is where this value of <span class="math inline">\(1.96\)</span> is coming from. Note also that this means we no longer use the <span class="math inline">\(2 \times se\)</span> rule used to calculate the <em>approximate 95% confidence interval</em>.</p>
 </div>
 <div id="the-binomial-distribution" class="section level1">
 <h1><span class="header-section-number">4</span> - The Binomial Distribution</h1>
@@ -252,16 +253,19 @@ p.95CI.lower; p.95CI.upper</code></pre></div>
 ## sample estimates:
 ## probability of success 
 ##              0.4208333</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.confint</span>(X, n, <span class="dt">p=</span><span class="fl">0.5</span>, <span class="dt">alternative=</span><span class="st">&quot;two.sided&quot;</span>, <span class="dt">conf.level=</span><span class="fl">0.95</span>, <span class="dt">methods=</span><span class="st">&quot;ac&quot;</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.confint</span>(X, n, <span class="dt">p=</span><span class="fl">0.5</span>, <span class="dt">alternative=</span><span class="st">&quot;two.sided&quot;</span>, <span class="dt">conf.level=</span><span class="fl">0.95</span>, <span class="dt">methods=</span><span class="kw">c</span>(<span class="st">&quot;ac&quot;</span>))</code></pre></div>
 <pre><code>##          method   x   n      mean     lower     upper
 ## 1 agresti-coull 101 240 0.4208333 0.3600899 0.4840711</code></pre>
 <p>Note a couple of things. First, <code>binom.test()</code> is calculating the default <strong>Wald</strong> confidence interval whereas <code>binom.confint</code> allows us to choose what method we want and in this example you see the <strong>Agresti-Coull</strong> method being used via the <code>methods=“ac”</code> switch.</p>
-<p>The Agresti-Coull method used by R is slightly different from that listed in the text. In particular, “for a 95% confidence interval, this method does not use the concept of”adding 2 successes and 2 failures,&quot; but rather uses the formulas explicitly described in the following link: <a href="http://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval#Agresti-Coull_Interval" class="uri">http://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval#Agresti-Coull_Interval</a>.&quot; As a result our manual calculations will not synchronize 1:1 with the confidence interval generated by <code>binom.confint</code>.</p>
-<p>Remember: If <span class="math inline">\(n\)</span> is small and/or <span class="math inline">\(p\)</span> is close to <span class="math inline">\(0\)</span> or <span class="math inline">\(1\)</span> then the Agresti-Coull method is preferred.</p>
+<p>The Agresti-Coull method used by R is slightly different from that listed in the text. In particular, “for a 95% confidence interval, this method does not use the concept of”adding 2 successes and 2 failures,&quot; but rather uses the formulas explicitly described here: <a href="http://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval#Agresti-Coull_Interval" class="uri">http://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval#Agresti-Coull_Interval</a>.&quot; As a result our manual calculations will not synchronize 1:1 with the confidence interval generated by <code>binom.confint</code>. However, this won’t be an issue since R will automatically calculate the correct confidence interval limits so long as we specify <code>method=“ac”</code>.</p>
+<p>Remember: If <span class="math inline">\(n\)</span> is small and/or <span class="math inline">\(p\)</span> is close to <span class="math inline">\(0\)</span> or <span class="math inline">\(1\)</span> then the Agresti-Coull method is preferred. I would just default to this in any event.</p>
 </div>
 <div id="radiologists-and-missing-sons" class="section level2">
 <h2><span class="header-section-number">5.2</span> - Radiologists and Missing Sons</h2>
-<p>Assume that they are just as likely to have boys as girls. This then generates the following hypotheses: <span class="math display">\[H_0: \text{ Radiologsts are just as likely to have sons as daughters } (p=0.5)\]</span> <span class="math display">\[H_A: \text{ Radiologsts are not as likely to have sons as daughters } (p \neq 0.5)\]</span> Let <span class="math inline">\(\alpha=0.05\)</span></p>
+<p>Assume that they are just as likely to have boys as girls. This then generates the following hypotheses:</p>
+<p><span class="math display">\[H_0: \text{ Radiologsts are just as likely to have sons as daughters } (p=0.5)\]</span><br />
+<span class="math display">\[H_A: \text{ Radiologsts are not as likely to have sons as daughters } (p \neq 0.5)\]</span></p>
+<p>Let <span class="math inline">\(\alpha=0.05\)</span></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.test</span>(<span class="dv">30</span>, <span class="dv">87</span>, <span class="dt">p=</span><span class="fl">0.5</span>, <span class="dt">alternative=</span><span class="st">&quot;two.sided&quot;</span>, <span class="dt">conf.level=</span><span class="fl">0.95</span>)</code></pre></div>
 <pre><code>## 
 ##  Exact binomial test
@@ -276,7 +280,9 @@ p.95CI.lower; p.95CI.upper</code></pre></div>
 ## probability of success 
 ##              0.3448276</code></pre>
 <p>The <span class="math inline">\(p-value = 0.005014\)</span> so we can reject <span class="math inline">\(H_0\)</span>; the data provide sufficient evidence to conclude that radiologists are not as likely to have sons as daughters.</p>
-<p>What if we suspected, <em>a priori</em> that radiologists are less likely to have sons? In that case we would have done the following: <span class="math display">\[H_0: \text{ Radiologsts are at least as likely to have sons as daughters } (p \geq 0.5)\]</span> <span class="math display">\[H_A: \text{ Radiologsts are less likely to have sons than daughters } (p &lt; 0.5)\]</span> Let <span class="math inline">\(\alpha=0.05\)</span></p>
+<p>What if we suspected, <em>a priori</em> that radiologists are less likely to have sons? In that case we would have done the following:</p>
+<p><span class="math display">\[H_0: \text{ Radiologsts are at least as likely to have sons as daughters } (p \geq 0.5)\]</span></p>
+<p><span class="math display">\[H_A: \text{ Radiologsts are less likely to have sons than daughters } (p &lt; 0.5)\]</span> Let <span class="math inline">\(\alpha=0.05\)</span></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.test</span>(<span class="dv">30</span>, <span class="dv">87</span>, <span class="dt">p=</span><span class="fl">0.5</span>, <span class="dt">alternative=</span><span class="st">&quot;less&quot;</span>, <span class="dt">conf.level=</span><span class="fl">0.95</span>)</code></pre></div>
 <pre><code>## 
 ##  Exact binomial test
@@ -298,7 +304,7 @@ p.95CI.lower; p.95CI.upper</code></pre></div>
 <li><p>Best estimate of the proportion of $1 bills with measurable cocaine content would be <span class="math inline">\(\frac{46}{50}=\)</span> <code>0.92</code></p></li>
 <li><p>The 95% confidence interval would be</p></li>
 </ol>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.confint</span>(<span class="dv">46</span>, <span class="dv">50</span>, <span class="dt">p=</span><span class="fl">0.5</span>, <span class="dt">alternative=</span><span class="st">&quot;two.sided&quot;</span>, <span class="dt">conf.level=</span><span class="fl">0.95</span>, <span class="dt">methods=</span><span class="st">&quot;ac&quot;</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.confint</span>(<span class="dv">46</span>, <span class="dv">50</span>, <span class="dt">p=</span><span class="fl">0.5</span>, <span class="dt">conf.level=</span><span class="fl">0.95</span>, <span class="dt">methods=</span><span class="kw">c</span>(<span class="st">&quot;ac&quot;</span>), <span class="dt">alternative=</span><span class="st">&quot;two.sided&quot;</span>)</code></pre></div>
 <pre><code>##          method  x  n mean     lower     upper
 ## 1 agresti-coull 46 50 0.92 0.8064694 0.9735986</code></pre>
 <ol start="3" style="list-style-type: lower-alpha">
@@ -333,7 +339,8 @@ p.95CI.lower; p.95CI.upper</code></pre></div>
 <div id="problem-15" class="section level2">
 <h2><span class="header-section-number">5.5</span> - Problem 15</h2>
 <p>Given that in 13 of the 16 pairs the clade with latex/resin was found to be more diverse. Does having the clade defended by latex/resin lead to more diversity?</p>
-<p><span class="math display">\[H_0: \text{ The clade with latex/resin is likely to be just as diverse as its sister clade without latex/resin} (p=0.5)\]</span> <span class="math display">\[H_A: \text{ The clade with latex/resin is not likely to be just as diverse as its sister clade without latex/resin} (p \neq 0.5)\]</span> Let <span class="math inline">\(\alpha=0.05\)</span></p>
+<p><span class="math display">\[H_0: \text{ The clade with latex/resin is likely to be just as diverse as its sister clade without latex/resin} (p=0.5)\]</span></p>
+<p><span class="math display">\[H_A: \text{ The clade with latex/resin is not likely to be just as diverse as its sister clade without latex/resin} (p \neq 0.5)\]</span> Let <span class="math inline">\(\alpha=0.05\)</span></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.test</span>(<span class="dv">13</span>, <span class="dv">16</span>, <span class="dt">p=</span><span class="fl">0.5</span>, <span class="dt">alternative=</span><span class="st">&quot;two.sided&quot;</span>, <span class="dt">conf.level=</span><span class="fl">0.95</span>)</code></pre></div>
 <pre><code>## 
 ##  Exact binomial test
