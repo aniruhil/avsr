@@ -110,22 +110,22 @@ img {
 <h1>Flipping coins again</h1>
 <p>Say you are flipping a fair coin twice. You know you can end up with Heads or Tails on any given toss. The sample space would then be <span class="math inline">\(S = \left\{ HH, HT, TH, TT \right\}\)</span>, i.e., the sample size is <span class="math inline">\(n=4\)</span>. The probability of getting exactly one Tails is <span class="math inline">\(\dfrac{2}{4} = 0.5\)</span> and so is the probability of one Heads. What if we flipped the coin ten times? What would be the probability of exactly three Tails in ten flips of the coin? We could spell out the full sample space and then calculate the needed probability but that would be tedious. It would be easier to use a formula that does this calculation for us.</p>
 <p><span class="math display">\[
-\begin{aligned}     
+\begin{align}   
 P\left[X \text{ successes}\right] = \binom{n}{X}p^{X}\left(1 - p\right)^{n-X} \\
 &amp; \text{where } \binom{n}{x} = \dfrac{n!}{X!(n-X)!} \text{ and } \\
 &amp; n! = n \times (n-1) \times (n-2) \times \cdots \times 2 \times 1
-\end{aligned}
+\end{align}
 \]</span></p>
 <p>Let us define Success as a Tails resulting on the flip, and X being 3 Tails in ten flips of the coin (i.e., <span class="math inline">\(n=10\)</span>). Let us also assume that it is a fair coin so that the probability of Tails on any single flip of the coin is <span class="math inline">\(p=0.5\)</span>. Plugging these values into the equation will yield:</p>
 <p><span class="math display">\[
-\begin{aligned}     
+\begin{align}   
 P\left[3 \text{ successes}\right] = \binom{10}{3}0.5^{3}\left(1 - 0.5 \right)^{10-3} \\
 &amp; = \dfrac{10 \times 9 \times 8 \times \cdots \times 1}{\left(3 \times 2 \times 1 \right) \left(7 \times 6 \times \cdots \times 1 \right)} \left(0.5 \right)^{3} \left(0.5 \right)^{7} \\
 &amp; = \dfrac{10 \times 9 \times 8 }{\left(3 \times 2 \times 1 \right)} \left(0.5 \right)^{3} \left(0.5 \right)^{7} \\
 &amp; = \left(10 \times 3 \times 4 \right)\left(0.5 \right)^{3} \left(0.5 \right)^{7} \\
 &amp; = \left(120\right) \left(0.125 \right) \left(0.0078125 \right) \\
 &amp; = 0.1171875
-\end{aligned}
+\end{align}
 \]</span></p>
 <p>Using R as a calculator we could solve the above formula as follows:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">n =<span class="st"> </span><span class="dv">10</span>
