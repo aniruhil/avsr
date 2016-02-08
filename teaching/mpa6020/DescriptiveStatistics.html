@@ -93,7 +93,7 @@ img {
 <div id="header">
 <h1 class="title">Descriptive Statistics</h1>
 <h4 class="author"><em>MPA 6020 (Spring 2016)</em></h4>
-<h4 class="date"><em>22 January, 2016</em></h4>
+<h4 class="date"><em>08 February, 2016</em></h4>
 </div>
 
 <div id="TOC">
@@ -113,7 +113,7 @@ img {
 <div id="the-summary-function" class="section level2">
 <h2>The summary() Function</h2>
 <p>Let us load the <strong>hsb2.RData</strong> we read and saved earlier. If we want to look at its contents and get a quick feel for the distributions of each variable we can do so via the <code>summary()</code> function.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">load</span>(<span class="st">&quot;~/Downloads/Archive/hsb2.RData&quot;</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">load</span>(<span class="st">&quot;~/Downloads/hsb2.RData&quot;</span>)
 
 <span class="kw">summary</span>(hsb2)</code></pre></div>
 <table>
@@ -632,7 +632,7 @@ table<span class="fl">.6</span> =<span class="st"> </span>DT[, <span class="kw">
 </div>
 <div id="frequency-tables" class="section level1">
 <h1>Frequency Tables</h1>
-<p>With qualitative variables such as female, race, etc. we know we can best represent their distributions via frequency tables. These can be created very easily, and then dressed up a bit. The basic command for a cross-tabulation of frequencies is <code>table(df<span class="math inline">\(x1, df\)</span>x2)</code>. This command does not create the row and column totals so we use the <code>as.data.frame(addmargins(tab.x, FUN = Total))</code> command. The <code>kable()</code> command generates the final table when we <code>knit</code> the document.</p>
+<p>With qualitative variables such as female, race, etc. we know we can best represent their distributions via frequency tables. These can be created very easily, and then dressed up a bit. The basic command for a cross-tabulation of frequencies is <code>table(df$x1, df$x2)</code>. This command does not create the row and column totals so we use the <code>as.data.frame(addmargins(tab.x, FUN = Total))</code> command. The <code>kable()</code> command generates the final table when we <code>knit</code> the document.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tab.6a =<span class="st"> </span><span class="kw">table</span>(hsb2$ses)
 
 Total =<span class="st"> </span>sum
