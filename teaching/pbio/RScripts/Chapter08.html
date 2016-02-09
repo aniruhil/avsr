@@ -318,7 +318,7 @@ Xsq</code></pre></div>
 <p>Now the <span class="math inline">\(\chi^2\)</span> test:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p.H0 =<span class="st"> </span><span class="fl">0.052</span>
 p.HA =<span class="st"> </span><span class="dv">1</span> -<span class="st"> </span><span class="fl">0.052</span>
-<span class="kw">chisq.test</span>(tab<span class="fl">.1</span>, <span class="dt">p=</span><span class="kw">c</span>(p.HA, p.H0))</code></pre></div>
+xsq =<span class="st"> </span><span class="kw">chisq.test</span>(tab<span class="fl">.1</span>, <span class="dt">p=</span><span class="kw">c</span>(p.HA, p.H0)); xsq</code></pre></div>
 <pre><code>## 
 ##  Chi-squared test for given probabilities
 ## 
