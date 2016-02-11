@@ -10,7 +10,7 @@
 
 <meta name="author" content="Anirudh V. S. Ruhil" />
 
-<meta name="date" content="2016-02-10" />
+<meta name="date" content="2016-02-11" />
 
 <title>Lab 5: The Chi-Square and the Poisson</title>
 
@@ -93,7 +93,7 @@ img {
 <div id="header">
 <h1 class="title">Lab 5: The Chi-Square and the Poisson</h1>
 <h4 class="author"><em>Anirudh V. S. Ruhil</em></h4>
-<h4 class="date"><em>2016-02-10</em></h4>
+<h4 class="date"><em>2016-02-11</em></h4>
 </div>
 
 <div id="TOC">
@@ -115,9 +115,11 @@ img {
 </ul></li>
 <li><a href="#practice-problems">Practice Problems</a><ul>
 <li><a href="#world-cup-goals-problem-4">World Cup Goals (Problem 4)</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#practice-problems-1">Practice Problems</a><ul>
 <li><a href="#falling-cats">Falling Cats</a></li>
 <li><a href="#snapdragons">Snapdragons</a></li>
-</ul></li>
 </ul></li>
 </ul>
 </div>
@@ -163,7 +165,7 @@ img {
 <div id="four-health-campaigns" class="section level2">
 <h2>Four Health Campaigns</h2>
 <p><span class="math inline">\(H_0:\)</span> Proportions of the sample recalling any commercial are the same<br />
-<span class="math inline">\(H_0:\)</span> Proportions of the sample recalling any commercial are NOT the same</p>
+<span class="math inline">\(H_A:\)</span> Proportions of the sample recalling any commercial are NOT the same</p>
 <p>Set <span class="math inline">\(\alpha\)</span>; I choose 0.05</p>
 <p>Decision Rule: Reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(p-value \leq \alpha\)</span>; do not reject otherwise.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">observed =<span class="st"> </span><span class="kw">c</span>(<span class="dv">85</span>, <span class="dv">95</span>, <span class="dv">50</span>, <span class="dv">70</span>)
@@ -197,7 +199,7 @@ observed =<span class="st"> </span><span class="kw">c</span>(<span class="dv">17
 ## 
 ## data:  observed
 ## X-squared = 29.514, df = 5, p-value = 1.838e-05</code></pre>
-<p>Given the low p-value we reject <span class="math inline">\(H_0\)</span>; the data suggest that the color distribution is NOT that the company would like to see.</p>
+<p>Given the low p-value we reject <span class="math inline">\(H_0\)</span>; the data suggest that the color distribution is NOT what the company would like to see.</p>
 </div>
 <div id="number-of-boys" class="section level2">
 <h2>Number of Boys</h2>
@@ -438,7 +440,7 @@ new.cats</code></pre></div>
 <p><span class="math inline">\(H_0:\)</span> Goals per game do not follow the Poisson distribution<br />
 <span class="math inline">\(H_A:\)</span> Goals per game DO follow the Poisson distribution</p>
 <p><span class="math inline">\(\alpha=0.05\)</span></p>
-<p>Reject <span class="math inline">\(H_0\)</span> if the p-value is <span class="math inline">\(\lew \alpha\)</span>; do not reject <span class="math inline">\(H_0\)</span> otherwise</p>
+<p>Reject <span class="math inline">\(H_0\)</span> if the p-value is <span class="math inline">\(\leq \alpha\)</span>; do not reject <span class="math inline">\(H_0\)</span> otherwise</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x =<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">5</span>, <span class="dt">by=</span><span class="dv">1</span>)
 probs =<span class="st"> </span><span class="kw">dpois</span>(x, <span class="dt">lambda=</span>mean.goals); probs</code></pre></div>
 <pre><code>## [1] 0.284275199 0.357564899 0.224874799 0.094283445 0.029647724 0.007458256</code></pre>
@@ -470,6 +472,10 @@ expected <span class="co">#expected number of 0, 1, 2, ... goals </span></code><
 ## 36.387225 45.768307 28.783974 12.068281  4.992212</code></pre>
 <p>It is quite obvious that there is marginal drift between our observed frequencies and what we would have expected to see if goals were distributed Poisson.</p>
 </div>
+</div>
+</div>
+<div id="practice-problems-1" class="section level1">
+<h1>Practice Problems</h1>
 <div id="falling-cats" class="section level3">
 <h3>Falling Cats</h3>
 <p>A study of the Feline High-Rise Syndrome (FHRS) included data on the number of cats that fell in a given month. Can we infer that the rate of cats falling varies between months of the year?</p>
@@ -501,6 +507,25 @@ tab.cats =<span class="st"> </span><span class="kw">table</span>(cats$month); ta
 <li><p>The results of such a cross were 10 red, 21 pink, and 9 white offspring. Do these results differ significantly from that expected by the 1:2:1 ratio?</p></li>
 <li><p>In another experiment, you count 100 times as many flowers and end up with 1000 red, 2100 pink, and 900 white. Do these results differ significantly from that expected by the 1:2:1 ratio?</p></li>
 <li><p>Do the proportions observed in (a) and (b) differ? Did the results of your hypothesis test differ? Why or why not?</p></li>
+</ol>
+<div id="shark-attacks" class="section level4">
+<h4>Shark Attacks</h4>
+<p>In recent years shark attacks have drawn attention every summer. The data below reflect the number of shark attacks per year for the 2005 through 2014 years:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">attacks =<span class="st"> </span><span class="kw">c</span>(<span class="dv">58</span>, <span class="dv">59</span>, <span class="dv">70</span>, <span class="dv">55</span>, <span class="dv">68</span>, <span class="dv">82</span>, <span class="dv">79</span>, <span class="dv">83</span>, <span class="dv">76</span>, <span class="dv">72</span>)
+year =<span class="st"> </span><span class="kw">c</span>(<span class="kw">seq</span>(<span class="dv">2005</span>, <span class="dv">2014</span>, <span class="dt">by=</span><span class="dv">1</span>))
+sharks =<span class="st"> </span><span class="kw">cbind.data.frame</span>(year, attacks)</code></pre></div>
+<ol style="list-style-type: lower-alpha">
+<li><p>Plot the distribution of shark attacks.</p></li>
+<li><p>Do shark attacks per year follow the Poisson distribution?</p></li>
+</ol>
+</div>
+<div id="hurricanes" class="section level4">
+<h4>Hurricanes</h4>
+<p>The Saffir-Simpson scale rates hurricane on a five-point rating system, with Category 5 being the worst. The data given here <a href="http://whitlockschluter.zoology.ubc.ca/wp-content/data/chapter08/chap08q19Hurricanes.csv" class="uri">http://whitlockschluter.zoology.ubc.ca/wp-content/data/chapter08/chap08q19Hurricanes.csv</a> reflect the number of Cat 3 hurricanes over a one-hundred year period in the U.S.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Based on these data, what is the mean number of severe hurricanes to hit the U.S. per year?</p></li>
+<li><p>What model would describe the distribution of hurricanes per year if hurricanes hit independently of each other and the probability of a hurricane were the same in every year?</p></li>
+<li><p>Test the fit of the model you identified in (b) to these data. Be sure to specify the hypotheses, the <span class="math inline">\(\alpha\)</span>, and the decision rule. Once you conduct the test, state your decision and hence your conclusion (in words).</p></li>
 </ol>
 </div>
 </div>
