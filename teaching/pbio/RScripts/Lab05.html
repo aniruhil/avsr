@@ -120,6 +120,8 @@ img {
 <li><a href="#practice-problems-1">Practice Problems</a><ul>
 <li><a href="#falling-cats">Falling Cats</a></li>
 <li><a href="#snapdragons">Snapdragons</a></li>
+<li><a href="#shark-attacks">Shark Attacks</a></li>
+<li><a href="#hurricanes">Hurricanes</a></li>
 </ul></li>
 </ul>
 </div>
@@ -508,8 +510,9 @@ tab.cats =<span class="st"> </span><span class="kw">table</span>(cats$month); ta
 <li><p>In another experiment, you count 100 times as many flowers and end up with 1000 red, 2100 pink, and 900 white. Do these results differ significantly from that expected by the 1:2:1 ratio?</p></li>
 <li><p>Do the proportions observed in (a) and (b) differ? Did the results of your hypothesis test differ? Why or why not?</p></li>
 </ol>
-<div id="shark-attacks" class="section level4">
-<h4>Shark Attacks</h4>
+</div>
+<div id="shark-attacks" class="section level3">
+<h3>Shark Attacks</h3>
 <p>In recent years shark attacks have drawn attention every summer. The data below reflect the number of shark attacks per year for the 2005 through 2014 years:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">attacks =<span class="st"> </span><span class="kw">c</span>(<span class="dv">58</span>, <span class="dv">59</span>, <span class="dv">70</span>, <span class="dv">55</span>, <span class="dv">68</span>, <span class="dv">82</span>, <span class="dv">79</span>, <span class="dv">83</span>, <span class="dv">76</span>, <span class="dv">72</span>)
 year =<span class="st"> </span><span class="kw">c</span>(<span class="kw">seq</span>(<span class="dv">2005</span>, <span class="dv">2014</span>, <span class="dt">by=</span><span class="dv">1</span>))
@@ -519,15 +522,14 @@ sharks =<span class="st"> </span><span class="kw">cbind.data.frame</span>(year, 
 <li><p>Do shark attacks per year follow the Poisson distribution?</p></li>
 </ol>
 </div>
-<div id="hurricanes" class="section level4">
-<h4>Hurricanes</h4>
+<div id="hurricanes" class="section level3">
+<h3>Hurricanes</h3>
 <p>The Saffir-Simpson scale rates hurricane on a five-point rating system, with Category 5 being the worst. The data given here <a href="http://whitlockschluter.zoology.ubc.ca/wp-content/data/chapter08/chap08q19Hurricanes.csv" class="uri">http://whitlockschluter.zoology.ubc.ca/wp-content/data/chapter08/chap08q19Hurricanes.csv</a> reflect the number of Cat 3 hurricanes over a one-hundred year period in the U.S.</p>
 <ol style="list-style-type: lower-alpha">
 <li><p>Based on these data, what is the mean number of severe hurricanes to hit the U.S. per year?</p></li>
 <li><p>What model would describe the distribution of hurricanes per year if hurricanes hit independently of each other and the probability of a hurricane were the same in every year?</p></li>
 <li><p>Test the fit of the model you identified in (b) to these data. Be sure to specify the hypotheses, the <span class="math inline">\(\alpha\)</span>, and the decision rule. Once you conduct the test, state your decision and hence your conclusion (in words).</p></li>
 </ol>
-</div>
 </div>
 </div>
 
