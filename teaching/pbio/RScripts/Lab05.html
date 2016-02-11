@@ -10,7 +10,7 @@
 
 <meta name="author" content="Anirudh V. S. Ruhil" />
 
-<meta name="date" content="2016-02-09" />
+<meta name="date" content="2016-02-10" />
 
 <title>Lab 5: The Chi-Square and the Poisson</title>
 
@@ -93,7 +93,7 @@ img {
 <div id="header">
 <h1 class="title">Lab 5: The Chi-Square and the Poisson</h1>
 <h4 class="author"><em>Anirudh V. S. Ruhil</em></h4>
-<h4 class="date"><em>2016-02-09</em></h4>
+<h4 class="date"><em>2016-02-10</em></h4>
 </div>
 
 <div id="TOC">
@@ -281,7 +281,8 @@ y </code></pre></div>
 <div id="an-example-mass-extinctions-in-the-fossil-record" class="section level3">
 <h3>An Example: Mass Extinctions in the Fossil Record</h3>
 <p>Do extinctions occur randomly through the long fossil record of Earth’s history or are there periods in which the extinction rates are unusually high (“mass extinctions”) compared with background rates? We can test this hypothesis via data on the number of recorded extinctions of marine invertebrate families in 76 time intervals. If mass extinctions are indeed random in time then the distribution should follow the Poisson, with any departures from the Poisson suggesting that something must have been going on.</p>
-<p><span class="math display">\[H_0: \text{Number of extinctions follow the Poisson distribution }\]</span> <span class="math display">\[H_A: \text{Number of extinctions DO NOT follow the Poisson distribution }\]</span></p>
+<p><span class="math display">\[H_0: \text{Number of extinctions follow the Poisson distribution }\]</span><br />
+<span class="math display">\[H_A: \text{Number of extinctions DO NOT follow the Poisson distribution }\]</span></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">extinct =<span class="st"> </span><span class="kw">read.csv</span>(<span class="kw">url</span>(<span class="st">&quot;http://whitlockschluter.zoology.ubc.ca/wp-content/data/chapter08/chap08e6MassExtinctions.csv&quot;</span>))
 <span class="kw">head</span>(extinct)</code></pre></div>
 <pre><code>##   numberOfExtinctions
@@ -471,7 +472,7 @@ expected <span class="co">#expected number of 0, 1, 2, ... goals </span></code><
 </div>
 <div id="falling-cats" class="section level3">
 <h3>Falling Cats</h3>
-<p>A study of the Feline High-Rise Syndrome (FHRS) included data on the number of cats that fell in a given month. Does the Poisson distribution characterize these data?</p>
+<p>A study of the Feline High-Rise Syndrome (FHRS) included data on the number of cats that fell in a given month. Can we infer that the rate of cats falling varies between months of the year?</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">cats =<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;http://whitlockschluter.zoology.ubc.ca/wp-content/data/chapter08/chap08q21FallingCatsByMonth.csv&quot;</span>)
 tab.cats =<span class="st"> </span><span class="kw">table</span>(cats$month); tab.cats</code></pre></div>
 <pre><code>## 
@@ -490,7 +491,7 @@ tab.cats =<span class="st"> </span><span class="kw">table</span>(cats$month); ta
 ##        13        12        12         7         5</code></pre>
 <ol style="list-style-type: lower-alpha">
 <li><p>Plot the distribution of FHRS in these data.</p></li>
-<li><p>Test whether FHRS is characterized by the Poisson distribution</p></li>
+<li><p>Test whether FHRS rate varies across the months of the year.</p></li>
 </ol>
 </div>
 <div id="snapdragons" class="section level3">
