@@ -92,7 +92,7 @@ img {
 <div id="header">
 <h1 class="title">Data Acquisition and Management (2)</h1>
 <h4 class="author"><em>MPA 6020 (Spring 2016)</em></h4>
-<h4 class="date"><em>07 February, 2016</em></h4>
+<h4 class="date"><em>22 February, 2016</em></h4>
 </div>
 
 
@@ -252,7 +252,7 @@ flights[flights$month ==<span class="st"> </span><span class="dv">1</span> &amp;
 <p>If we want to rename some columns we can do so via <code>rename()</code>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rename</span>(flights, <span class="dt">arrival.delay =</span> arr_delay)
 <span class="kw">rename</span>(flights, <span class="dt">arrival.time =</span> arr_time, <span class="dt">departure.time =</span> dep_time)</code></pre></div>
-<p>Unique values in a column can be extracted as well. For example, how many unique aircrafts do we have flagged by the tail number (<strong>tailnum</strong>)? This is extracted by <code>distinct(select())</code>, both for a single column (as in <em>tailnum</em>) and forcombinations of multiple columns (as in <em>origin, des</em>).</p>
+<p>Unique values in a column can be extracted as well. For example, how many unique aircraft do we have flagged by the tail number (<strong>tailnum</strong>)? This is extracted by <code>distinct(select())</code>, both for a single column (as in <em>tailnum</em>) and for combinations of multiple columns (as in <em>origin, des</em>).</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">distinct</span>(<span class="kw">select</span>(flights, tailnum))
 <span class="kw">distinct</span>(<span class="kw">select</span>(flights, origin, dest))</code></pre></div>
 <p>If we want to calculate something based on existing columns and then add these new calculated values to the data frame, <code>mutate</code> comes in handy.</p>
