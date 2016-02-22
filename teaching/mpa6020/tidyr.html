@@ -108,7 +108,7 @@ img {
 </ul>
 </div>
 
-<p>The <code>tidyr</code> package is another useful tool in the data analysts’ toolkit. In fact very often you will <code>tidyr</code> being used in tandem with <code>dplyr</code> because they complement each other well. One thing that we will do here is to use the pipe operator <code>%&gt;%</code> because, well, because it is efficient and most likely will become the default even if it isn’t today.</p>
+<p>The <code>tidyr</code> package is another useful tool in the data analysts’ toolkit. In fact very often you will see <code>tidyr</code> being used in tandem with <code>dplyr</code> because they complement each other well. One thing that we will do here is to use the pipe operator <code>%&gt;%</code> because, well, because it is efficient and most likely will become the default even if it isn’t today.</p>
 <p>What does this pipe operator do? Let us see its abilities in the context of how we have run commands thus far. In particular, thus far we have used dplyr as shown below:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">arrange</span>(
             <span class="kw">summarize</span>(
@@ -198,7 +198,7 @@ c =<span class="st"> </span><span class="kw">arrange</span>(b, <span class="kw">
 <p><code>unite()</code> will merge two columns into a single column for each observation.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">DF.unite1 =<span class="st"> </span><span class="kw">unite</span>(DF, CountyState, County, State, <span class="dt">sep=</span><span class="st">&quot;, &quot;</span>)
 DF.unite2 =<span class="st"> </span>DF %&gt;%<span class="st"> </span><span class="kw">unite</span>(CountyState, County, State, <span class="dt">sep=</span><span class="st">&quot;, &quot;</span>)</code></pre></div>
-<p>Note the components of the command. Without the pipe operator you specify the data frame, then the two variables to be united, and finally if and how these should be separated. Notice the space after the comma in <code>sep=“,”</code>. If you didn’t put the space the names would show up as <strong>Alamance,NC</strong> instead of as <strong>Alamance, NC</strong>.</p>
+<p>Note the components of the command. Without the pipe operator you specify the data frame, then the two variables to be united, and finally if and how these should be separated. Notice the space after the comma in <code>sep=&quot;, &quot;</code>. If you didn’t put the space the names would show up as <strong>Alamance,NC</strong> instead of as <strong>Alamance, NC</strong>.</p>
 </div>
 <div id="separate" class="section level2">
 <h2>separate</h2>
