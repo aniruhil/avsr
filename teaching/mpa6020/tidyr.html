@@ -202,7 +202,7 @@ DF.unite2 =<span class="st"> </span>DF %&gt;%<span class="st"> </span><span clas
 </div>
 <div id="separate" class="section level2">
 <h2>separate</h2>
-<p><code>separate()</code> does exactly the opposite; it will split a column. Let us split the <strong>CountyState</strong> column we just created into two columns, one we’ll call <strong>CountyName</strong> and the other we’ can call <strong>StateAbbreviation</strong>.</p>
+<p><code>separate()</code> does exactly the opposite; it will split a column. Let us split the <strong>CountyState</strong> column we just created into two columns, one we’ll call <strong>CountyName</strong> and the other we’ll call <strong>StateAbbreviation</strong>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">DF.separate1 =<span class="st"> </span><span class="kw">separate</span>(DF.unite1, CountyState, <span class="kw">c</span>(<span class="st">&quot;CountyName&quot;</span>, <span class="st">&quot;StateAbbreviation&quot;</span>))
 DF.separate2 =<span class="st"> </span>DF.unite2 %&gt;%<span class="st"> </span><span class="kw">separate</span>(CountyState, <span class="kw">c</span>(<span class="st">&quot;CountyName&quot;</span>, <span class="st">&quot;StateAbbreviation&quot;</span>))</code></pre></div>
 <p>Notice the components … if you are not using the pipe operator, the data frame comes first, then the variable to be split, and finally the names of the new columns to be created.</p>
