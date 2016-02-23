@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+<meta name="author" content="ruhil" />
+
+
+<title>Chapter 10: The Normal Distribution</title>
+
+<script src="Chapter_10_files/jquery-1.11.0/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="Chapter_10_files/bootstrap-3.3.1/css/flatly.min.css" rel="stylesheet" />
+<script src="Chapter_10_files/bootstrap-3.3.1/js/bootstrap.min.js"></script>
+<script src="Chapter_10_files/bootstrap-3.3.1/shim/html5shiv.min.js"></script>
+<script src="Chapter_10_files/bootstrap-3.3.1/shim/respond.min.js"></script>
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img { 
+  max-width:100%; 
+  height: auto; 
+}
+</style>
+<div class="container-fluid main-container">
+
+
+<div id="header">
+<h1 class="title">Chapter 10: The Normal Distribution</h1>
+<h4 class="author"><em>ruhil</em></h4>
+</div>
+
+<div id="TOC">
+<ul>
+<li><a href="#working-with-the-standard-normal-distribution">Working with the Standard Normal Distribution</a></li>
+<li><a href="#putting-the-standard-normal-distribution-to-good-use">Putting the Standard Normal Distribution to Good Use</a></li>
+<li><a href="#the-standard-error">The Standard Error</a></li>
+<li><a href="#the-normal-approximation-to-the-binomial">The Normal Approximation to the Binomial</a></li>
+</ul>
+</div>
+
+<style type="text/css">
+table {
+  border: 1px solid #ccc;
+}
+th {
+  background-color: #000000;
+  color: #ffffff;
+  max-width: 45%;
+}
+td {
+  background-color: #dcdcdc;
+}
+</style>
+<div id="working-with-the-standard-normal-distribution" class="section level2">
+<h2>Working with the Standard Normal Distribution</h2>
+<p><span class="math inline">\(z-scores\)</span> are essentially standardized distributions, standardized in the sense that each value of <span class="math inline">\(Y\)</span> is converted to its position relative to the mean <span class="math inline">\((\mu)\)</span>, and divided by the standard deviation <span class="math inline">\((\sigma)\)</span>. Formally, <span class="math inline">\(z = \dfrac{Y - \mu}{\sigma}\)</span>. Since for all <span class="math inline">\(z-score\)</span> distributions the mean is 0 and the standard deviation is 1, we can easily figure out how much of the area under the curve lies above or below a specific <span class="math inline">\(z-score\)</span>, as well as between two <span class="math inline">\(z-scores\)</span>. For example, if we want to know the area (i) above a <span class="math inline">\(z=0\)</span>, (ii) above a <span class="math inline">\(z=2.11\)</span>, or (iii) below a <span class="math inline">\(z=-0.33\)</span>, we can calculate these as follows:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pnorm</span>(<span class="dv">0</span>, <span class="dt">lower.tail=</span><span class="ot">FALSE</span>) <span class="co"># since I need the area above</span></code></pre></div>
+<pre><code>## [1] 0.5</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pnorm</span>(<span class="fl">2.11</span>, <span class="dt">lower.tail=</span><span class="ot">FALSE</span>) <span class="co"># since I need the area above</span></code></pre></div>
+<pre><code>## [1] 0.01742918</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pnorm</span>(-<span class="fl">0.33</span>, <span class="dt">lower.tail=</span><span class="ot">TRUE</span>) <span class="co"># since I need the area below</span></code></pre></div>
+<pre><code>## [1] 0.3707</code></pre>
+<p>What about the area between <span class="math inline">\(-0.33 \leq z \leq 2.11\)</span>? Between <span class="math inline">\(-2.11 \leq z \leq -0.33\)</span>?</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pnorm</span>(-<span class="fl">0.33</span>, <span class="dt">lower.tail=</span><span class="ot">FALSE</span>) -<span class="st"> </span><span class="kw">pnorm</span>(<span class="fl">2.11</span>, <span class="dt">lower.tail=</span><span class="ot">FALSE</span>)</code></pre></div>
+<pre><code>## [1] 0.6118708</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pnorm</span>(-<span class="fl">2.11</span>, <span class="dt">lower.tail=</span><span class="ot">FALSE</span>) -<span class="st"> </span><span class="kw">pnorm</span>(-<span class="fl">0.33</span>, <span class="dt">lower.tail=</span><span class="ot">FALSE</span>)</code></pre></div>
+<pre><code>## [1] 0.3532708</code></pre>
+<p>What if, however, we were asked to work backwards, say, asked to find the <span class="math inline">\(z-score\)</span> that leaves a particular area above it or below it? For example, we were told to find a <span class="math inline">\(z-score\)</span> that leaves 0.39 of the area under the curve above it? Or the <span class="math inline">\(z-score\)</span> that leaves 0.11 of the area under the curve below it?</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qnorm</span>(<span class="fl">0.39</span>, <span class="dt">lower.tail=</span><span class="ot">FALSE</span>) <span class="co"># focus on area above</span></code></pre></div>
+<pre><code>## [1] 0.279319</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qnorm</span>(<span class="fl">0.11</span>, <span class="dt">lower.tail=</span><span class="ot">TRUE</span>) <span class="co"># focus on area below</span></code></pre></div>
+<pre><code>## [1] -1.226528</code></pre>
+<p>So we can easily shift from area to <span class="math inline">\(z-score\)</span> or the other way around via <code>pnorm</code> and <code>qnorm</code>.</p>
+</div>
+<div id="putting-the-standard-normal-distribution-to-good-use" class="section level2">
+<h2>Putting the Standard Normal Distribution to Good Use</h2>
+<p>NASA excludes anyone under 62 inches in height and anyone over 75 inches in height from being an astronaut pilot. In metric units these cutoffs are 157.5 cm and 190.5 cm, respectively. Assume that heights are distributed with means and standard deviations of 177.6 cm and 9.7 cm for 20-29 year-old men, and 163.2 cm and 10.1 cm for 20-29 year-old women. What proportion of men and women in these age groups would be excluded from being NASA astronaut pilots?</p>
+<p>First, we flip the qualifying cutoffs into <span class="math inline">\(z-scores\)</span> for men and women, respectively.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">z.LowMen =<span class="st"> </span>(<span class="fl">157.5</span> -<span class="st"> </span><span class="fl">177.6</span>)/<span class="fl">9.7</span>; z.LowMen</code></pre></div>
+<pre><code>## [1] -2.072165</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">z.HighMen =<span class="st"> </span>(<span class="fl">190.5</span> -<span class="st"> </span><span class="fl">177.6</span>)/<span class="fl">9.7</span>; z.HighMen</code></pre></div>
+<pre><code>## [1] 1.329897</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">z.LowWomen =<span class="st"> </span>(<span class="fl">157.5</span> -<span class="st"> </span><span class="fl">163.2</span>)/<span class="fl">10.1</span>; z.LowWomen</code></pre></div>
+<pre><code>## [1] -0.5643564</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">z.HighWomen =<span class="st"> </span>(<span class="fl">190.5</span> -<span class="st"> </span><span class="fl">163.2</span>)/<span class="fl">10.1</span>; z.HighWomen</code></pre></div>
+<pre><code>## [1] 2.70297</code></pre>
+<p>Now we can figure out what proportion of the distribution of men and women fall outside these cutoffs:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pnorm</span>(z.LowMen, <span class="dt">lower.tail=</span><span class="ot">TRUE</span>) +<span class="st"> </span><span class="kw">pnorm</span>(z.HighMen, <span class="dt">lower.tail=</span><span class="ot">FALSE</span>)</code></pre></div>
+<pre><code>## [1] 0.1109012</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pnorm</span>(z.LowWomen, <span class="dt">lower.tail=</span><span class="ot">TRUE</span>) +<span class="st"> </span><span class="kw">pnorm</span>(z.HighWomen, <span class="dt">lower.tail=</span><span class="ot">FALSE</span>)</code></pre></div>
+<pre><code>## [1] 0.2896919</code></pre>
+<p>In essence, then, some 11.09% of 20-29 year-old men and 28.96% of 20-29 year-old women will be excluded from being NASA astronaut pilots.</p>
+<div id="problem-4" class="section level4">
+<h4>Problem 4</h4>
+<p>It was rumored that MI5 has an upper limit on the height of its spies; you had to be no taller than 180.3 cm if a man and no taller than 172.7 cm if a woman. If heights of British men and women are <span class="math inline">\(\sim N(177;7.1)\)</span> and <span class="math inline">\(\sim N(163.3; 6.4)\)</span>, respectively.</p>
+<blockquote>
+<ol style="list-style-type: lower-alpha">
+<li>What fraction of men would be excluded?</li>
+</ol>
+</blockquote>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">height.men.mu =<span class="st"> </span><span class="dv">177</span>
+height.men.sd =<span class="st"> </span><span class="fl">7.1</span>
+max.height.men =<span class="st"> </span><span class="fl">180.3</span>
+height.z =<span class="st"> </span>(max.height.men -<span class="st"> </span>height.men.mu)/height.men.sd
+<span class="kw">round</span>(height.z, <span class="dt">digits=</span><span class="dv">2</span>)</code></pre></div>
+<pre><code>## [1] 0.46</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p.value =<span class="st"> </span><span class="kw">pnorm</span>(<span class="fl">0.46</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dt">lower.tail=</span><span class="ot">FALSE</span>)
+<span class="kw">round</span>(p.value, <span class="dt">digits=</span><span class="dv">4</span>)</code></pre></div>
+<pre><code>## [1] 0.3228</code></pre>
+<p>Some 32.28% would be excluded.</p>
+<blockquote>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>What fraction of women meet the height requirement for application to MI5?</li>
+</ol>
+</blockquote>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">height.women.mu =<span class="st"> </span><span class="fl">163.3</span>
+height.women.sd =<span class="st"> </span><span class="fl">6.4</span>
+max.height.women =<span class="st"> </span><span class="fl">172.7</span>
+height.z =<span class="st"> </span>(max.height.women -<span class="st"> </span>height.women.mu)/height.women.sd
+<span class="kw">round</span>(height.z, <span class="dt">digits=</span><span class="dv">2</span>)</code></pre></div>
+<pre><code>## [1] 1.47</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p.value =<span class="st"> </span><span class="kw">pnorm</span>(<span class="fl">1.47</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dt">lower.tail=</span><span class="ot">TRUE</span>)
+<span class="kw">round</span>(p.value, <span class="dt">digits=</span><span class="dv">4</span>)</code></pre></div>
+<pre><code>## [1] 0.9292</code></pre>
+<p>Some 92.92% of women meet the height requirement.</p>
+<blockquote>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>Sean Connery is 183.4 cm tall. By how many standard deviations does he exceed the height limit for MI5?</li>
+</ol>
+</blockquote>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">james.bond =<span class="st"> </span><span class="fl">183.4</span>
+z.james.bond =<span class="st"> </span>(james.bond -<span class="st"> </span>max.height.men)/height.men.sd
+<span class="kw">round</span>(z.james.bond, <span class="dt">digits=</span><span class="dv">2</span>)</code></pre></div>
+<pre><code>## [1] 0.44</code></pre>
+<p>He exceeds the limit by 0.44 standard deviation units.</p>
+</div>
+</div>
+<div id="the-standard-error" class="section level2">
+<h2>The Standard Error</h2>
+<p>If we have a sample to work with then we use the standard error <span class="math inline">\(\left(\sigma_{\bar{Y}} = \dfrac{\sigma}{\sqrt{n}}\right)\)</span> instead of the standard deviation. Problem 6(e) shows this in action.</p>
+<div id="problem-6" class="section level4">
+<h4>Problem 6</h4>
+<p>Babies born in singleton births in the United States have birth weights (in kilograms) that are <span class="math inline">\(\sim N(3.296; 0.560)\)</span>.</p>
+<blockquote>
+<ol style="list-style-type: lower-alpha">
+<li>What is the probability of a baby weighing more than 5 kg at birth?</li>
+</ol>
+</blockquote>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mu =<span class="st"> </span><span class="fl">3.296</span>
+sd =<span class="st"> </span><span class="fl">0.560</span>
+x =<span class="st"> </span><span class="dv">5</span>
+baby.z =<span class="st"> </span>(x -<span class="st"> </span>mu)/sd
+<span class="kw">round</span>(baby.z, <span class="dt">digits=</span><span class="dv">2</span>)</code></pre></div>
+<pre><code>## [1] 3.04</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pnorm</span>(<span class="fl">3.04</span>, <span class="dt">lower.tail=</span><span class="ot">FALSE</span>)</code></pre></div>
+<pre><code>## [1] 0.001182891</code></pre>
+<p>About 0.1182% of babies will be born with birth weights greater than 5 kg.</p>
+<blockquote>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>What is the probability of the baby weighing betwen 3 and 4 kg?</li>
+</ol>
+</blockquote>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">z<span class="fl">.3</span> =<span class="st"> </span>(<span class="dv">3</span> -<span class="st"> </span>mu)/sd
+z<span class="fl">.4</span> =<span class="st"> </span>(<span class="dv">4</span> -<span class="st"> </span>mu)/sd 
+p.value =<span class="st"> </span><span class="kw">pnorm</span>(z<span class="fl">.3</span>, <span class="dt">lower.tail=</span><span class="ot">FALSE</span>) -<span class="st"> </span><span class="kw">pnorm</span>(z<span class="fl">.4</span>,<span class="dt">lower.tail=</span><span class="ot">FALSE</span>)
+p.value</code></pre></div>
+<pre><code>## [1] 0.5970977</code></pre>
+<p>About 59.70% of babies will fall within these limits.</p>
+<blockquote>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>What fraction of babies is more than 1.5 standard deviations from the mean in either direction?</li>
+</ol>
+</blockquote>
+<p>In essence they are asking about the area above/below <span class="math inline">\(z=\pm 1.5\)</span>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pnorm</span>(<span class="fl">1.5</span>, <span class="dt">lower.tail=</span><span class="ot">FALSE</span>) +<span class="st"> </span><span class="kw">pnorm</span>(-<span class="fl">1.5</span>, <span class="dt">lower.tail=</span><span class="ot">TRUE</span>)</code></pre></div>
+<pre><code>## [1] 0.1336144</code></pre>
+<p>Some 13.36% of babies will have birth weights more than 1.5 standard deviation units either side of the mean.</p>
+<blockquote>
+<ol start="4" style="list-style-type: lower-alpha">
+<li>What fraction of the babies is more than 1.5 kg from the mean in either direction?</li>
+</ol>
+</blockquote>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">z<span class="fl">.1.5</span> =<span class="st"> </span><span class="fl">1.5</span>/sd; z<span class="fl">.1.5</span></code></pre></div>
+<pre><code>## [1] 2.678571</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pnorm</span>(z<span class="fl">.1.5</span>, <span class="dt">lower.tail=</span><span class="ot">FALSE</span>) +<span class="st"> </span><span class="kw">pnorm</span>(-z<span class="fl">.1.5</span>, <span class="dt">lower.tail=</span><span class="ot">TRUE</span>)</code></pre></div>
+<pre><code>## [1] 0.007393696</code></pre>
+<p>So 0.73% of babies will weigh more than 1.5 kg from the mean in either direction.</p>
+<blockquote>
+<ol start="5" style="list-style-type: lower-alpha">
+<li>If you took a random sample of 10 babies, what is the probability that their mean weight <span class="math inline">\((\bar{Y})\)</span> would be greater than 3.5 kg?</li>
+</ol>
+</blockquote>
+<p>Now we’ll have to work with the standard error so let us calculate it first.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">n =<span class="st"> </span><span class="dv">10</span>
+se =<span class="st"> </span>sd/<span class="kw">sqrt</span>(n); se <span class="co"># for use in calculating the z-score</span></code></pre></div>
+<pre><code>## [1] 0.1770875</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">z =<span class="st"> </span>(<span class="fl">3.5</span> -<span class="st"> </span>mu)/se; z</code></pre></div>
+<pre><code>## [1] 1.151973</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pnorm</span>(z, <span class="dt">lower.tail=</span><span class="ot">FALSE</span>)</code></pre></div>
+<pre><code>## [1] 0.1246662</code></pre>
+<p>In a sample of 10 babies the probability of their birth weight exceeding 3.5 kg is 0.1246.</p>
+</div>
+</div>
+<div id="the-normal-approximation-to-the-binomial" class="section level2">
+<h2>The Normal Approximation to the Binomial</h2>
+<p>If <span class="math inline">\(n\)</span> is large the binomial distribution can be approximated by a normal distribution with <span class="math inline">\(\mu=np\)</span> and <span class="math inline">\(\sigma=\sqrt{np\left(1 - p\right)}\)</span>. Note that it makes little sense to do this today given the computing power at your fingertips. Nevertheless, the example below should demonstrate the process.</p>
+<div id="problem-12" class="section level4">
+<h4>Problem 12</h4>
+<p>This is the same data-set about cancer among the cast and crew who worked on The Conqueror where 91 out of 220 were eventually diagnosed with cancer. The population proportion is 14%.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">n =<span class="st"> </span><span class="dv">220</span>; p=<span class="fl">0.14</span>
+np =<span class="st"> </span>n*p; np</code></pre></div>
+<pre><code>## [1] 30.8</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">sigma =<span class="st"> </span><span class="kw">sqrt</span>(np *<span class="st"> </span>(<span class="dv">1</span> -<span class="st"> </span>p)); sigma</code></pre></div>
+<pre><code>## [1] 5.146649</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">z =<span class="st"> </span>(<span class="dv">91</span> -<span class="st"> </span>np)/sigma
+<span class="dv">2</span> *<span class="st"> </span><span class="kw">pnorm</span>(z, <span class="dt">lower.tail=</span><span class="ot">FALSE</span>) </code></pre></div>
+<pre><code>## [1] 1.321476e-31</code></pre>
+<p>The <span class="math inline">\(p.value\)</span> is practically 0 so we can reject the null hypothesis; the data suggest that the cancer rate for this cast and crew was different from that expected.</p>
+</div>
+</div>
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

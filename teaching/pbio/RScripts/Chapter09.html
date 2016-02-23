@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+<meta name="author" content="ruhil" />
+
+
+<title>Chapter 9: Contingency Tables and Odds-Ratios</title>
+
+<script src="Chapter_09_files/jquery-1.11.0/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="Chapter_09_files/bootstrap-3.3.1/css/flatly.min.css" rel="stylesheet" />
+<script src="Chapter_09_files/bootstrap-3.3.1/js/bootstrap.min.js"></script>
+<script src="Chapter_09_files/bootstrap-3.3.1/shim/html5shiv.min.js"></script>
+<script src="Chapter_09_files/bootstrap-3.3.1/shim/respond.min.js"></script>
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img { 
+  max-width:100%; 
+  height: auto; 
+}
+</style>
+<div class="container-fluid main-container">
+
+
+<div id="header">
+<h1 class="title">Chapter 9: Contingency Tables and Odds-Ratios</h1>
+<h4 class="author"><em>ruhil</em></h4>
+</div>
+
+<div id="TOC">
+<ul>
+<li><a href="#contingency-tables">Contingency Tables</a><ul>
+<li><a href="#aspirin-and-cancer">Aspirin and Cancer</a></li>
+<li><a href="#relative-risk">Relative Risk</a></li>
+<li><a href="#the-chi2-test-of-independence-aka-association">The <span class="math inline">\(\chi^2\)</span> Test of Independence (aka Association)</a></li>
+<li><a href="#some-worked-examples">Some Worked Examples</a></li>
+</ul></li>
+</ul>
+</div>
+
+<style type="text/css">
+table {
+  border: 1px solid #ccc;
+}
+th {
+  background-color: #000000;
+  color: #ffffff;
+  max-width: 45%;
+}
+td {
+  background-color: #dcdcdc;
+}
+</style>
+<div id="contingency-tables" class="section level2">
+<h2>Contingency Tables</h2>
+<p>Contingency analysis comes into use when we need to <strong>test for the independence of two categorical variables</strong>. For example, did Male passengers on the Titanic have the same survival chances as Female passengers? Is lung cancer independent of smoking?</p>
+<p>In order to do such tests we often rely upon <code>odds</code> and <code>odds ratios</code>. The odds of an event are calculated as the probability of a “success” divided by the probability of a “failure”. For e.g., on average 51 boys are born in every 100 births, so the probability of any randomly chosen delivery being that of a boy is <span class="math inline">\(\dfrac{51}{100}=0.51\)</span>.</p>
+<p>Likewise the probability of any randomly chosen delivery being that of a girl is <span class="math inline">\(\dfrac{49}{100}=0.49\)</span></p>
+<p><strong>Note:</strong> If <span class="math inline">\(p=\)</span> probability of success; <span class="math inline">\(1-p\)</span> = probability of failure, then the odds of success: <span class="math inline">\(O = \dfrac{p}{1-p}\)</span>. Since with a sample we <strong>estimate the odds</strong> we have <span class="math inline">\(\hat{O} = \dfrac{\hat{p}}{1-\hat{p}}\)</span></p>
+<div id="aspirin-and-cancer" class="section level3">
+<h3>Aspirin and Cancer</h3>
+<p>The example below is the same one from the text.</p>
+<div markdown="1" style="width:400px">
+<table>
+<thead>
+<tr class="header">
+<th align="left">Outcome</th>
+<th align="right">Aspirin</th>
+<th align="right">Placebo</th>
+<th align="right">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Cancer</td>
+<td align="right">1438</td>
+<td align="right">1427</td>
+<td align="right">2865</td>
+</tr>
+<tr class="even">
+<td align="left">No Cancer</td>
+<td align="right">18496</td>
+<td align="right">18515</td>
+<td align="right">37011</td>
+</tr>
+<tr class="odd">
+<td align="left">Total</td>
+<td align="right">19934</td>
+<td align="right">19942</td>
+<td align="right">39876</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>What were the odds of (i) not getting cancer, and (ii) getting cancer for the Aspirin group versus the Placebo group? These were:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p.ncAspirin =<span class="st"> </span>(<span class="dv">18496</span>/<span class="dv">19934</span>); p.ncAspirin</code></pre></div>
+<pre><code>## [1] 0.9278619</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p.cAspirin =<span class="st"> </span>(<span class="dv">1438</span>/<span class="dv">19934</span>); p.cAspirin</code></pre></div>
+<pre><code>## [1] 0.07213806</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Odds.ncAspirin =<span class="st"> </span>p.ncAspirin/p.cAspirin; Odds.ncAspirin</code></pre></div>
+<pre><code>## [1] 12.86231</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p.ncPlacebo =<span class="st"> </span>(<span class="dv">18515</span>/<span class="dv">19942</span>); p.ncPlacebo</code></pre></div>
+<pre><code>## [1] 0.9284425</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p.cPlacebo =<span class="st"> </span>(<span class="dv">1427</span>/<span class="dv">19942</span>); p.cPlacebo</code></pre></div>
+<pre><code>## [1] 0.07155752</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Odds.ncPlacebo =<span class="st"> </span>p.ncPlacebo/p.cPlacebo; Odds.ncPlacebo</code></pre></div>
+<pre><code>## [1] 12.97477</code></pre>
+<p>So the odds-ratio of not getting cancer for the Aspirin versus the Placebo group is:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">OR.Aspirin =<span class="st"> </span>Odds.ncAspirin/Odds.ncPlacebo; OR.Aspirin</code></pre></div>
+<pre><code>## [1] 0.9913321</code></pre>
+<p>In plain words: The odds of <em>not getting cancer</em> were slightly less for the Aspirin group than for the Placebo group.</p>
+<div id="what-is-the-range-of-values-that-the-odds-and-the-odds-ratios-can-assume" class="section level4">
+<h4>What is the range of values that the Odds and the Odds Ratios can assume?</h4>
+<p>Let <span class="math inline">\(p=\)</span> the probability of success; <span class="math inline">\(1-p\)</span> = probability of failure. Then, as previously defined, the odds of success are calculated as <span class="math inline">\(O = \dfrac{p}{1-p}\)</span> and for two groups the odds ratio of success is <span class="math inline">\(O=\dfrac{O_1}{O_2}\)</span>. Table 1 (see below) maps out the minimum probability of success (<span class="math inline">\(=0\)</span>) and the maximum probability of success (<span class="math inline">\(=1\)</span>) for a single group. Note <span class="math inline">\(p=0\)</span> means success never occurs and <span class="math inline">\(p=1\)</span> means success always occurs, for this particular group. Expressing the probability as odds yields a corresponding range of values that are anchored below at <span class="math inline">\(0\)</span> and above at <span class="math inline">\(\infty\)</span> … these are the limits of the odds.</p>
+<div markdown="1" style="width:400px">
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(p\)</span></th>
+<th align="center"><span class="math inline">\(1-p\)</span></th>
+<th align="center"><span class="math inline">\(odds\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">0.00</td>
+<td align="center">1.00</td>
+<td align="center">0.00</td>
+</tr>
+<tr class="even">
+<td align="center">0.10</td>
+<td align="center">0.90</td>
+<td align="center">0.11</td>
+</tr>
+<tr class="odd">
+<td align="center">0.20</td>
+<td align="center">0.80</td>
+<td align="center">0.25</td>
+</tr>
+<tr class="even">
+<td align="center">0.30</td>
+<td align="center">0.70</td>
+<td align="center">0.43</td>
+</tr>
+<tr class="odd">
+<td align="center">0.40</td>
+<td align="center">0.60</td>
+<td align="center">0.67</td>
+</tr>
+<tr class="even">
+<td align="center">0.50</td>
+<td align="center">0.50</td>
+<td align="center">1.00</td>
+</tr>
+<tr class="odd">
+<td align="center">0.60</td>
+<td align="center">0.40</td>
+<td align="center">1.50</td>
+</tr>
+<tr class="even">
+<td align="center">0.70</td>
+<td align="center">0.30</td>
+<td align="center">2.33</td>
+</tr>
+<tr class="odd">
+<td align="center">0.80</td>
+<td align="center">0.20</td>
+<td align="center">4.00</td>
+</tr>
+<tr class="even">
+<td align="center">0.90</td>
+<td align="center">0.10</td>
+<td align="center">9.00</td>
+</tr>
+<tr class="odd">
+<td align="center">1.00</td>
+<td align="center">0.00</td>
+<td align="center"><span class="math inline">\(\infty\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The implication is that the odds follow an asymmetric, highly skewed distribution and hence require a transformation in order for us to come up with some estimate of the uncertainty surrounding the odds. The log-transformation achieves this by normalizing the distribution of the odds.</p>
+<p>However, what would be the limits of odds ratios? The answer: It depends on what <span class="math inline">\(p\)</span> is for any group. Let us see this with an example. Assume that the following fictional data represent passenger survival on the Titanic. Let us assume that there were a total of 100 passengers, 50 Male and 50 Female. Let us also assume that all Males and Females survived. What would the contingency table look like?</p>
+<div markdown="1" style="width:400px">
+<table>
+<thead>
+<tr class="header">
+<th align="left">Sex</th>
+<th align="right">Survived</th>
+<th align="right">Died</th>
+<th align="right">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Male</td>
+<td align="right">50</td>
+<td align="right">0</td>
+<td align="right">50</td>
+</tr>
+<tr class="even">
+<td align="left">Female</td>
+<td align="right">50</td>
+<td align="right">0</td>
+<td align="right">50</td>
+</tr>
+<tr class="odd">
+<td align="left">Total</td>
+<td align="right">100</td>
+<td align="right">0</td>
+<td align="right">100</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>What then is the probability that a Male passenger survived? It is <span class="math inline">\(= \dfrac{50}{50} = 1\)</span> and hence the probability that a Male passenger died is <span class="math inline">\(1 - \hat{p}_{male} = 1 - 1 = 0\)</span>. What about the Female passengers? Well, the probability that a Female passenger survived is also <span class="math inline">\(= \dfrac{50}{50} = 1\)</span> and hence the probability that a female passenger died is <span class="math inline">\(1 - \hat{p}_{female} = 1 - 1 = 0\)</span>. Now let us calculate the odds of survival for Male passengers <span class="math inline">\(= \dfrac{1}{0} = \infty\)</span> and likewise the odds of survival for Female passengers <span class="math inline">\(= \dfrac{1}{0} = \infty\)</span>.</p>
+<p>So this tells us that one extreme situation may be where for each group the odds of survival are <span class="math inline">\(\infty\)</span>. When this happens the odds ratio will be <span class="math inline">\(\dfrac{\infty}{\infty}\)</span>, and this is <strong>undefined</strong> so we would be unable to calculate an odds ratio!! The R code and output below shows you what happens.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">M1 =<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">50</span>, <span class="dv">50</span>, <span class="dv">0</span>, <span class="dv">0</span>), <span class="dt">nrow=</span><span class="dv">2</span>)
+<span class="kw">rownames</span>(M1) =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Male&quot;</span>, <span class="st">&quot;Female&quot;</span>)
+<span class="kw">colnames</span>(M1) =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Survived&quot;</span>, <span class="st">&quot;Died&quot;</span>)
+M1</code></pre></div>
+<pre><code>##        Survived Died
+## Male         50    0
+## Female       50    0</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(mosaic)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">oddsRatio</span>(M1, <span class="dt">verbose=</span><span class="ot">TRUE</span>)</code></pre></div>
+<pre><code>## 
+## Odds Ratio
+## 
+## Proportions
+##     Prop. 1:  1 
+##     Prop. 2:  1 
+##   Rel. Risk:  1 
+## 
+## Odds
+##      Odds 1:  Inf 
+##      Odds 2:  Inf 
+##  Odds Ratio:  NaN 
+## 
+## 95 percent confidence interval:
+##   1 &lt; RR &lt; 1 
+##   NaN &lt; OR &lt; NaN 
+## NULL</code></pre>
+<pre><code>## [1] NaN</code></pre>
+<p>Note that this result also obtains if no Male or Female passenger survived.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">M2 =<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">50</span>, <span class="dv">50</span>), <span class="dt">nrow=</span><span class="dv">2</span>)
+<span class="kw">rownames</span>(M2) =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Male&quot;</span>, <span class="st">&quot;Female&quot;</span>)
+<span class="kw">colnames</span>(M2) =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Survived&quot;</span>, <span class="st">&quot;Died&quot;</span>)
+M2</code></pre></div>
+<pre><code>##        Survived Died
+## Male          0   50
+## Female        0   50</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">oddsRatio</span>(M2, <span class="dt">verbose=</span><span class="ot">TRUE</span>)</code></pre></div>
+<pre><code>## 
+## Odds Ratio
+## 
+## Proportions
+##     Prop. 1:  0 
+##     Prop. 2:  0 
+##   Rel. Risk:  NaN 
+## 
+## Odds
+##      Odds 1:  0 
+##      Odds 2:  0 
+##  Odds Ratio:  NaN 
+## 
+## 95 percent confidence interval:
+##   NaN &lt; RR &lt; NaN 
+##   NaN &lt; OR &lt; NaN 
+## NULL</code></pre>
+<pre><code>## [1] NaN</code></pre>
+<p>What if the distribution were different, where all Males died and all Females survived?</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">M3 =<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">50</span>, <span class="dv">50</span>, <span class="dv">0</span>), <span class="dt">nrow=</span><span class="dv">2</span>)
+<span class="kw">rownames</span>(M3) =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Male&quot;</span>, <span class="st">&quot;Female&quot;</span>)
+<span class="kw">colnames</span>(M3) =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Survived&quot;</span>, <span class="st">&quot;Died&quot;</span>)
+M3</code></pre></div>
+<pre><code>##        Survived Died
+## Male          0   50
+## Female       50    0</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">oddsRatio</span>(M3, <span class="dt">verbose=</span><span class="ot">TRUE</span>)</code></pre></div>
+<pre><code>## 
+## Odds Ratio
+## 
+## Proportions
+##     Prop. 1:  0 
+##     Prop. 2:  1 
+##   Rel. Risk:  Inf 
+## 
+## Odds
+##      Odds 1:  0 
+##      Odds 2:  Inf 
+##  Odds Ratio:  Inf 
+## 
+## 95 percent confidence interval:
+##   NaN &lt; RR &lt; Inf 
+##   NaN &lt; OR &lt; Inf 
+## NULL</code></pre>
+<pre><code>## [1] Inf</code></pre>
+<p>… and finally if things were reversed and all Males survived but no Females survived.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">M4 =<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">50</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">50</span>), <span class="dt">nrow=</span><span class="dv">2</span>)
+<span class="kw">rownames</span>(M4) =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Male&quot;</span>, <span class="st">&quot;Female&quot;</span>)
+<span class="kw">colnames</span>(M4) =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Survived&quot;</span>, <span class="st">&quot;Died&quot;</span>)
+M4</code></pre></div>
+<pre><code>##        Survived Died
+## Male         50    0
+## Female        0   50</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">oddsRatio</span>(M4, <span class="dt">verbose=</span><span class="ot">TRUE</span>)</code></pre></div>
+<pre><code>## 
+## Odds Ratio
+## 
+## Proportions
+##     Prop. 1:  1 
+##     Prop. 2:  0 
+##   Rel. Risk:  0 
+## 
+## Odds
+##      Odds 1:  Inf 
+##      Odds 2:  0 
+##  Odds Ratio:  0 
+## 
+## 95 percent confidence interval:
+##   0 &lt; RR &lt; NaN 
+##   0 &lt; OR &lt; NaN 
+## NULL</code></pre>
+<pre><code>## [1] 0</code></pre>
+<p>Hence we see two limits when the odds ratio is defined: The confidence intervals are bounded below by <span class="math inline">\(0\)</span> and bounded above by <span class="math inline">\(\infty\)</span>.</p>
+<p>As a rule, then, if in a <span class="math inline">\(2 \times 2\)</span> contingency table the count in <em>any cell</em> is zero the odds-ratio will be undefined. Consequently, when any cell is <span class="math inline">\(0\)</span>, in practice you will often see the odds-ratio calculated by adding a small constant (usually <span class="math inline">\(0.5\)</span>) to every cell frequency (see below).</p>
+<div markdown="1" style="width:400px">
+<table>
+<thead>
+<tr class="header">
+<th align="left">Sex</th>
+<th align="right">Survived</th>
+<th align="right">Died</th>
+<th align="right">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Male</td>
+<td align="right">50.5</td>
+<td align="right">0.5</td>
+<td align="right">51</td>
+</tr>
+<tr class="even">
+<td align="left">Female</td>
+<td align="right">50.5</td>
+<td align="right">0.5</td>
+<td align="right">51</td>
+</tr>
+<tr class="odd">
+<td align="left">Total</td>
+<td align="right">101</td>
+<td align="right">1</td>
+<td align="right">102</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Now the odds ratio and its associated confidence intervals can be calculated (see below):</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">M5 =<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="fl">50.5</span>, <span class="fl">50.5</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span>), <span class="dt">nrow=</span><span class="dv">2</span>)
+<span class="kw">rownames</span>(M5) =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Male&quot;</span>, <span class="st">&quot;Female&quot;</span>)
+<span class="kw">colnames</span>(M5) =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Survived&quot;</span>, <span class="st">&quot;Died&quot;</span>)
+M5</code></pre></div>
+<pre><code>##        Survived Died
+## Male       50.5  0.5
+## Female     50.5  0.5</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">oddsRatio</span>(M5, <span class="dt">verbose=</span><span class="ot">TRUE</span>)</code></pre></div>
+<pre><code>## 
+## Odds Ratio
+## 
+## Proportions
+##     Prop. 1:  0.9902 
+##     Prop. 2:  0.9902 
+##   Rel. Risk:  1 
+## 
+## Odds
+##      Odds 1:  101 
+##      Odds 2:  101 
+##  Odds Ratio:  1 
+## 
+## 95 percent confidence interval:
+##   0.9621 &lt; RR &lt; 1.039 
+##   0.01946 &lt; OR &lt; 51.38 
+## NULL</code></pre>
+<pre><code>## [1] 1</code></pre>
+</div>
+</div>
+<div id="relative-risk" class="section level3">
+<h3>Relative Risk</h3>
+<p>In a classic design one might employ what is called a <em>cohort study</em> – you first identify a set of units (for example, persons) that represent the population, you then identify whether they have been exposed to some condition or not (for example, whether they smoke or not) and then you follow them over time to see if some outcome results or not (for example, whether they get lung cancer or not).</p>
+<div markdown="1" style="width:600px">
+<table>
+<thead>
+<tr class="header">
+<th align="left">Group</th>
+<th align="left">Lung Cancer</th>
+<th align="left">No Lung Cancer</th>
+<th align="left">Total</th>
+<th align="left">Incidence of Lung Cancer</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Smoker</td>
+<td align="left">a</td>
+<td align="left">b</td>
+<td align="left">a + b</td>
+<td align="left"><span class="math inline">\(\dfrac{a}{a+b}\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">Non-Smoker</td>
+<td align="left">c</td>
+<td align="left">d</td>
+<td align="left">c + d</td>
+<td align="left"><span class="math inline">\(\dfrac{c}{c+d}\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The Relative Risk of Lung Cancer is then calculable as: <span class="math display">\[\dfrac{\left(\dfrac{a}{a+b}\right)}{\left(\dfrac{c}{c+d}\right)} \]</span></p>
+<div markdown="1" style="width:600px">
+<table>
+<thead>
+<tr class="header">
+<th align="left">Group</th>
+<th align="left">Lung Cancer</th>
+<th align="left">No Lung Cancer</th>
+<th align="left">Total</th>
+<th align="left">Incidence of Lung Cancer</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Smoker</td>
+<td align="left">84</td>
+<td align="left">2916</td>
+<td align="left">3000</td>
+<td align="left"><span class="math inline">\(\dfrac{84}{3000}=0.028\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">Non-Smoker</td>
+<td align="left">87</td>
+<td align="left">4913</td>
+<td align="left">5000</td>
+<td align="left"><span class="math inline">\(\dfrac{87}{5000}=0.0174\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><span class="math display">\[ RR = \dfrac{0.028}{0.0174} = 1.609195\]</span></p>
+<ul>
+<li>If <span class="math inline">\(RR = 1\)</span> the risks are the same in the two groups</li>
+<li>If <span class="math inline">\(RR &gt; 1\)</span> the risks are higher in the numerator group (the exposed group) than in the denominator group (the not exposed group)</li>
+<li>If <span class="math inline">\(RR &lt; 1\)</span> the risks are lower in the numerator group (the exposed group) than in the denominator group (the not exposed group)</li>
+</ul>
+</div>
+<div id="the-chi2-test-of-independence-aka-association" class="section level3">
+<h3>The <span class="math inline">\(\chi^2\)</span> Test of Independence (aka Association)</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">killi =<span class="st"> </span><span class="kw">read.csv</span>(<span class="kw">url</span>(<span class="st">&quot;http://whitlockschluter.zoology.ubc.ca/wp-content/data/chapter09/chap09e3ParasiteBrainWarp.csv&quot;</span>))
+<span class="kw">head</span>(killi); <span class="kw">names</span>(killi)</code></pre></div>
+<pre><code>##   infectionStatus     eaten
+## 1      uninfected     eaten
+## 2      uninfected not eaten
+## 3      uninfected not eaten
+## 4      uninfected not eaten
+## 5      uninfected not eaten
+## 6      uninfected not eaten</code></pre>
+<pre><code>## [1] &quot;infectionStatus&quot; &quot;eaten&quot;</code></pre>
+<blockquote>
+<p><span class="math inline">\(H_0\)</span>: Parasite infection and being eaten are independent<br />
+<span class="math inline">\(H_A\)</span>: Parasite infection and being eaten are not independent<br />
+<span class="math inline">\(\alpha=0.05\)</span><br />
+Reject <span class="math inline">\(H_0:\)</span> if <span class="math inline">\(p-value \leq 0.05\)</span><br />
+Do not reject <span class="math inline">\(H_0\)</span> otherwise</p>
+</blockquote>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">killi$infectionStatus =<span class="st"> </span><span class="kw">ordered</span>(killi$infectionStatus, <span class="kw">c</span>(<span class="st">&quot;uninfected&quot;</span>, <span class="st">&quot;light&quot;</span>, <span class="st">&quot;high&quot;</span>)) 
+tab.k =<span class="st"> </span><span class="kw">table</span>(killi$eaten, killi$infectionStatus)
+tab.k</code></pre></div>
+<pre><code>##            
+##             uninfected light high
+##   eaten              1    10   37
+##   not eaten         49    35    9</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mosaicplot</span>( tab.k, <span class="dt">col =</span> <span class="kw">c</span>(<span class="st">&quot;firebrick&quot;</span>, <span class="st">&quot;goldenrod1&quot;</span>), <span class="dt">cex.axis =</span> <span class="fl">0.5</span>, <span class="dt">main =</span> <span class="st">&quot;Mosaic-plot&quot;</span>, <span class="dt">sub =</span> <span class="st">&quot;Infection Status&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Relative Frequency&quot;</span>)</code></pre></div>
+<p><img src="Chapter_09_files/figure-html/unnamed-chunk-11-1.png" /><!-- --></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">chisq.test</span>(tab.k, <span class="dt">correct=</span><span class="ot">FALSE</span>)</code></pre></div>
+<pre><code>## 
+##  Pearson&#39;s Chi-squared test
+## 
+## data:  tab.k
+## X-squared = 69.756, df = 2, p-value = 7.124e-16</code></pre>
+<p>Given the <span class="math inline">\(p-value \approx 0\)</span> we can easily reject <span class="math inline">\(H_0\)</span>; the data suggest that parasite infection and being eaten are not independent.</p>
+<div id="fishers-exact-test" class="section level4">
+<h4>Fisher’s Exact Test</h4>
+<p>Fisher’s exact test is used if the assumptions of the <span class="math inline">\(\chi^2\)</span> are violated. In fact, as a rule just go with Fisher’s test if you are dealing with a <span class="math inline">\(2 \times 2\)</span> contingency table and have small samples. The example below runs the test with the data on vampire bats.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">bats =<span class="st"> </span><span class="kw">read.csv</span>(<span class="kw">url</span>(<span class="st">&quot;http://whitlockschluter.zoology.ubc.ca/wp-content/data/chapter09/chap09e4VampireBites.csv&quot;</span>))
+<span class="kw">head</span>(bats); <span class="kw">names</span>(bats)</code></pre></div>
+<pre><code>##   estrous bitten
+## 1 estrous bitten
+## 2 estrous bitten
+## 3 estrous bitten
+## 4 estrous bitten
+## 5 estrous bitten
+## 6 estrous bitten</code></pre>
+<pre><code>## [1] &quot;estrous&quot; &quot;bitten&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tab.b =<span class="st"> </span><span class="kw">table</span>(bats$bitten, bats$estrous)
+tab.b</code></pre></div>
+<pre><code>##             
+##              estrous no estrous
+##   bitten          15          6
+##   not bitten       7        322</code></pre>
+<blockquote>
+<p><span class="math inline">\(H_0:\)</span> State of estrous and vampire bat attack are independent<br />
+<span class="math inline">\(H_A:\)</span> State of estrous and vampire bat attack are not independent<br />
+<span class="math inline">\(\alpha=0.05\)</span>; standard decision rule applies</p>
+</blockquote>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fisher.test</span>(tab.b, <span class="dt">conf.int=</span><span class="ot">TRUE</span>, <span class="dt">conf.level=</span><span class="fl">0.95</span>, <span class="dt">alternative=</span><span class="st">&quot;two.sided&quot;</span>)</code></pre></div>
+<pre><code>## 
+##  Fisher&#39;s Exact Test for Count Data
+## 
+## data:  tab.b
+## p-value &lt; 2.2e-16
+## alternative hypothesis: true odds ratio is not equal to 1
+## 95 percent confidence interval:
+##   29.94742 457.26860
+## sample estimates:
+## odds ratio 
+##   108.3894</code></pre>
+<p>Given the <span class="math inline">\(p-value\)</span> we can easily reject <span class="math inline">\(H_0\)</span>; the data suggest that state of estrous and vampire bat attack are not independent.</p>
+</div>
+<div id="the-g-test" class="section level4">
+<h4>The <span class="math inline">\(G\)</span> Test</h4>
+<p>The <span class="math inline">\(G-test\)</span> is useful for large samples and when dealing with complex experimental research designs.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(RVAideMemoire)
+<span class="kw">G.test</span>(tab.b)</code></pre></div>
+<pre><code>## 
+##  G-test
+## 
+## data:  tab.b
+## G = 71.451, df = 1, p-value &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<div id="some-worked-examples" class="section level3">
+<h3>Some Worked Examples</h3>
+<div id="problem-4" class="section level4">
+<h4>Problem 4</h4>
+<p>It has been hypothesized that the white rump of pigeons serves to distract predators like the peregrine falcons, and therefore it may be an adaptation to reduce predation. To test this, researchers followed the fate of 203 pigeons, 101 with white rumps and 102 with blue rumps. Nine of the white-rumped birds and 92 of the blue-rumped birds were killed by falcons.</p>
+<blockquote>
+<ol style="list-style-type: lower-alpha">
+<li>Show the results in a frequency table (with the response as the rows and the explanatory variable as the columns). What association is suggested?</li>
+</ol>
+</blockquote>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">rumps =<span class="st"> </span><span class="kw">read.csv</span>(<span class="kw">url</span>(<span class="st">&quot;http://whitlockschluter.zoology.ubc.ca/wp-content/data/chapter09/chap09q04PigeonRumps.csv&quot;</span>))
+<span class="kw">head</span>(rumps); <span class="kw">names</span>(rumps)</code></pre></div>
+<pre><code>##   rumpColor survivalWithFalcon
+## 1      blue           survived
+## 2      blue           survived
+## 3      blue           survived
+## 4      blue           survived
+## 5      blue           survived
+## 6      blue           survived</code></pre>
+<pre><code>## [1] &quot;rumpColor&quot;          &quot;survivalWithFalcon&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tab.p =<span class="st"> </span><span class="kw">table</span>(rumps$survivalWithFalcon, rumps$rumpColor)
+<span class="kw">addmargins</span>(tab.p)</code></pre></div>
+<pre><code>##           
+##            blue white Sum
+##   killed     92     9 101
+##   survived   10    92 102
+##   Sum       102   101 203</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tab.p2 =<span class="st"> </span><span class="kw">prop.table</span>(tab.p, <span class="dv">1</span>); tab.p2</code></pre></div>
+<pre><code>##           
+##                  blue      white
+##   killed   0.91089109 0.08910891
+##   survived 0.09803922 0.90196078</code></pre>
+<p>The table suggests that 91% of the blue-rumped pigeons were killed versus only 9% of the white-rumped pigeons.</p>
+<blockquote>
+<p>Do the two kinds of pigeons differ in their rate of capture by falcons? Carry out an appropriate test.</p>
+</blockquote>
+<p><span class="math inline">\(H_0:\)</span> Predation by falcons is independent of rump-color<br />
+<span class="math inline">\(H_A:\)</span> Predation by falcons is not independent of rump-color<br />
+<span class="math inline">\(\alpha=0.05\)</span></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">chisq.test</span>(tab.p, <span class="dt">correct=</span><span class="ot">FALSE</span>)</code></pre></div>
+<pre><code>## 
+##  Pearson&#39;s Chi-squared test
+## 
+## data:  tab.p
+## X-squared = 134.13, df = 1, p-value &lt; 2.2e-16</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fisher.test</span>(tab.p)</code></pre></div>
+<pre><code>## 
+##  Fisher&#39;s Exact Test for Count Data
+## 
+## data:  tab.p
+## p-value &lt; 2.2e-16
+## alternative hypothesis: true odds ratio is not equal to 1
+## 95 percent confidence interval:
+##   33.70502 270.81972
+## sample estimates:
+## odds ratio 
+##   89.50586</code></pre>
+<p>Regardless of the test used, we can safely Reject <span class="math inline">\(H_0\)</span> given that the <span class="math inline">\(p-value \approx 0\)</span>. The data suggest that predation by falcons is not independent of rump-color</p>
+<blockquote>
+<p>What is the estimated odds ratio for capture of the two groups of pigeons? What is the 95% confidence interval for the odds ratios?</p>
+</blockquote>
+<p>Note: For the <code>mosaic</code> library, “successes” should be located in column 1, and the treatment of interest should be located in row 2. The odds ratio is calculated as <span class="math inline">\((\text{Odds row 2}) / (\text{Odds row 1})\)</span>. So we’ll have to recreate the table.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tab.p <span class="co"># The original table</span></code></pre></div>
+<pre><code>##           
+##            blue white
+##   killed     92     9
+##   survived   10    92</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tab.pp =<span class="st"> </span><span class="kw">table</span>(rumps$rumpColor, rumps$survivalWithFalcon)
+tab.pp <span class="co"># The corrected table with &quot;killed&quot; as column 1 and &quot;blue&quot; as row 2</span></code></pre></div>
+<pre><code>##        
+##         killed survived
+##   blue      92       10
+##   white      9       92</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(mosaic)
+<span class="kw">oddsRatio</span>(tab.pp, <span class="dt">conf.level=</span><span class="fl">0.95</span>, <span class="dt">verbose=</span><span class="ot">TRUE</span>)</code></pre></div>
+<pre><code>## 
+## Odds Ratio
+## 
+## Proportions
+##     Prop. 1:  0.902 
+##     Prop. 2:  0.08911 
+##   Rel. Risk:  0.09879 
+## 
+## Odds
+##      Odds 1:  9.2 
+##      Odds 2:  0.09783 
+##  Odds Ratio:  0.01063 
+## 
+## 95 percent confidence interval:
+##   0.05279 &lt; RR &lt; 0.1849 
+##   0.00413 &lt; OR &lt; 0.02738 
+## NULL</code></pre>
+<pre><code>## [1] 0.01063327</code></pre>
+<p>The estimated odds ratio is 0.0106 and the 95% confidence interval is <span class="math inline">\([0.00413, 0.02738]\)</span></p>
+</div>
+<div id="problem-7" class="section level4">
+<h4>Problem 7</h4>
+<p>Reed frogs, a species living in West Africa, have been observed hopping away from grass fires long before the heat of the fire reached the area they were in. This finding led to the hypothesis that the frogs might hear the fire and respond well before the fire reaches them. To test this hypothesis, researchers played three types of sound to samples of reed frogs and recorded their response. Twenty frogs were exposed to the sound of fire, 20 were exposed to the sound of the fire played backward (to control for the range of sound frequencies present in the real sound), and 20 were exposed to equally loud white noise. Of these 60 frogs, 18 hopped away from the sound of the fire, 6 hopped away from the sound of the fire played backward, and 0 hopped away from the sound of the white noise.</p>
+<blockquote>
+<ol style="list-style-type: lower-alpha">
+<li>Illustrate these data with a frequency table. What association is suggested?</li>
+</ol>
+</blockquote>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">frogs =<span class="st"> </span><span class="kw">read.csv</span>(<span class="kw">url</span>(<span class="st">&quot;http://whitlockschluter.zoology.ubc.ca/wp-content/data/chapter09/chap09q07FrogsFire.csv&quot;</span>))
+<span class="kw">head</span>(frogs); <span class="kw">names</span>(frogs)</code></pre></div>
+<pre><code>##   sound direction
+## 1  fire      away
+## 2  fire      away
+## 3  fire      away
+## 4  fire      away
+## 5  fire      away
+## 6  fire      away</code></pre>
+<pre><code>## [1] &quot;sound&quot;     &quot;direction&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tab.f =<span class="st"> </span><span class="kw">table</span>(frogs$direction, frogs$sound)
+tab.f</code></pre></div>
+<pre><code>##           
+##            backwards fire noise
+##   away             6   18     0
+##   not away        14    2    20</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tab.ff =<span class="st"> </span><span class="kw">prop.table</span>(tab.f, <span class="dv">2</span>)
+tab.ff</code></pre></div>
+<pre><code>##           
+##            backwards fire noise
+##   away           0.3  0.9   0.0
+##   not away       0.7  0.1   1.0</code></pre>
+<p>The table suggests an association between the type of sound and frogs hopping away.</p>
+<blockquote>
+<p>Do the data provide evidence that reed frogs change their behavior in response to the sound of fire?</p>
+</blockquote>
+<p><span class="math inline">\(H_0:\)</span> Reed frogs do not change their behavior in response to the sound of fire<br />
+<span class="math inline">\(H_A:\)</span> Reed frogs do change their behavior in response to the sound of fire<br />
+<span class="math inline">\(\alpha=0.05\)</span>; the usual decision rule applies</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fisher.test</span>(tab.f)</code></pre></div>
+<pre><code>## 
+##  Fisher&#39;s Exact Test for Count Data
+## 
+## data:  tab.f
+## p-value = 2.328e-09
+## alternative hypothesis: two.sided</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">chisq.test</span>(tab.f, <span class="dt">correct=</span><span class="ot">FALSE</span>)</code></pre></div>
+<pre><code>## 
+##  Pearson&#39;s Chi-squared test
+## 
+## data:  tab.f
+## X-squared = 35, df = 2, p-value = 2.511e-08</code></pre>
+<p>Regardless of the test used, the <span class="math inline">\(p-value\)</span> is almost 0 and so we can easily reject <span class="math inline">\(H_0\)</span>. The data suggest that reed frogs do change their behavior in response to the sound of fire</p>
+</div>
+<div id="problem-12" class="section level4">
+<h4>Problem 12</h4>
+<p>Migraine with aura is a potentially debilitating condition, yet little is known about its causes. A case-control study compared 93 people who suffer from chronic migraine with aura to a sample of 93 healthy patients. The researchers used trans-esophageal echocardiography to look for cardiac shunts in all of these patients. (A cardiac shunt is a heart defect that causes blood to flow from the right to the left in the heart, causing poor oxygenation.) Forty-four of the migraine patients were found to have a cardiac shunt while only 16 of the people without migraine symptoms had this heart defect.</p>
+<blockquote>
+<ol style="list-style-type: lower-alpha">
+<li>Is this an observational or experimental study?</li>
+</ol>
+</blockquote>
+<p>It is an observational study</p>
+<blockquote>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Show the association between migraines and cardiac shunts with a mosaic plot.</li>
+</ol>
+</blockquote>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">M =<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">49</span>, <span class="dv">44</span>, <span class="dv">77</span>, <span class="dv">16</span>), <span class="dt">nrow =</span> <span class="dv">2</span>,
+       <span class="dt">dimnames =</span> <span class="kw">list</span>(<span class="dt">Treatment =</span> <span class="kw">c</span>(<span class="st">&quot;No Shunt&quot;</span>, <span class="st">&quot;Shunt&quot;</span>), <span class="dt">Outcome =</span> <span class="kw">c</span>(<span class="st">&quot;Migraines&quot;</span>, <span class="st">&quot;No Migraines&quot;</span>))
+       )
+M</code></pre></div>
+<pre><code>##           Outcome
+## Treatment  Migraines No Migraines
+##   No Shunt        49           77
+##   Shunt           44           16</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mosaicplot</span>(<span class="kw">t</span>(M), <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;yellow&quot;</span>, <span class="st">&quot;firebrick&quot;</span>), <span class="dt">main=</span><span class="st">&quot;Mosaic plot&quot;</span>, <span class="dt">cex.axis=</span><span class="fl">0.75</span>, <span class="dt">ylab=</span><span class="st">&quot;Relative Frequency&quot;</span>)</code></pre></div>
+<p><img src="Chapter_09_files/figure-html/unnamed-chunk-20-1.png" /><!-- --></p>
+<blockquote>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>How strong is the association between migraines and cardiac shunts? Calculate the odds ratio for migraine, comparing the patients with and without cardiac shunts.</li>
+</ol>
+</blockquote>
+<p>Remember: You need the successes in column 1 and the treatment in row 2. Our matrix “M” meets these criteria.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">oddsRatio</span>(M, <span class="dt">verbose=</span><span class="ot">TRUE</span>)</code></pre></div>
+<pre><code>## 
+## Odds Ratio
+## 
+## Proportions
+##     Prop. 1:  0.3889 
+##     Prop. 2:  0.7333 
+##   Rel. Risk:  1.886 
+## 
+## Odds
+##      Odds 1:  0.6364 
+##      Odds 2:  2.75 
+##  Odds Ratio:  4.321 
+## 
+## 95 percent confidence interval:
+##   1.444 &lt; RR &lt; 2.462 
+##   2.2 &lt; OR &lt; 8.488 
+## NULL</code></pre>
+<pre><code>## [1] 4.321429</code></pre>
+<p>The odds ratio is 4.321429</p>
+<blockquote>
+<ol start="4" style="list-style-type: lower-alpha">
+<li>What is the 95% confidence interval for this odds ratio?</li>
+</ol>
+</blockquote>
+<p>The 95% confidence interval is <span class="math inline">\([2.200, 8.488]\)</span></p>
+</div>
+</div>
+</div>
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
