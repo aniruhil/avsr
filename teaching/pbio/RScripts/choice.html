@@ -10,7 +10,7 @@
 
 <meta name="author" content="Ani Ruhil" />
 
-<meta name="date" content="2016-01-25" />
+<meta name="date" content="2016-02-23" />
 
 <title>Choosing Appropriate Graphics and Tests</title>
 
@@ -49,13 +49,14 @@ img {
 <div id="header">
 <h1 class="title">Choosing Appropriate Graphics and Tests</h1>
 <h4 class="author"><em>Ani Ruhil</em></h4>
-<h4 class="date"><em>January 25, 2016</em></h4>
+<h4 class="date"><em>2016-02-23</em></h4>
 </div>
 
 <div id="TOC">
 <ul>
 <li><a href="#choosing-graphics">Choosing Graphics</a></li>
 <li><a href="#choosing-descriptive-statistics">Choosing Descriptive Statistics</a></li>
+<li><a href="#hypothesis-testing-with-categorical-variables">Hypothesis Testing with Categorical Variables</a></li>
 </ul>
 </div>
 
@@ -97,6 +98,24 @@ img {
 <li>For a single categorical variable, a frequency table will come in handy. Remember to convert these frequencies to proportions or, even better, to percentages.<br />
 </li>
 <li>For two categorical variables, with one variable representing a likely “cause” and the other variable representing the “effect” a contingency table would be ideal. Remember to slot the outcome (the “effect” – malaria/no malaria, accident/no accident, etc.) in the rows and the “cause” in the columns.</li>
+</ul>
+</div>
+<div id="hypothesis-testing-with-categorical-variables" class="section level1">
+<h1>Hypothesis Testing with Categorical Variables</h1>
+<ul>
+<li>If only two outcomes are possible and I have one variable, then the binomial test should be used.<br />
+</li>
+<li>If I have count data (discrete, numerical outcomes) and need to test whether these data are randomly and independently distributed over time/space, then the Poisson distribution applies and the test used is the <span class="math inline">\(\chi^2\)</span> test.<br />
+</li>
+<li>If I have more than two categories of a single categorical variable and need to test whether the proportions are all the same or if they follow a specific expected distribution of proportons, then the <span class="math inline">\(\chi^2\)</span> test should be used. The G-test would be applicable as well.<br />
+</li>
+<li>I have TWO categorical variables, each with two or more categories
+<ul>
+<li>Small sample or <span class="math inline">\(\chi^2\)</span> assumptions violated? Use Fisher’s Exact Test<br />
+</li>
+<li>Large sample and <span class="math inline">\(\chi^2\)</span> assumptions are violated? Use G-test</li>
+<li>Large sample and <span class="math inline">\(\chi^2\)</span> assumptions are not violated? Use <span class="math inline">\(\chi^2\)</span> Test</li>
+</ul></li>
 </ul>
 </div>
 
