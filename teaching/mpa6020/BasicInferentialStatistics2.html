@@ -11,7 +11,7 @@
 
 <meta name="author" content="MPA 6020 (Spring 2016)" />
 
-<meta name="date" content="2016-03-07" />
+<meta name="date" content="2016-03-13" />
 
 <title>Basic Hypothesis Testing</title>
 
@@ -229,7 +229,7 @@ div.tocify {
 
 <h1 class="title">Basic Hypothesis Testing</h1>
 <h4 class="author"><em>MPA 6020 (Spring 2016)</em></h4>
-<h4 class="date"><em>2016-03-07</em></h4>
+<h4 class="date"><em>2016-03-13</em></h4>
 
 </div>
 
@@ -933,7 +933,97 @@ Xsq<span class="fl">.2</span></code></pre></div>
 <p>That didn’t work. We could try some R packages designed to help transform the data but that would be pretty useless. Consequently, we might as well opt for the Sign Test.</p>
 <p><span class="math inline">\(H_0\)</span>: Median difference in number of species is <span class="math inline">\(= 0\)</span><br />
 <span class="math inline">\(H_A\)</span>: Median difference in number of species is <span class="math inline">\(\neq 0\)</span></p>
-<p>First thing we will do is count how many cases are <span class="math inline">\(+\)</span>, how many are <span class="math inline">\(-\)</span>, and how many are equal to the hypothesized median of <span class="math inline">\(0\)</span></p>
+<p>Let us use the BSDA library that has the test built-in. The commands below assume the data are from two groups, not the same group measured twice. This is in fact the case in our example so we are on the right track.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(BSDA)
+<span class="kw">SIGN.test</span>(taxa$nSpeciesMultipleMating, taxa$nSpeciesSingleMating, 
+    <span class="dt">md =</span> <span class="dv">0</span>, <span class="dt">alternative =</span> <span class="st">&quot;two.sided&quot;</span>, <span class="dt">conf.level =</span> <span class="fl">0.95</span>)</code></pre></div>
+<pre><code>## 
+##  Dependent-samples Sign-Test
+## 
+## data:  taxa$nSpeciesMultipleMating and taxa$nSpeciesSingleMating
+## S = 18, p-value = 0.04329
+## alternative hypothesis: true median difference is not equal to 0
+## 95 percent confidence interval:
+##   1.00000 77.16674
+## sample estimates:
+## median of x-y 
+##            16</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">Conf.Level</th>
+<th align="right">L.E.pt</th>
+<th align="right">U.E.pt</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Lower Achieved CI</td>
+<td align="right">0.8922</td>
+<td align="right">1</td>
+<td align="right">70.0000</td>
+</tr>
+<tr class="even">
+<td align="left">Interpolated CI</td>
+<td align="right">0.9500</td>
+<td align="right">1</td>
+<td align="right">77.1667</td>
+</tr>
+<tr class="odd">
+<td align="left">Upper Achieved CI</td>
+<td align="right">0.9567</td>
+<td align="right">1</td>
+<td align="right">78.0000</td>
+</tr>
+</tbody>
+</table>
+<p>Given the p-value we can reject <span class="math inline">\(H_0\)</span>; the Median difference is not <span class="math inline">\(=0\)</span>. The data suggest that groups of insects whose females mate multiple times have more species than groups whose females mate singly, consistent with the sexual-conflict hypothesis.</p>
+<p>If we had the same units measured twice we would have run the command slightly differently.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">SIGN.test</span>(taxa$difference, <span class="dt">md =</span> <span class="dv">0</span>, <span class="dt">alternative =</span> <span class="st">&quot;two.sided&quot;</span>, 
+    <span class="dt">conf.level =</span> <span class="fl">0.95</span>)</code></pre></div>
+<pre><code>## 
+##  One-sample Sign-Test
+## 
+## data:  taxa$difference
+## s = 18, p-value = 0.04329
+## alternative hypothesis: true median is not equal to 0
+## 95 percent confidence interval:
+##   1.00000 77.16674
+## sample estimates:
+## median of x 
+##          16</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">Conf.Level</th>
+<th align="right">L.E.pt</th>
+<th align="right">U.E.pt</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Lower Achieved CI</td>
+<td align="right">0.8922</td>
+<td align="right">1</td>
+<td align="right">70.0000</td>
+</tr>
+<tr class="even">
+<td align="left">Interpolated CI</td>
+<td align="right">0.9500</td>
+<td align="right">1</td>
+<td align="right">77.1667</td>
+</tr>
+<tr class="odd">
+<td align="left">Upper Achieved CI</td>
+<td align="right">0.9567</td>
+<td align="right">1</td>
+<td align="right">78.0000</td>
+</tr>
+</tbody>
+</table>
+<p>Let us also see how to run the Sign test manually: First thing we will do is count how many cases are <span class="math inline">\(+\)</span>, how many are <span class="math inline">\(-\)</span>, and how many are equal to the hypothesized median of <span class="math inline">\(0\)</span></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">taxa$sign =<span class="st"> &quot;equal to median&quot;</span>
 taxa$sign[taxa$difference &gt;<span class="st"> </span><span class="dv">0</span>] =<span class="st"> &quot;plus&quot;</span>
 taxa$sign[taxa$difference &lt;<span class="st"> </span><span class="dv">0</span>] =<span class="st"> &quot;minus&quot;</span>
@@ -969,12 +1059,12 @@ taxa$sign =<span class="st"> </span><span class="kw">factor</span>(taxa$sign, <s
 ## sample estimates:
 ## probability of success 
 ##                   0.28</code></pre>
-<p>Given the p-value we can reject <span class="math inline">\(H_0\)</span>; the Median difference is not <span class="math inline">\(=0\)</span>. The data suggest that groups of insects whose females mate multiple times have more species than groups whose females mate singly, consistent with the sexual-conflict hypothesis</p>
+<p>Note the p-value. We can reject <span class="math inline">\(H_0\)</span>; the Median difference is not <span class="math inline">\(=0\)</span>. T</p>
 </div>
 </div>
 <div id="the-wilcoxon-signed-rank-test" class="section level2">
 <h2>The Wilcoxon Signed-Rank Test</h2>
-<p>The Sign Test is weak in that it does not take magnitudes of how much above/below the median an observation falls. The Wilcoxon Signed-Rank Test is a slight improvement because it ranks observations on the basis of how far below/above they fall from the hypothesized median.</p>
+<p>The Sign Test is weak in that it does not take into account the magnitudes of how much above/below the median an observation falls. The Wilcoxon Signed-Rank Test is a slight improvement because it ranks observations on the basis of how far below/above they fall from the hypothesized median.</p>
 <ul>
 <li>Assumes the distribution is symmetric around the Median … <span class="math inline">\(=\)</span> assumption of no skew so a very restrictive assumption</li>
 <li>Steps:
@@ -1127,10 +1217,8 @@ taxa$sign =<span class="st"> </span><span class="kw">factor</span>(taxa$sign, <s
 ## data:  gestures$numberOfGestures by gestures$sightedness
 ## W = 62.5, p-value = 0.5755
 ## alternative hypothesis: true location shift is not equal to 0</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(exactRankTests)</code></pre></div>
-<pre><code>##  Package 'exactRankTests' is no longer under development.
-##  Please consider using package 'coin' instead.</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">wilcox.exact</span>(gestures$numberOfGestures ~<span class="st"> </span>gestures$sightedness, 
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(exactRankTests)
+<span class="kw">wilcox.exact</span>(gestures$numberOfGestures ~<span class="st"> </span>gestures$sightedness, 
     <span class="dt">paired =</span> <span class="ot">FALSE</span>)</code></pre></div>
 <pre><code>## 
 ##  Exact Wilcoxon rank sum test
@@ -1212,23 +1300,8 @@ taxa$sign =<span class="st"> </span><span class="kw">factor</span>(taxa$sign, <s
 ## sample estimates:
 ## ratio of variances 
 ##           2.839337</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(lawstat)</code></pre></div>
-<pre><code>## Loading required package: Hmisc</code></pre>
-<pre><code>## Loading required package: lattice</code></pre>
-<pre><code>## Loading required package: survival</code></pre>
-<pre><code>## Loading required package: Formula</code></pre>
-<pre><code>## Loading required package: ggplot2</code></pre>
-<pre><code>## 
-## Attaching package: 'Hmisc'</code></pre>
-<pre><code>## The following objects are masked from 'package:base':
-## 
-##     format.pval, round.POSIXt, trunc.POSIXt, units</code></pre>
-<pre><code>## Loading required package: Kendall</code></pre>
-<pre><code>## Loading required package: mvtnorm</code></pre>
-<pre><code>## Loading required package: VGAM</code></pre>
-<pre><code>## Loading required package: stats4</code></pre>
-<pre><code>## Loading required package: splines</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">levene.test</span>(cric$timeToMating, <span class="dt">group =</span> cric$feedingStatus, <span class="dt">location =</span> <span class="st">&quot;mean&quot;</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(lawstat)
+<span class="kw">levene.test</span>(cric$timeToMating, <span class="dt">group =</span> cric$feedingStatus, <span class="dt">location =</span> <span class="st">&quot;mean&quot;</span>)</code></pre></div>
 <pre><code>## 
 ##  classical Levene's test based on the absolute deviations from the
 ##  mean ( none not applied because the location is not set to median
