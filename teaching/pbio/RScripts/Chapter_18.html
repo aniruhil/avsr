@@ -303,9 +303,9 @@ uc1 =<span class="st"> </span><span class="kw">glht</span>(lm<span class="fl">.1
 ## 
 ## Linear Hypotheses:
 ##                     Estimate Std. Error t value Pr(&gt;|t|)   
-## low - control == 0   -1.0200     0.2895  -3.524  0.01909 * 
-## high - control == 0  -1.6400     0.2895  -5.665  0.00116 **
-## high - low == 0      -0.6200     0.2895  -2.142  0.14245   
+## low - control == 0   -1.0200     0.2895  -3.524  0.01905 * 
+## high - control == 0  -1.6400     0.2895  -5.665  0.00135 **
+## high - low == 0      -0.6200     0.2895  -2.142  0.14231   
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## (Adjusted p values reported -- single-step method)</code></pre>
@@ -332,7 +332,7 @@ uc1 =<span class="st"> </span><span class="kw">glht</span>(lm<span class="fl">.1
 <h1>Factorial ANOVA (with interaction)</h1>
 <p>Here we have a third null hypothesis – that of no interaction between the two factors. Let us set this up with the inter-tidal algae example.</p>
 <blockquote>
-<p>Harley (2003) investigated how herbivores affect the abundance of plants living in the intertidal habitat of coastal Washngton using field transplants of a red alga, <strong>Mazaella parksii</strong>. The experiment also investigated whether the effects of herbivores on the algae depended upon where i the intertidal zone the plants were growing. Thirty-two study plots were establshed just above the low-tide mark, and another 32 plots were set at the mid-point between the low- and high-tide marks. Plots were cleared of all organisms, and a constant amount of new algae was glued onto the rock surface of each plot. Using copper fencing, herbivores (mainly limpets and snails) were excluded from a randomly chosen half of the plots at each height. The remaining plots were left accessible to herbivores. The design indcluded every combination of the height and herbivore treatments. At the end of the experiment the surface area covered by algae (in <span class="math inline">\(cm^2\)</span>) was measured in each plot. The data were square-root transformed to meet the assumptions of normality and equal variances. The data are given below:</p>
+<p>Harley (2003) investigated how herbivores affect the abundance of plants living in the intertidal habitat of coastal Washngton using field transplants of a red alga, <strong>Mazaella parksii</strong>. The experiment also investigated whether the effects of herbivores on the algae depended upon where in the intertidal zone the plants were growing. Thirty-two study plots were establshed just above the low-tide mark, and another 32 plots were set at the mid-point between the low- and high-tide marks. Plots were cleared of all organisms, and a constant amount of new algae was glued onto the rock surface of each plot. Using copper fencing, herbivores (mainly limpets and snails) were excluded from a randomly chosen half of the plots at each height. The remaining plots were left accessible to herbivores. The design included every combination of the height and herbivore treatments. At the end of the experiment the surface area covered by algae (in <span class="math inline">\(cm^2\)</span>) was measured in each plot. The data were square-root transformed to meet the assumptions of normality and equal variances. The data are given below:</p>
 </blockquote>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">algae =<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;http://whitlockschluter.zoology.ubc.ca/wp-content/data/chapter18/chap18e3IntertidalAlgae.csv&quot;</span>)
 <span class="kw">names</span>(algae); <span class="kw">summary</span>(algae)</code></pre></div>
