@@ -303,9 +303,9 @@ uc1 =<span class="st"> </span><span class="kw">glht</span>(lm<span class="fl">.1
 ## 
 ## Linear Hypotheses:
 ##                     Estimate Std. Error t value Pr(&gt;|t|)   
-## low - control == 0   -1.0200     0.2895  -3.524  0.01907 * 
-## high - control == 0  -1.6400     0.2895  -5.665  0.00101 **
-## high - low == 0      -0.6200     0.2895  -2.142  0.14233   
+## low - control == 0   -1.0200     0.2895  -3.524  0.01909 * 
+## high - control == 0  -1.6400     0.2895  -5.665  0.00116 **
+## high - low == 0      -0.6200     0.2895  -2.142  0.14245   
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## (Adjusted p values reported -- single-step method)</code></pre>
@@ -348,8 +348,8 @@ uc1 =<span class="st"> </span><span class="kw">glht</span>(lm<span class="fl">.1
 <span class="math inline">\(H_A\)</span>: Herbivory treatments have an impact on algae cover</p>
 <p><span class="math inline">\(H_0\)</span>: Height has no impact on algae cover<br />
 <span class="math inline">\(H_A\)</span>: Height has an impact on algae cover</p>
-<p><span class="math inline">\(H_0\)</span>: There is no interaction between Herbivory treatment and Height<br />
-<span class="math inline">\(H_A\)</span>: There is an interaction between Herbivore treatment and Height</p>
+<p><span class="math inline">\(H_0\)</span>: There is no interaction between Herbivory treatments and Height<br />
+<span class="math inline">\(H_A\)</span>: There is an interaction between Herbivory treatments and Height</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">lm<span class="fl">.2</span> =<span class="st"> </span><span class="kw">lm</span>(sqrtArea ~<span class="st"> </span>herbivores *<span class="st"> </span>height, <span class="dt">data =</span> algae)
 <span class="kw">anova</span>(lm<span class="fl">.2</span>)</code></pre></div>
 <pre><code>## Analysis of Variance Table
@@ -452,11 +452,7 @@ lm5.Varcomp</code></pre></div>
 </li>
 <li>Variance within the insects is the Residual and = 0.000355</li>
 </ul>
-<p>Repeatability can then be calculated as</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">r =<span class="st"> </span>(<span class="fl">0.0010539182</span>) /<span class="st"> </span>(<span class="fl">0.0010539182</span> +<span class="st"> </span><span class="fl">0.0003559996</span>)
-r</code></pre></div>
-<pre><code>## [1] 0.7475033</code></pre>
-<p>This can be calculated more easily by extracting, from <code>lm5.Varcomp</code>, the variance in the first row, first column, and then the variance in the second row, first column.</p>
+<p>Repeatability can then be calculated very easily by extracting, from <code>lm5.Varcomp</code>, the variance in the first row, first column, and then the variance in the second row, first column.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">varAmong  =<span class="st"> </span><span class="kw">as.numeric</span>( lm5.Varcomp[<span class="dv">1</span>,<span class="dv">1</span>] )
 varWithin =<span class="st"> </span><span class="kw">as.numeric</span>( lm5.Varcomp[<span class="dv">2</span>,<span class="dv">1</span>] )
 repeatability =<span class="st"> </span>varAmong /<span class="st"> </span>(varAmong +<span class="st"> </span>varWithin)
