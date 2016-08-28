@@ -61,7 +61,8 @@ blockquote {
 
 code, pre {
   font-family:Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal;
-  color:#333;
+  /* color:#333; change on August 28, 2016 to the one below*/
+  color:#bfefff;
   font-size:12px;
 }
 
