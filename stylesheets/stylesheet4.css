@@ -77,7 +77,8 @@ pre {
 table { 
   color: #444;
   font-family: Helvetica, Arial, sans-serif;
-  width: 590px;
+/*  width: 590px; Was changed to 690px on August 26 */ 
+  width: 690px;
   /* Table reset stuff */
   border-collapse: collapse; border-spacing: 0; 
 }
