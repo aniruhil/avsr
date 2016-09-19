@@ -21,6 +21,24 @@
 
 </script>
 
+<!-- Activate responsiveness in the "child" page -->
+<script src="/js/jquery.responsiveiframe.js"></script>
+<script>
+  var ri = responsiveIframe();
+  ri.allowResponsiveEmbedding();
+</script>
+  
+<!-- Corresponding code in the "parent" page -->
+<script src="/js/jquery.js"></script>
+<script src="/js/jquery.responsiveiframe.js"></script>
+<script>
+  ;(function($){          
+      $(function(){
+        $('#myIframeID').responsiveIframe({ xdomain: '*'});
+      });        
+  })(jQuery);
+</script>
+
   </head>
 
   <body>
