@@ -1,0 +1,61 @@
+"subj","ge","ag","hi","co","dh","dr","tv","sp","ne","ah","ve","pa","pi","re","ab","aa","ld"
+1,"m",32,2.2,3.5,0,5,3,5,0,0,FALSE,"r","conservative","most weeks",FALSE,FALSE,FALSE
+2,"f",23,2.1,3.5,1200,0.3,15,7,5,6,FALSE,"d","liberal","occasionally",FALSE,FALSE,NA
+3,"f",27,3.3,3,1300,1.5,0,4,3,0,FALSE,"d","liberal","most weeks",FALSE,FALSE,NA
+4,"f",35,3.5,3.2,1500,8,5,5,6,3,FALSE,"i","moderate","occasionally",FALSE,FALSE,FALSE
+5,"m",23,3.1,3.5,1600,10,6,6,3,0,FALSE,"i","very liberal","never",FALSE,FALSE,FALSE
+6,"m",39,3.5,3.5,350,3,4,5,7,0,FALSE,"d","liberal","occasionally",FALSE,FALSE,NA
+7,"m",24,3.6,3.7,0,0.2,5,12,4,2,FALSE,"i","liberal","occasionally",FALSE,FALSE,FALSE
+8,"f",31,3,3,5000,1.5,5,3,3,1,FALSE,"i","liberal","occasionally",FALSE,FALSE,FALSE
+9,"m",34,3,3,5000,2,7,5,3,0,FALSE,"i","very liberal","occasionally",FALSE,FALSE,NA
+10,"m",28,4,3.1,900,2,1,1,2,1,FALSE,"i","slightly liberal","never",FALSE,FALSE,FALSE
+11,"m",23,2.3,2.6,253,1.5,10,15,1,1,FALSE,"r","slightly conservative","occasionally",FALSE,FALSE,FALSE
+12,"f",27,3.5,3.6,190,3,14,3,7,0,FALSE,"d","liberal","occasionally",FALSE,FALSE,NA
+13,"m",36,3.3,3.5,245,1.5,6,15,12,5,FALSE,"d","very liberal","occasionally",FALSE,FALSE,FALSE
+14,"m",28,3.2,3.2,500,6,3,10,1,2,FALSE,"i","moderate","occasionally",FALSE,FALSE,FALSE
+15,"f",28,3,3.5,3500,1,4,3,1,0,FALSE,"d","very liberal","never",FALSE,FALSE,FALSE
+16,"f",25,3.8,3.3,210,10,7,6,1,0,FALSE,"i","liberal","every week",FALSE,FALSE,FALSE
+17,"f",41,4,3,1000,15,6,7,3,10,FALSE,"i","slightly liberal","every week",FALSE,NA,FALSE
+18,"m",50,3.8,3.8,0,3,5,9,6,10,FALSE,"d","liberal","never",FALSE,FALSE,FALSE
+19,"m",71,4,3.5,5000,3,6,12,2,2,FALSE,"i","liberal","never",FALSE,FALSE,FALSE
+20,"f",28,3,3.8,120,1,25,0,0,2,FALSE,"d","very liberal","occasionally",FALSE,FALSE,FALSE
+21,"f",26,3.7,3.7,8000,8,4,4,4,1,FALSE,"i","moderate","occasionally",FALSE,FALSE,FALSE
+22,"f",27,4,3.7,2,2.5,4,2,7,0,FALSE,"i","liberal","occasionally",FALSE,FALSE,FALSE
+23,"m",31,2.7,3.5,1700,5,7,7,2,0,FALSE,"r","very conservative","every week",FALSE,FALSE,FALSE
+24,"f",23,3.7,3.7,2,2,7,4,2,0,FALSE,"i","moderate","never",FALSE,FALSE,FALSE
+25,"m",23,3.2,3.8,450,4,0,7,7,3,FALSE,"i","very liberal","never",FALSE,FALSE,FALSE
+26,"f",44,3,3,0,2,2,3,2,3,FALSE,"i","slightly liberal","most weeks",FALSE,FALSE,FALSE
+27,"m",26,3.7,3,1000,3,8,2,7,0,FALSE,"d","liberal","occasionally",FALSE,FALSE,NA
+28,"f",31,3.7,3.8,850,10,10,3,7,0,FALSE,"r","slightly conservative","most weeks",FALSE,FALSE,FALSE
+29,"m",24,3.3,3.1,420,2,10,6,5,0,FALSE,"d","moderate","occasionally",FALSE,FALSE,NA
+30,"f",26,3.3,3.3,1200,0.75,10,0,3,0,FALSE,"r","liberal","occasionally",FALSE,FALSE,NA
+31,"m",26,3.3,3.5,1000,1.5,0,3,3,3,FALSE,"d","liberal","occasionally",FALSE,FALSE,FALSE
+32,"f",32,3.5,3.9,150,12,10,2,0,0,FALSE,"d","liberal","occasionally",FALSE,FALSE,FALSE
+33,"m",26,3.4,3.4,2000,1.5,2,7,14,0,FALSE,"d","liberal","never",FALSE,FALSE,FALSE
+34,"f",22,3.2,2.8,316,2,10,3,5,2,FALSE,"i","liberal","occasionally",FALSE,FALSE,NA
+35,"f",24,3.5,3.9,900,1.75,8,0,0,1,FALSE,"d","very liberal","occasionally",FALSE,FALSE,NA
+36,"m",24,3.6,3.3,250,2,4,6,3,1,FALSE,"r","slightly conservative","every week",FALSE,FALSE,FALSE
+37,"m",23,3.8,3.7,180,0.5,10,5,7,0,FALSE,"i","liberal","never",FALSE,FALSE,NA
+38,"m",33,3.4,3.4,6000,1.5,8,5,6,2,FALSE,"i","liberal","never",FALSE,FALSE,FALSE
+39,"m",23,2.8,3.2,950,2,37,10,5,0,FALSE,"r","slightly conservative","most weeks",FALSE,FALSE,FALSE
+40,"m",31,3.8,3.5,1100,0.75,0.5,3,5,2,FALSE,"r","conservative","most weeks",FALSE,FALSE,NA
+41,"m",26,3.4,3.4,1300,1.2,0,8,2,0,FALSE,"i","liberal","occasionally",FALSE,FALSE,FALSE
+42,"m",28,2,3,360,0.25,10,8,3,0,FALSE,"d","slightly liberal","never",FALSE,FALSE,NA
+43,"f",24,3.8,3.9,1800,2,2,5,4,1,FALSE,"r","conservative","every week",FALSE,FALSE,FALSE
+44,"m",23,3,3.6,900,15,12,0,5,0,FALSE,"r","slightly conservative","never",FALSE,FALSE,FALSE
+45,"f",25,3,4,5000,5,1.5,0,4,0,FALSE,"i","moderate","occasionally",FALSE,FALSE,FALSE
+46,"f",24,3,3.5,300,1,10,5,5,0,FALSE,"d","liberal","never",FALSE,FALSE,FALSE
+47,"f",27,3,3.8,2000,20,28,7,14,2,FALSE,"r","slightly liberal","occasionally",FALSE,FALSE,FALSE
+48,"m",24,3.3,3.8,630,1.3,2,3,5,0,FALSE,"r","very conservative","every week",FALSE,FALSE,FALSE
+49,"f",26,3.8,4,1200,1,0,4,3,1,FALSE,"d","liberal","never",FALSE,FALSE,FALSE
+50,"f",27,3,4,580,2,5,15,1,2,FALSE,"d","very liberal","occasionally",FALSE,FALSE,FALSE
+51,"m",32,3,3,2000,5,5,5,2,1,FALSE,"r","slightly conservative","every week",FALSE,FALSE,FALSE
+52,"f",41,4,4,0,8,8,4,2,2,FALSE,"r","moderate","occasionally",FALSE,FALSE,FALSE
+53,"f",29,3,3.9,300,3.7,2,5,1,11,FALSE,"d","liberal","occasionally",FALSE,FALSE,FALSE
+54,"f",50,3.5,3.8,6,6,7,3,7,0,FALSE,"d","liberal","occasionally",FALSE,FALSE,NA
+55,"f",22,3.4,3.7,80,7,10,1,2,2,FALSE,"i","liberal","never",FALSE,FALSE,NA
+56,"f",23,3.6,3.2,375,1.5,5,10,5,0,FALSE,"r","conservative","every week",FALSE,FALSE,FALSE
+57,"m",26,3.5,3.6,2000,0.3,16,8,3,0,FALSE,"d","moderate","occasionally",FALSE,FALSE,NA
+58,"m",30,3,3,1,1.1,1,4,3,0,FALSE,"i","slightly liberal","every week",FALSE,FALSE,FALSE
+59,"f",23,3,3,112,0.5,15,3,3,0,FALSE,"i","moderate","most weeks",FALSE,FALSE,FALSE
+60,"f",22,3.4,3,650,4,8,16,7,1,FALSE,"i","moderate","occasionally",FALSE,FALSE,FALSE
