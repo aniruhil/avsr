@@ -79,7 +79,7 @@ table {
   color: #444;
   font-family: Helvetica, Arial, sans-serif;
 /*  width: 690px; Was changed to 790px on August 26 */ 
-  width: 790px;
+  width: 690px;
   /* Table reset stuff */
   border-collapse: collapse; border-spacing: 0; 
 }
