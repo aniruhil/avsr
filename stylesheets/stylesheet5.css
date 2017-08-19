@@ -85,7 +85,12 @@ table {
 }
 		
 td, th {  border: 0 none; height: 30px; }
-			
+
+td {
+    height: 50px;
+    vertical-align: top;
+}
+
 th:first-child {
     border-radius: 6px 0 0 0;
 }
