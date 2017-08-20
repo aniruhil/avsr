@@ -107,7 +107,8 @@ img {
 	}
 
 header {
-  width:270px;
+/*  width:270px;  Original*/
+  width:170px;	
   float:left;
   position:fixed;
 }
@@ -170,7 +171,7 @@ header ul a strong {
   color:#222;
 }
 
-section {
+section {	
   width:800px;
   float:right;
   padding-bottom:50px;
