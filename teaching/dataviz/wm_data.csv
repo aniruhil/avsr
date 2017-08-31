@@ -1,50 +1,5 @@
 "Country Name","Country Code","year","mortality_ratio"
-"Arab World","ARB","1990",289
-"Caribbean small states","CSS","1990",94
-"Central Europe and the Baltics","CEB","1990",41
-"Early-demographic dividend","EAR","1990",456
-"East Asia & Pacific","EAS","1990",159
-"East Asia & Pacific (excluding high income)","EAP","1990",168
-"East Asia & Pacific (IDA & IBRD)","TEA","1990",169
-"Euro area","EMU","1990",11
-"Europe & Central Asia","ECS","1990",44
-"Europe & Central Asia (excluding high income)","ECA","1990",69
-"Europe & Central Asia (IDA & IBRD)","TEC","1990",66
-"European Union","EUU","1990",18
-"Fragile and conflict affected situations","FCS","1990",825
-"Heavily indebted poor countries (HIPC)","HPC","1990",957
-"High income","HIC","1990",15
-"IBRD only","IBD","1990",269
-"IDA & IBRD total","IBT","1990",424
-"IDA blend","IDB","1990",776
-"IDA only","IDX","1990",848
-"IDA total","IDA","1990",824
-"Late-demographic dividend","LTE","1990",97
-"Latin America & Caribbean","LCN","1990",135
-"Latin America & Caribbean (excluding high income)","LAC","1990",138
-"Latin America & Caribbean (IDA & IBRD)","TLA","1990",136
-"Least developed countries: UN classification","LDC","1990",903
-"Low & middle income","LMY","1990",425
-"Low income","LIC","1990",1010
-"Lower middle income","LMC","1990",538
-"Middle East & North Africa","MEA","1990",166
-"Middle East & North Africa (excluding high income)","MNA","1990",181
-"Middle East & North Africa (IDA & IBRD)","TMN","1990",182
-"Middle income","MIC","1990",349
-"North America","NAC","1990",11
-"OECD members","OED","1990",32
-"Other small states","OSS","1990",538
 "Pacific island small states","PSS","1990",176
-"Post-demographic dividend","PST","1990",15
-"Pre-demographic dividend","PRE","1990",1010
-"Small states","SST","1990",428
-"South Asia","SAS","1990",558
-"South Asia (IDA & IBRD)","TSA","1990",558
-"Sub-Saharan Africa","SSF","1990",987
-"Sub-Saharan Africa (excluding high income)","SSA","1990",987
-"Sub-Saharan Africa (IDA & IBRD)","TSS","1990",987
-"Upper middle income","UMC","1990",101
-"World","WLD","1990",385
 "Afghanistan","AFG","1990",1340
 "Albania","ALB","1990",71
 "Algeria","DZA","1990",216
@@ -262,52 +217,7 @@
 "Yemen, Rep.","YEM","1990",547
 "Zambia","ZMB","1990",577
 "Zimbabwe","ZWE","1990",440
-"Arab World","ARB","1991",285
-"Caribbean small states","CSS","1991",93
-"Central Europe and the Baltics","CEB","1991",37
-"Early-demographic dividend","EAR","1991",442
-"East Asia & Pacific","EAS","1991",151
-"East Asia & Pacific (excluding high income)","EAP","1991",160
-"East Asia & Pacific (IDA & IBRD)","TEA","1991",161
-"Euro area","EMU","1991",11
-"Europe & Central Asia","ECS","1991",43
-"Europe & Central Asia (excluding high income)","ECA","1991",68
-"Europe & Central Asia (IDA & IBRD)","TEC","1991",64
-"European Union","EUU","1991",17
-"Fragile and conflict affected situations","FCS","1991",817
-"Heavily indebted poor countries (HIPC)","HPC","1991",946
-"High income","HIC","1991",15
-"IBRD only","IBD","1991",262
-"IDA & IBRD total","IBT","1991",419
-"IDA blend","IDB","1991",764
-"IDA only","IDX","1991",835
-"IDA total","IDA","1991",812
-"Late-demographic dividend","LTE","1991",93
-"Latin America & Caribbean","LCN","1991",131
-"Latin America & Caribbean (excluding high income)","LAC","1991",135
-"Latin America & Caribbean (IDA & IBRD)","TLA","1991",133
-"Least developed countries: UN classification","LDC","1991",889
-"Low & middle income","LMY","1991",420
-"Low income","LIC","1991",997
-"Lower middle income","LMC","1991",523
-"Middle East & North Africa","MEA","1991",159
-"Middle East & North Africa (excluding high income)","MNA","1991",174
-"Middle East & North Africa (IDA & IBRD)","TMN","1991",175
-"Middle income","MIC","1991",342
-"North America","NAC","1991",11
-"OECD members","OED","1991",31
-"Other small states","OSS","1991",524
 "Pacific island small states","PSS","1991",170
-"Post-demographic dividend","PST","1991",15
-"Pre-demographic dividend","PRE","1991",1000
-"Small states","SST","1991",418
-"South Asia","SAS","1991",541
-"South Asia (IDA & IBRD)","TSA","1991",541
-"Sub-Saharan Africa","SSF","1991",975
-"Sub-Saharan Africa (excluding high income)","SSA","1991",975
-"Sub-Saharan Africa (IDA & IBRD)","TSS","1991",975
-"Upper middle income","UMC","1991",97
-"World","WLD","1991",381
 "Afghanistan","AFG","1991",1330
 "Albania","ALB","1991",69
 "Algeria","DZA","1991",210
@@ -525,52 +435,7 @@
 "Yemen, Rep.","YEM","1991",535
 "Zambia","ZMB","1991",584
 "Zimbabwe","ZWE","1991",428
-"Arab World","ARB","1992",281
-"Caribbean small states","CSS","1992",94
-"Central Europe and the Baltics","CEB","1992",34
-"Early-demographic dividend","EAR","1992",428
-"East Asia & Pacific","EAS","1992",146
-"East Asia & Pacific (excluding high income)","EAP","1992",154
-"East Asia & Pacific (IDA & IBRD)","TEA","1992",155
-"Euro area","EMU","1992",11
-"Europe & Central Asia","ECS","1992",43
-"Europe & Central Asia (excluding high income)","ECA","1992",68
-"Europe & Central Asia (IDA & IBRD)","TEC","1992",64
-"European Union","EUU","1992",16
-"Fragile and conflict affected situations","FCS","1992",812
-"Heavily indebted poor countries (HIPC)","HPC","1992",940
-"High income","HIC","1992",14
-"IBRD only","IBD","1992",257
-"IDA & IBRD total","IBT","1992",416
-"IDA blend","IDB","1992",753
-"IDA only","IDX","1992",824
-"IDA total","IDA","1992",801
-"Late-demographic dividend","LTE","1992",89
-"Latin America & Caribbean","LCN","1992",127
-"Latin America & Caribbean (excluding high income)","LAC","1992",130
-"Latin America & Caribbean (IDA & IBRD)","TLA","1992",129
-"Least developed countries: UN classification","LDC","1992",879
-"Low & middle income","LMY","1992",417
-"Low income","LIC","1992",988
-"Lower middle income","LMC","1992",510
-"Middle East & North Africa","MEA","1992",154
-"Middle East & North Africa (excluding high income)","MNA","1992",168
-"Middle East & North Africa (IDA & IBRD)","TMN","1992",169
-"Middle income","MIC","1992",337
-"North America","NAC","1992",11
-"OECD members","OED","1992",31
-"Other small states","OSS","1992",510
 "Pacific island small states","PSS","1992",163
-"Post-demographic dividend","PST","1992",14
-"Pre-demographic dividend","PRE","1992",991
-"Small states","SST","1992",409
-"South Asia","SAS","1992",525
-"South Asia (IDA & IBRD)","TSA","1992",525
-"Sub-Saharan Africa","SSF","1992",965
-"Sub-Saharan Africa (excluding high income)","SSA","1992",965
-"Sub-Saharan Africa (IDA & IBRD)","TSS","1992",965
-"Upper middle income","UMC","1992",93
-"World","WLD","1992",378
 "Afghanistan","AFG","1992",1330
 "Albania","ALB","1992",65
 "Algeria","DZA","1992",205
@@ -788,52 +653,7 @@
 "Yemen, Rep.","YEM","1992",523
 "Zambia","ZMB","1992",589
 "Zimbabwe","ZWE","1992",414
-"Arab World","ARB","1993",278
-"Caribbean small states","CSS","1993",95
-"Central Europe and the Baltics","CEB","1993",32
-"Early-demographic dividend","EAR","1993",415
-"East Asia & Pacific","EAS","1993",140
-"East Asia & Pacific (excluding high income)","EAP","1993",148
-"East Asia & Pacific (IDA & IBRD)","TEA","1993",149
-"Euro area","EMU","1993",11
-"Europe & Central Asia","ECS","1993",45
-"Europe & Central Asia (excluding high income)","ECA","1993",73
-"Europe & Central Asia (IDA & IBRD)","TEC","1993",68
-"European Union","EUU","1993",15
-"Fragile and conflict affected situations","FCS","1993",807
-"Heavily indebted poor countries (HIPC)","HPC","1993",931
-"High income","HIC","1993",14
-"IBRD only","IBD","1993",251
-"IDA & IBRD total","IBT","1993",414
-"IDA blend","IDB","1993",745
-"IDA only","IDX","1993",813
-"IDA total","IDA","1993",791
-"Late-demographic dividend","LTE","1993",85
-"Latin America & Caribbean","LCN","1993",124
-"Latin America & Caribbean (excluding high income)","LAC","1993",127
-"Latin America & Caribbean (IDA & IBRD)","TLA","1993",126
-"Least developed countries: UN classification","LDC","1993",867
-"Low & middle income","LMY","1993",415
-"Low income","LIC","1993",976
-"Lower middle income","LMC","1993",498
-"Middle East & North Africa","MEA","1993",149
-"Middle East & North Africa (excluding high income)","MNA","1993",163
-"Middle East & North Africa (IDA & IBRD)","TMN","1993",164
-"Middle income","MIC","1993",333
-"North America","NAC","1993",11
-"OECD members","OED","1993",31
-"Other small states","OSS","1993",499
 "Pacific island small states","PSS","1993",156
-"Post-demographic dividend","PST","1993",14
-"Pre-demographic dividend","PRE","1993",983
-"Small states","SST","1993",401
-"South Asia","SAS","1993",508
-"South Asia (IDA & IBRD)","TSA","1993",508
-"Sub-Saharan Africa","SSF","1993",956
-"Sub-Saharan Africa (excluding high income)","SSA","1993",956
-"Sub-Saharan Africa (IDA & IBRD)","TSS","1993",956
-"Upper middle income","UMC","1993",89
-"World","WLD","1993",375
 "Afghanistan","AFG","1993",1320
 "Albania","ALB","1993",63
 "Algeria","DZA","1993",201
@@ -1051,52 +871,7 @@
 "Yemen, Rep.","YEM","1993",517
 "Zambia","ZMB","1993",592
 "Zimbabwe","ZWE","1993",405
-"Arab World","ARB","1994",274
-"Caribbean small states","CSS","1994",100
-"Central Europe and the Baltics","CEB","1994",30
-"Early-demographic dividend","EAR","1994",401
-"East Asia & Pacific","EAS","1994",133
-"East Asia & Pacific (excluding high income)","EAP","1994",142
-"East Asia & Pacific (IDA & IBRD)","TEA","1994",143
-"Euro area","EMU","1994",11
-"Europe & Central Asia","ECS","1994",45
-"Europe & Central Asia (excluding high income)","ECA","1994",73
-"Europe & Central Asia (IDA & IBRD)","TEC","1994",69
-"European Union","EUU","1994",15
-"Fragile and conflict affected situations","FCS","1994",798
-"Heavily indebted poor countries (HIPC)","HPC","1994",916
-"High income","HIC","1994",14
-"IBRD only","IBD","1994",246
-"IDA & IBRD total","IBT","1994",411
-"IDA blend","IDB","1994",743
-"IDA only","IDX","1994",798
-"IDA total","IDA","1994",780
-"Late-demographic dividend","LTE","1994",81
-"Latin America & Caribbean","LCN","1994",120
-"Latin America & Caribbean (excluding high income)","LAC","1994",123
-"Latin America & Caribbean (IDA & IBRD)","TLA","1994",122
-"Least developed countries: UN classification","LDC","1994",851
-"Low & middle income","LMY","1994",412
-"Low income","LIC","1994",959
-"Lower middle income","LMC","1994",487
-"Middle East & North Africa","MEA","1994",144
-"Middle East & North Africa (excluding high income)","MNA","1994",157
-"Middle East & North Africa (IDA & IBRD)","TMN","1994",158
-"Middle income","MIC","1994",329
-"North America","NAC","1994",11
-"OECD members","OED","1994",30
-"Other small states","OSS","1994",490
 "Pacific island small states","PSS","1994",150
-"Post-demographic dividend","PST","1994",14
-"Pre-demographic dividend","PRE","1994",974
-"Small states","SST","1994",396
-"South Asia","SAS","1994",492
-"South Asia (IDA & IBRD)","TSA","1994",492
-"Sub-Saharan Africa","SSF","1994",944
-"Sub-Saharan Africa (excluding high income)","SSA","1994",944
-"Sub-Saharan Africa (IDA & IBRD)","TSS","1994",944
-"Upper middle income","UMC","1994",85
-"World","WLD","1994",372
 "Afghanistan","AFG","1994",1300
 "Albania","ALB","1994",49
 "Algeria","DZA","1994",196
@@ -1314,52 +1089,7 @@
 "Yemen, Rep.","YEM","1994",507
 "Zambia","ZMB","1994",597
 "Zimbabwe","ZWE","1994",427
-"Arab World","ARB","1995",269
-"Caribbean small states","CSS","1995",102
-"Central Europe and the Baltics","CEB","1995",28
-"Early-demographic dividend","EAR","1995",388
-"East Asia & Pacific","EAS","1995",129
-"East Asia & Pacific (excluding high income)","EAP","1995",137
-"East Asia & Pacific (IDA & IBRD)","TEA","1995",138
-"Euro area","EMU","1995",11
-"Europe & Central Asia","ECS","1995",43
-"Europe & Central Asia (excluding high income)","ECA","1995",71
-"Europe & Central Asia (IDA & IBRD)","TEC","1995",66
-"European Union","EUU","1995",14
-"Fragile and conflict affected situations","FCS","1995",785
-"Heavily indebted poor countries (HIPC)","HPC","1995",897
-"High income","HIC","1995",14
-"IBRD only","IBD","1995",241
-"IDA & IBRD total","IBT","1995",407
-"IDA blend","IDB","1995",739
-"IDA only","IDX","1995",780
-"IDA total","IDA","1995",767
-"Late-demographic dividend","LTE","1995",77
-"Latin America & Caribbean","LCN","1995",117
-"Latin America & Caribbean (excluding high income)","LAC","1995",120
-"Latin America & Caribbean (IDA & IBRD)","TLA","1995",118
-"Least developed countries: UN classification","LDC","1995",832
-"Low & middle income","LMY","1995",408
-"Low income","LIC","1995",939
-"Lower middle income","LMC","1995",476
-"Middle East & North Africa","MEA","1995",138
-"Middle East & North Africa (excluding high income)","MNA","1995",152
-"Middle East & North Africa (IDA & IBRD)","TMN","1995",153
-"Middle income","MIC","1995",324
-"North America","NAC","1995",11
-"OECD members","OED","1995",30
-"Other small states","OSS","1995",479
 "Pacific island small states","PSS","1995",144
-"Post-demographic dividend","PST","1995",14
-"Pre-demographic dividend","PRE","1995",959
-"Small states","SST","1995",389
-"South Asia","SAS","1995",476
-"South Asia (IDA & IBRD)","TSA","1995",476
-"Sub-Saharan Africa","SSF","1995",928
-"Sub-Saharan Africa (excluding high income)","SSA","1995",928
-"Sub-Saharan Africa (IDA & IBRD)","TSS","1995",928
-"Upper middle income","UMC","1995",81
-"World","WLD","1995",369
 "Afghanistan","AFG","1995",1270
 "Albania","ALB","1995",53
 "Algeria","DZA","1995",192
@@ -1577,52 +1307,7 @@
 "Yemen, Rep.","YEM","1995",498
 "Zambia","ZMB","1995",596
 "Zimbabwe","ZWE","1995",449
-"Arab World","ARB","1996",264
-"Caribbean small states","CSS","1996",105
-"Central Europe and the Baltics","CEB","1996",26
-"Early-demographic dividend","EAR","1996",375
-"East Asia & Pacific","EAS","1996",125
-"East Asia & Pacific (excluding high income)","EAP","1996",133
-"East Asia & Pacific (IDA & IBRD)","TEA","1996",133
-"Euro area","EMU","1996",10
-"Europe & Central Asia","ECS","1996",40
-"Europe & Central Asia (excluding high income)","ECA","1996",66
-"Europe & Central Asia (IDA & IBRD)","TEC","1996",62
-"European Union","EUU","1996",13
-"Fragile and conflict affected situations","FCS","1996",771
-"Heavily indebted poor countries (HIPC)","HPC","1996",881
-"High income","HIC","1996",13
-"IBRD only","IBD","1996",235
-"IDA & IBRD total","IBT","1996",403
-"IDA blend","IDB","1996",741
-"IDA only","IDX","1996",764
-"IDA total","IDA","1996",757
-"Late-demographic dividend","LTE","1996",74
-"Latin America & Caribbean","LCN","1996",115
-"Latin America & Caribbean (excluding high income)","LAC","1996",118
-"Latin America & Caribbean (IDA & IBRD)","TLA","1996",117
-"Least developed countries: UN classification","LDC","1996",814
-"Low & middle income","LMY","1996",404
-"Low income","LIC","1996",922
-"Lower middle income","LMC","1996",465
-"Middle East & North Africa","MEA","1996",133
-"Middle East & North Africa (excluding high income)","MNA","1996",146
-"Middle East & North Africa (IDA & IBRD)","TMN","1996",147
-"Middle income","MIC","1996",320
-"North America","NAC","1996",11
-"OECD members","OED","1996",29
-"Other small states","OSS","1996",473
 "Pacific island small states","PSS","1996",139
-"Post-demographic dividend","PST","1996",13
-"Pre-demographic dividend","PRE","1996",946
-"Small states","SST","1996",385
-"South Asia","SAS","1996",460
-"South Asia (IDA & IBRD)","TSA","1996",460
-"Sub-Saharan Africa","SSF","1996",916
-"Sub-Saharan Africa (excluding high income)","SSA","1996",916
-"Sub-Saharan Africa (IDA & IBRD)","TSS","1996",916
-"Upper middle income","UMC","1996",78
-"World","WLD","1996",366
 "Afghanistan","AFG","1996",1240
 "Albania","ALB","1996",50
 "Algeria","DZA","1996",189
@@ -1840,52 +1525,7 @@
 "Yemen, Rep.","YEM","1996",488
 "Zambia","ZMB","1996",598
 "Zimbabwe","ZWE","1996",479
-"Arab World","ARB","1997",258
-"Caribbean small states","CSS","1997",106
-"Central Europe and the Baltics","CEB","1997",25
-"Early-demographic dividend","EAR","1997",362
-"East Asia & Pacific","EAS","1997",122
-"East Asia & Pacific (excluding high income)","EAP","1997",130
-"East Asia & Pacific (IDA & IBRD)","TEA","1997",130
-"Euro area","EMU","1997",9
-"Europe & Central Asia","ECS","1997",37
-"Europe & Central Asia (excluding high income)","ECA","1997",62
-"Europe & Central Asia (IDA & IBRD)","TEC","1997",58
-"European Union","EUU","1997",13
-"Fragile and conflict affected situations","FCS","1997",755
-"Heavily indebted poor countries (HIPC)","HPC","1997",860
-"High income","HIC","1997",12
-"IBRD only","IBD","1997",228
-"IDA & IBRD total","IBT","1997",398
-"IDA blend","IDB","1997",741
-"IDA only","IDX","1997",746
-"IDA total","IDA","1997",745
-"Late-demographic dividend","LTE","1997",72
-"Latin America & Caribbean","LCN","1997",114
-"Latin America & Caribbean (excluding high income)","LAC","1997",117
-"Latin America & Caribbean (IDA & IBRD)","TLA","1997",115
-"Least developed countries: UN classification","LDC","1997",794
-"Low & middle income","LMY","1997",399
-"Low income","LIC","1997",901
-"Lower middle income","LMC","1997",454
-"Middle East & North Africa","MEA","1997",128
-"Middle East & North Africa (excluding high income)","MNA","1997",141
-"Middle East & North Africa (IDA & IBRD)","TMN","1997",142
-"Middle income","MIC","1997",315
-"North America","NAC","1997",11
-"OECD members","OED","1997",29
-"Other small states","OSS","1997",470
 "Pacific island small states","PSS","1997",134
-"Post-demographic dividend","PST","1997",13
-"Pre-demographic dividend","PRE","1997",932
-"Small states","SST","1997",383
-"South Asia","SAS","1997",442
-"South Asia (IDA & IBRD)","TSA","1997",442
-"Sub-Saharan Africa","SSF","1997",901
-"Sub-Saharan Africa (excluding high income)","SSA","1997",901
-"Sub-Saharan Africa (IDA & IBRD)","TSS","1997",901
-"Upper middle income","UMC","1997",76
-"World","WLD","1997",361
 "Afghanistan","AFG","1997",1200
 "Albania","ALB","1997",51
 "Algeria","DZA","1997",184
@@ -2103,52 +1743,7 @@
 "Yemen, Rep.","YEM","1997",476
 "Zambia","ZMB","1997",598
 "Zimbabwe","ZWE","1997",505
-"Arab World","ARB","1998",251
-"Caribbean small states","CSS","1998",107
-"Central Europe and the Baltics","CEB","1998",23
-"Early-demographic dividend","EAR","1998",349
-"East Asia & Pacific","EAS","1998",119
-"East Asia & Pacific (excluding high income)","EAP","1998",127
-"East Asia & Pacific (IDA & IBRD)","TEA","1998",127
-"Euro area","EMU","1998",9
-"Europe & Central Asia","ECS","1998",35
-"Europe & Central Asia (excluding high income)","ECA","1998",59
-"Europe & Central Asia (IDA & IBRD)","TEC","1998",55
-"European Union","EUU","1998",12
-"Fragile and conflict affected situations","FCS","1998",740
-"Heavily indebted poor countries (HIPC)","HPC","1998",840
-"High income","HIC","1998",12
-"IBRD only","IBD","1998",221
-"IDA & IBRD total","IBT","1998",392
-"IDA blend","IDB","1998",738
-"IDA only","IDX","1998",729
-"IDA total","IDA","1998",732
-"Late-demographic dividend","LTE","1998",70
-"Latin America & Caribbean","LCN","1998",114
-"Latin America & Caribbean (excluding high income)","LAC","1998",117
-"Latin America & Caribbean (IDA & IBRD)","TLA","1998",115
-"Least developed countries: UN classification","LDC","1998",774
-"Low & middle income","LMY","1998",393
-"Low income","LIC","1998",880
-"Lower middle income","LMC","1998",442
-"Middle East & North Africa","MEA","1998",122
-"Middle East & North Africa (excluding high income)","MNA","1998",135
-"Middle East & North Africa (IDA & IBRD)","TMN","1998",136
-"Middle income","MIC","1998",309
-"North America","NAC","1998",11
-"OECD members","OED","1998",29
-"Other small states","OSS","1998",470
 "Pacific island small states","PSS","1998",129
-"Post-demographic dividend","PST","1998",12
-"Pre-demographic dividend","PRE","1998",915
-"Small states","SST","1998",384
-"South Asia","SAS","1998",424
-"South Asia (IDA & IBRD)","TSA","1998",424
-"Sub-Saharan Africa","SSF","1998",884
-"Sub-Saharan Africa (excluding high income)","SSA","1998",884
-"Sub-Saharan Africa (IDA & IBRD)","TSS","1998",884
-"Upper middle income","UMC","1998",74
-"World","WLD","1998",356
 "Afghanistan","AFG","1998",1160
 "Albania","ALB","1998",46
 "Algeria","DZA","1998",179
@@ -2366,52 +1961,7 @@
 "Yemen, Rep.","YEM","1998",462
 "Zambia","ZMB","1998",596
 "Zimbabwe","ZWE","1998",530
-"Arab World","ARB","1999",245
-"Caribbean small states","CSS","1999",109
-"Central Europe and the Baltics","CEB","1999",22
-"Early-demographic dividend","EAR","1999",335
-"East Asia & Pacific","EAS","1999",116
-"East Asia & Pacific (excluding high income)","EAP","1999",123
-"East Asia & Pacific (IDA & IBRD)","TEA","1999",123
-"Euro area","EMU","1999",9
-"Europe & Central Asia","ECS","1999",34
-"Europe & Central Asia (excluding high income)","ECA","1999",57
-"Europe & Central Asia (IDA & IBRD)","TEC","1999",54
-"European Union","EUU","1999",12
-"Fragile and conflict affected situations","FCS","1999",726
-"Heavily indebted poor countries (HIPC)","HPC","1999",820
-"High income","HIC","1999",12
-"IBRD only","IBD","1999",213
-"IDA & IBRD total","IBT","1999",385
-"IDA blend","IDB","1999",733
-"IDA only","IDX","1999",711
-"IDA total","IDA","1999",718
-"Late-demographic dividend","LTE","1999",67
-"Latin America & Caribbean","LCN","1999",107
-"Latin America & Caribbean (excluding high income)","LAC","1999",109
-"Latin America & Caribbean (IDA & IBRD)","TLA","1999",108
-"Least developed countries: UN classification","LDC","1999",753
-"Low & middle income","LMY","1999",385
-"Low income","LIC","1999",860
-"Lower middle income","LMC","1999",429
-"Middle East & North Africa","MEA","1999",117
-"Middle East & North Africa (excluding high income)","MNA","1999",130
-"Middle East & North Africa (IDA & IBRD)","TMN","1999",131
-"Middle income","MIC","1999",301
-"North America","NAC","1999",11
-"OECD members","OED","1999",29
-"Other small states","OSS","1999",469
 "Pacific island small states","PSS","1999",125
-"Post-demographic dividend","PST","1999",12
-"Pre-demographic dividend","PRE","1999",897
-"Small states","SST","1999",384
-"South Asia","SAS","1999",406
-"South Asia (IDA & IBRD)","TSA","1999",406
-"Sub-Saharan Africa","SSF","1999",867
-"Sub-Saharan Africa (excluding high income)","SSA","1999",867
-"Sub-Saharan Africa (IDA & IBRD)","TSS","1999",867
-"Upper middle income","UMC","1999",71
-"World","WLD","1999",349
 "Afghanistan","AFG","1999",1130
 "Albania","ALB","1999",42
 "Algeria","DZA","1999",174
@@ -2629,52 +2179,7 @@
 "Yemen, Rep.","YEM","1999",451
 "Zambia","ZMB","1999",569
 "Zimbabwe","ZWE","1999",563
-"Arab World","ARB","2000",238
-"Caribbean small states","CSS","2000",111
-"Central Europe and the Baltics","CEB","2000",20
-"Early-demographic dividend","EAR","2000",321
-"East Asia & Pacific","EAS","2000",113
-"East Asia & Pacific (excluding high income)","EAP","2000",120
-"East Asia & Pacific (IDA & IBRD)","TEA","2000",120
-"Euro area","EMU","2000",9
-"Europe & Central Asia","ECS","2000",33
-"Europe & Central Asia (excluding high income)","ECA","2000",56
-"Europe & Central Asia (IDA & IBRD)","TEC","2000",53
-"European Union","EUU","2000",11
-"Fragile and conflict affected situations","FCS","2000",709
-"Heavily indebted poor countries (HIPC)","HPC","2000",799
-"High income","HIC","2000",12
-"IBRD only","IBD","2000",203
-"IDA & IBRD total","IBT","2000",375
-"IDA blend","IDB","2000",724
-"IDA only","IDX","2000",692
-"IDA total","IDA","2000",702
-"Late-demographic dividend","LTE","2000",63
-"Latin America & Caribbean","LCN","2000",99
-"Latin America & Caribbean (excluding high income)","LAC","2000",101
-"Latin America & Caribbean (IDA & IBRD)","TLA","2000",100
-"Least developed countries: UN classification","LDC","2000",732
-"Low & middle income","LMY","2000",376
-"Low income","LIC","2000",838
-"Lower middle income","LMC","2000",415
-"Middle East & North Africa","MEA","2000",113
-"Middle East & North Africa (excluding high income)","MNA","2000",125
-"Middle East & North Africa (IDA & IBRD)","TMN","2000",126
-"Middle income","MIC","2000",292
-"North America","NAC","2000",12
-"OECD members","OED","2000",28
-"Other small states","OSS","2000",469
 "Pacific island small states","PSS","2000",120
-"Post-demographic dividend","PST","2000",12
-"Pre-demographic dividend","PRE","2000",875
-"Small states","SST","2000",384
-"South Asia","SAS","2000",388
-"South Asia (IDA & IBRD)","TSA","2000",388
-"Sub-Saharan Africa","SSF","2000",846
-"Sub-Saharan Africa (excluding high income)","SSA","2000",846
-"Sub-Saharan Africa (IDA & IBRD)","TSS","2000",846
-"Upper middle income","UMC","2000",68
-"World","WLD","2000",341
 "Afghanistan","AFG","2000",1100
 "Albania","ALB","2000",43
 "Algeria","DZA","2000",170
@@ -2892,52 +2397,7 @@
 "Yemen, Rep.","YEM","2000",440
 "Zambia","ZMB","2000",541
 "Zimbabwe","ZWE","2000",590
-"Arab World","ARB","2001",233
-"Caribbean small states","CSS","2001",111
-"Central Europe and the Baltics","CEB","2001",18
-"Early-demographic dividend","EAR","2001",308
-"East Asia & Pacific","EAS","2001",110
-"East Asia & Pacific (excluding high income)","EAP","2001",117
-"East Asia & Pacific (IDA & IBRD)","TEA","2001",117
-"Euro area","EMU","2001",9
-"Europe & Central Asia","ECS","2001",32
-"Europe & Central Asia (excluding high income)","ECA","2001",54
-"Europe & Central Asia (IDA & IBRD)","TEC","2001",51
-"European Union","EUU","2001",11
-"Fragile and conflict affected situations","FCS","2001",693
-"Heavily indebted poor countries (HIPC)","HPC","2001",778
-"High income","HIC","2001",12
-"IBRD only","IBD","2001",194
-"IDA & IBRD total","IBT","2001",366
-"IDA blend","IDB","2001",715
-"IDA only","IDX","2001",674
-"IDA total","IDA","2001",687
-"Late-demographic dividend","LTE","2001",61
-"Latin America & Caribbean","LCN","2001",95
-"Latin America & Caribbean (excluding high income)","LAC","2001",97
-"Latin America & Caribbean (IDA & IBRD)","TLA","2001",96
-"Least developed countries: UN classification","LDC","2001",711
-"Low & middle income","LMY","2001",366
-"Low income","LIC","2001",816
-"Lower middle income","LMC","2001",402
-"Middle East & North Africa","MEA","2001",110
-"Middle East & North Africa (excluding high income)","MNA","2001",121
-"Middle East & North Africa (IDA & IBRD)","TMN","2001",122
-"Middle income","MIC","2001",284
-"North America","NAC","2001",12
-"OECD members","OED","2001",26
-"Other small states","OSS","2001",468
 "Pacific island small states","PSS","2001",115
-"Post-demographic dividend","PST","2001",12
-"Pre-demographic dividend","PRE","2001",854
-"Small states","SST","2001",384
-"South Asia","SAS","2001",369
-"South Asia (IDA & IBRD)","TSA","2001",369
-"Sub-Saharan Africa","SSF","2001",827
-"Sub-Saharan Africa (excluding high income)","SSA","2001",827
-"Sub-Saharan Africa (IDA & IBRD)","TSS","2001",827
-"Upper middle income","UMC","2001",65
-"World","WLD","2001",332
 "Afghanistan","AFG","2001",1050
 "Albania","ALB","2001",40
 "Algeria","DZA","2001",164
@@ -3155,52 +2615,7 @@
 "Yemen, Rep.","YEM","2001",435
 "Zambia","ZMB","2001",518
 "Zimbabwe","ZWE","2001",621
-"Arab World","ARB","2002",226
-"Caribbean small states","CSS","2002",111
-"Central Europe and the Baltics","CEB","2002",17
-"Early-demographic dividend","EAR","2002",294
-"East Asia & Pacific","EAS","2002",106
-"East Asia & Pacific (excluding high income)","EAP","2002",113
-"East Asia & Pacific (IDA & IBRD)","TEA","2002",113
-"Euro area","EMU","2002",8
-"Europe & Central Asia","ECS","2002",31
-"Europe & Central Asia (excluding high income)","ECA","2002",52
-"Europe & Central Asia (IDA & IBRD)","TEC","2002",49
-"European Union","EUU","2002",10
-"Fragile and conflict affected situations","FCS","2002",675
-"Heavily indebted poor countries (HIPC)","HPC","2002",754
-"High income","HIC","2002",12
-"IBRD only","IBD","2002",185
-"IDA & IBRD total","IBT","2002",354
-"IDA blend","IDB","2002",693
-"IDA only","IDX","2002",654
-"IDA total","IDA","2002",666
-"Late-demographic dividend","LTE","2002",59
-"Latin America & Caribbean","LCN","2002",92
-"Latin America & Caribbean (excluding high income)","LAC","2002",94
-"Latin America & Caribbean (IDA & IBRD)","TLA","2002",93
-"Least developed countries: UN classification","LDC","2002",688
-"Low & middle income","LMY","2002",355
-"Low income","LIC","2002",791
-"Lower middle income","LMC","2002",385
-"Middle East & North Africa","MEA","2002",107
-"Middle East & North Africa (excluding high income)","MNA","2002",118
-"Middle East & North Africa (IDA & IBRD)","TMN","2002",119
-"Middle income","MIC","2002",273
-"North America","NAC","2002",13
-"OECD members","OED","2002",24
-"Other small states","OSS","2002",465
 "Pacific island small states","PSS","2002",112
-"Post-demographic dividend","PST","2002",12
-"Pre-demographic dividend","PRE","2002",825
-"Small states","SST","2002",383
-"South Asia","SAS","2002",350
-"South Asia (IDA & IBRD)","TSA","2002",350
-"Sub-Saharan Africa","SSF","2002",801
-"Sub-Saharan Africa (excluding high income)","SSA","2002",801
-"Sub-Saharan Africa (IDA & IBRD)","TSS","2002",801
-"Upper middle income","UMC","2002",64
-"World","WLD","2002",322
 "Afghanistan","AFG","2002",996
 "Albania","ALB","2002",37
 "Algeria","DZA","2002",158
@@ -3418,52 +2833,7 @@
 "Yemen, Rep.","YEM","2002",431
 "Zambia","ZMB","2002",493
 "Zimbabwe","ZWE","2002",642
-"Arab World","ARB","2003",221
-"Caribbean small states","CSS","2003",110
-"Central Europe and the Baltics","CEB","2003",16
-"Early-demographic dividend","EAR","2003",280
-"East Asia & Pacific","EAS","2003",102
-"East Asia & Pacific (excluding high income)","EAP","2003",108
-"East Asia & Pacific (IDA & IBRD)","TEA","2003",108
-"Euro area","EMU","2003",8
-"Europe & Central Asia","ECS","2003",30
-"Europe & Central Asia (excluding high income)","ECA","2003",49
-"Europe & Central Asia (IDA & IBRD)","TEC","2003",47
-"European Union","EUU","2003",10
-"Fragile and conflict affected situations","FCS","2003",657
-"Heavily indebted poor countries (HIPC)","HPC","2003",729
-"High income","HIC","2003",11
-"IBRD only","IBD","2003",176
-"IDA & IBRD total","IBT","2003",342
-"IDA blend","IDB","2003",668
-"IDA only","IDX","2003",632
-"IDA total","IDA","2003",644
-"Late-demographic dividend","LTE","2003",57
-"Latin America & Caribbean","LCN","2003",90
-"Latin America & Caribbean (excluding high income)","LAC","2003",92
-"Latin America & Caribbean (IDA & IBRD)","TLA","2003",91
-"Least developed countries: UN classification","LDC","2003",664
-"Low & middle income","LMY","2003",342
-"Low income","LIC","2003",764
-"Lower middle income","LMC","2003",369
-"Middle East & North Africa","MEA","2003",104
-"Middle East & North Africa (excluding high income)","MNA","2003",115
-"Middle East & North Africa (IDA & IBRD)","TMN","2003",116
-"Middle income","MIC","2003",262
-"North America","NAC","2003",13
-"OECD members","OED","2003",23
-"Other small states","OSS","2003",458
 "Pacific island small states","PSS","2003",108
-"Post-demographic dividend","PST","2003",12
-"Pre-demographic dividend","PRE","2003",794
-"Small states","SST","2003",378
-"South Asia","SAS","2003",331
-"South Asia (IDA & IBRD)","TSA","2003",331
-"Sub-Saharan Africa","SSF","2003",773
-"Sub-Saharan Africa (excluding high income)","SSA","2003",773
-"Sub-Saharan Africa (IDA & IBRD)","TSS","2003",773
-"Upper middle income","UMC","2003",62
-"World","WLD","2003",310
 "Afghanistan","AFG","2003",941
 "Albania","ALB","2003",35
 "Algeria","DZA","2003",153
@@ -3681,52 +3051,7 @@
 "Yemen, Rep.","YEM","2003",429
 "Zambia","ZMB","2003",472
 "Zimbabwe","ZWE","2003",657
-"Arab World","ARB","2004",214
-"Caribbean small states","CSS","2004",110
-"Central Europe and the Baltics","CEB","2004",15
-"Early-demographic dividend","EAR","2004",267
-"East Asia & Pacific","EAS","2004",98
-"East Asia & Pacific (excluding high income)","EAP","2004",104
-"East Asia & Pacific (IDA & IBRD)","TEA","2004",104
-"Euro area","EMU","2004",8
-"Europe & Central Asia","ECS","2004",28
-"Europe & Central Asia (excluding high income)","ECA","2004",46
-"Europe & Central Asia (IDA & IBRD)","TEC","2004",43
-"European Union","EUU","2004",9
-"Fragile and conflict affected situations","FCS","2004",639
-"Heavily indebted poor countries (HIPC)","HPC","2004",702
-"High income","HIC","2004",11
-"IBRD only","IBD","2004",167
-"IDA & IBRD total","IBT","2004",329
-"IDA blend","IDB","2004",642
-"IDA only","IDX","2004",610
-"IDA total","IDA","2004",620
-"Late-demographic dividend","LTE","2004",55
-"Latin America & Caribbean","LCN","2004",90
-"Latin America & Caribbean (excluding high income)","LAC","2004",92
-"Latin America & Caribbean (IDA & IBRD)","TLA","2004",91
-"Least developed countries: UN classification","LDC","2004",639
-"Low & middle income","LMY","2004",330
-"Low income","LIC","2004",735
-"Lower middle income","LMC","2004",354
-"Middle East & North Africa","MEA","2004",102
-"Middle East & North Africa (excluding high income)","MNA","2004",113
-"Middle East & North Africa (IDA & IBRD)","TMN","2004",114
-"Middle income","MIC","2004",252
-"North America","NAC","2004",13
-"OECD members","OED","2004",22
-"Other small states","OSS","2004",448
 "Pacific island small states","PSS","2004",104
-"Post-demographic dividend","PST","2004",11
-"Pre-demographic dividend","PRE","2004",764
-"Small states","SST","2004",371
-"South Asia","SAS","2004",314
-"South Asia (IDA & IBRD)","TSA","2004",314
-"Sub-Saharan Africa","SSF","2004",744
-"Sub-Saharan Africa (excluding high income)","SSA","2004",744
-"Sub-Saharan Africa (IDA & IBRD)","TSS","2004",744
-"Upper middle income","UMC","2004",60
-"World","WLD","2004",299
 "Afghanistan","AFG","2004",881
 "Albania","ALB","2004",31
 "Algeria","DZA","2004",150
@@ -3944,52 +3269,7 @@
 "Yemen, Rep.","YEM","2004",429
 "Zambia","ZMB","2004",414
 "Zimbabwe","ZWE","2004",648
-"Arab World","ARB","2005",207
-"Caribbean small states","CSS","2005",110
-"Central Europe and the Baltics","CEB","2005",14
-"Early-demographic dividend","EAR","2005",253
-"East Asia & Pacific","EAS","2005",94
-"East Asia & Pacific (excluding high income)","EAP","2005",100
-"East Asia & Pacific (IDA & IBRD)","TEA","2005",100
-"Euro area","EMU","2005",8
-"Europe & Central Asia","ECS","2005",27
-"Europe & Central Asia (excluding high income)","ECA","2005",43
-"Europe & Central Asia (IDA & IBRD)","TEC","2005",41
-"European Union","EUU","2005",9
-"Fragile and conflict affected situations","FCS","2005",622
-"Heavily indebted poor countries (HIPC)","HPC","2005",676
-"High income","HIC","2005",11
-"IBRD only","IBD","2005",159
-"IDA & IBRD total","IBT","2005",316
-"IDA blend","IDB","2005",619
-"IDA only","IDX","2005",588
-"IDA total","IDA","2005",598
-"Late-demographic dividend","LTE","2005",53
-"Latin America & Caribbean","LCN","2005",88
-"Latin America & Caribbean (excluding high income)","LAC","2005",90
-"Latin America & Caribbean (IDA & IBRD)","TLA","2005",89
-"Least developed countries: UN classification","LDC","2005",614
-"Low & middle income","LMY","2005",317
-"Low income","LIC","2005",706
-"Lower middle income","LMC","2005",339
-"Middle East & North Africa","MEA","2005",100
-"Middle East & North Africa (excluding high income)","MNA","2005",110
-"Middle East & North Africa (IDA & IBRD)","TMN","2005",111
-"Middle income","MIC","2005",241
-"North America","NAC","2005",13
-"OECD members","OED","2005",21
-"Other small states","OSS","2005",436
 "Pacific island small states","PSS","2005",101
-"Post-demographic dividend","PST","2005",12
-"Pre-demographic dividend","PRE","2005",736
-"Small states","SST","2005",362
-"South Asia","SAS","2005",296
-"South Asia (IDA & IBRD)","TSA","2005",296
-"Sub-Saharan Africa","SSF","2005",717
-"Sub-Saharan Africa (excluding high income)","SSA","2005",717
-"Sub-Saharan Africa (IDA & IBRD)","TSS","2005",717
-"Upper middle income","UMC","2005",58
-"World","WLD","2005",288
 "Afghanistan","AFG","2005",821
 "Albania","ALB","2005",30
 "Algeria","DZA","2005",148
@@ -4207,52 +3487,7 @@
 "Yemen, Rep.","YEM","2005",428
 "Zambia","ZMB","2005",372
 "Zimbabwe","ZWE","2005",629
-"Arab World","ARB","2006",200
-"Caribbean small states","CSS","2006",107
-"Central Europe and the Baltics","CEB","2006",13
-"Early-demographic dividend","EAR","2006",240
-"East Asia & Pacific","EAS","2006",89
-"East Asia & Pacific (excluding high income)","EAP","2006",95
-"East Asia & Pacific (IDA & IBRD)","TEA","2006",95
-"Euro area","EMU","2006",7
-"Europe & Central Asia","ECS","2006",24
-"Europe & Central Asia (excluding high income)","ECA","2006",39
-"Europe & Central Asia (IDA & IBRD)","TEC","2006",37
-"European Union","EUU","2006",9
-"Fragile and conflict affected situations","FCS","2006",608
-"Heavily indebted poor countries (HIPC)","HPC","2006",654
-"High income","HIC","2006",11
-"IBRD only","IBD","2006",150
-"IDA & IBRD total","IBT","2006",304
-"IDA blend","IDB","2006",588
-"IDA only","IDX","2006",569
-"IDA total","IDA","2006",575
-"Late-demographic dividend","LTE","2006",51
-"Latin America & Caribbean","LCN","2006",87
-"Latin America & Caribbean (excluding high income)","LAC","2006",89
-"Latin America & Caribbean (IDA & IBRD)","TLA","2006",88
-"Least developed countries: UN classification","LDC","2006",593
-"Low & middle income","LMY","2006",305
-"Low income","LIC","2006",682
-"Lower middle income","LMC","2006",324
-"Middle East & North Africa","MEA","2006",98
-"Middle East & North Africa (excluding high income)","MNA","2006",108
-"Middle East & North Africa (IDA & IBRD)","TMN","2006",109
-"Middle income","MIC","2006",231
-"North America","NAC","2006",13
-"OECD members","OED","2006",20
-"Other small states","OSS","2006",418
 "Pacific island small states","PSS","2006",99
-"Post-demographic dividend","PST","2006",11
-"Pre-demographic dividend","PRE","2006",707
-"Small states","SST","2006",349
-"South Asia","SAS","2006",281
-"South Asia (IDA & IBRD)","TSA","2006",281
-"Sub-Saharan Africa","SSF","2006",689
-"Sub-Saharan Africa (excluding high income)","SSA","2006",689
-"Sub-Saharan Africa (IDA & IBRD)","TSS","2006",689
-"Upper middle income","UMC","2006",56
-"World","WLD","2006",277
 "Afghanistan","AFG","2006",776
 "Albania","ALB","2006",29
 "Algeria","DZA","2006",147
@@ -4470,52 +3705,7 @@
 "Yemen, Rep.","YEM","2006",428
 "Zambia","ZMB","2006",338
 "Zimbabwe","ZWE","2006",600
-"Arab World","ARB","2007",193
-"Caribbean small states","CSS","2007",106
-"Central Europe and the Baltics","CEB","2007",12
-"Early-demographic dividend","EAR","2007",228
-"East Asia & Pacific","EAS","2007",85
-"East Asia & Pacific (excluding high income)","EAP","2007",91
-"East Asia & Pacific (IDA & IBRD)","TEA","2007",90
-"Euro area","EMU","2007",7
-"Europe & Central Asia","ECS","2007",22
-"Europe & Central Asia (excluding high income)","ECA","2007",36
-"Europe & Central Asia (IDA & IBRD)","TEC","2007",34
-"European Union","EUU","2007",9
-"Fragile and conflict affected situations","FCS","2007",596
-"Heavily indebted poor countries (HIPC)","HPC","2007",634
-"High income","HIC","2007",11
-"IBRD only","IBD","2007",142
-"IDA & IBRD total","IBT","2007",295
-"IDA blend","IDB","2007",578
-"IDA only","IDX","2007",552
-"IDA total","IDA","2007",560
-"Late-demographic dividend","LTE","2007",49
-"Latin America & Caribbean","LCN","2007",85
-"Latin America & Caribbean (excluding high income)","LAC","2007",87
-"Latin America & Caribbean (IDA & IBRD)","TLA","2007",86
-"Least developed countries: UN classification","LDC","2007",575
-"Low & middle income","LMY","2007",296
-"Low income","LIC","2007",661
-"Lower middle income","LMC","2007",313
-"Middle East & North Africa","MEA","2007",95
-"Middle East & North Africa (excluding high income)","MNA","2007",106
-"Middle East & North Africa (IDA & IBRD)","TMN","2007",107
-"Middle income","MIC","2007",223
-"North America","NAC","2007",13
-"OECD members","OED","2007",19
-"Other small states","OSS","2007",399
 "Pacific island small states","PSS","2007",96
-"Post-demographic dividend","PST","2007",11
-"Pre-demographic dividend","PRE","2007",692
-"Small states","SST","2007",335
-"South Asia","SAS","2007",265
-"South Asia (IDA & IBRD)","TSA","2007",265
-"Sub-Saharan Africa","SSF","2007",673
-"Sub-Saharan Africa (excluding high income)","SSA","2007",673
-"Sub-Saharan Africa (IDA & IBRD)","TSS","2007",673
-"Upper middle income","UMC","2007",54
-"World","WLD","2007",268
 "Afghanistan","AFG","2007",724
 "Albania","ALB","2007",30
 "Algeria","DZA","2007",148
@@ -4733,52 +3923,7 @@
 "Yemen, Rep.","YEM","2007",424
 "Zambia","ZMB","2007",311
 "Zimbabwe","ZWE","2007",564
-"Arab World","ARB","2008",186
-"Caribbean small states","CSS","2008",101
-"Central Europe and the Baltics","CEB","2008",12
-"Early-demographic dividend","EAR","2008",217
-"East Asia & Pacific","EAS","2008",81
-"East Asia & Pacific (excluding high income)","EAP","2008",86
-"East Asia & Pacific (IDA & IBRD)","TEA","2008",86
-"Euro area","EMU","2008",7
-"Europe & Central Asia","ECS","2008",21
-"Europe & Central Asia (excluding high income)","ECA","2008",33
-"Europe & Central Asia (IDA & IBRD)","TEC","2008",31
-"European Union","EUU","2008",9
-"Fragile and conflict affected situations","FCS","2008",580
-"Heavily indebted poor countries (HIPC)","HPC","2008",611
-"High income","HIC","2008",11
-"IBRD only","IBD","2008",135
-"IDA & IBRD total","IBT","2008",283
-"IDA blend","IDB","2008",549
-"IDA only","IDX","2008",532
-"IDA total","IDA","2008",538
-"Late-demographic dividend","LTE","2008",47
-"Latin America & Caribbean","LCN","2008",84
-"Latin America & Caribbean (excluding high income)","LAC","2008",86
-"Latin America & Caribbean (IDA & IBRD)","TLA","2008",85
-"Least developed countries: UN classification","LDC","2008",553
-"Low & middle income","LMY","2008",284
-"Low income","LIC","2008",635
-"Lower middle income","LMC","2008",299
-"Middle East & North Africa","MEA","2008",93
-"Middle East & North Africa (excluding high income)","MNA","2008",103
-"Middle East & North Africa (IDA & IBRD)","TMN","2008",104
-"Middle income","MIC","2008",213
-"North America","NAC","2008",14
-"OECD members","OED","2008",18
-"Other small states","OSS","2008",382
 "Pacific island small states","PSS","2008",93
-"Post-demographic dividend","PST","2008",11
-"Pre-demographic dividend","PRE","2008",664
-"Small states","SST","2008",322
-"South Asia","SAS","2008",252
-"South Asia (IDA & IBRD)","TSA","2008",252
-"Sub-Saharan Africa","SSF","2008",646
-"Sub-Saharan Africa (excluding high income)","SSA","2008",646
-"Sub-Saharan Africa (IDA & IBRD)","TSS","2008",646
-"Upper middle income","UMC","2008",53
-"World","WLD","2008",258
 "Afghanistan","AFG","2008",676
 "Albania","ALB","2008",30
 "Algeria","DZA","2008",148
@@ -4996,52 +4141,7 @@
 "Yemen, Rep.","YEM","2008",417
 "Zambia","ZMB","2008",289
 "Zimbabwe","ZWE","2008",533
-"Arab World","ARB","2009",180
-"Caribbean small states","CSS","2009",97
-"Central Europe and the Baltics","CEB","2009",12
-"Early-demographic dividend","EAR","2009",207
-"East Asia & Pacific","EAS","2009",78
-"East Asia & Pacific (excluding high income)","EAP","2009",83
-"East Asia & Pacific (IDA & IBRD)","TEA","2009",82
-"Euro area","EMU","2009",7
-"Europe & Central Asia","ECS","2009",20
-"Europe & Central Asia (excluding high income)","ECA","2009",30
-"Europe & Central Asia (IDA & IBRD)","TEC","2009",29
-"European Union","EUU","2009",8
-"Fragile and conflict affected situations","FCS","2009",567
-"Heavily indebted poor countries (HIPC)","HPC","2009",593
-"High income","HIC","2009",11
-"IBRD only","IBD","2009",129
-"IDA & IBRD total","IBT","2009",278
-"IDA blend","IDB","2009",564
-"IDA only","IDX","2009",516
-"IDA total","IDA","2009",532
-"Late-demographic dividend","LTE","2009",45
-"Latin America & Caribbean","LCN","2009",85
-"Latin America & Caribbean (excluding high income)","LAC","2009",87
-"Latin America & Caribbean (IDA & IBRD)","TLA","2009",85
-"Least developed countries: UN classification","LDC","2009",536
-"Low & middle income","LMY","2009",279
-"Low income","LIC","2009",614
-"Lower middle income","LMC","2009",297
-"Middle East & North Africa","MEA","2009",91
-"Middle East & North Africa (excluding high income)","MNA","2009",101
-"Middle East & North Africa (IDA & IBRD)","TMN","2009",102
-"Middle income","MIC","2009",211
-"North America","NAC","2009",14
-"OECD members","OED","2009",18
-"Other small states","OSS","2009",368
 "Pacific island small states","PSS","2009",91
-"Post-demographic dividend","PST","2009",11
-"Pre-demographic dividend","PRE","2009",663
-"Small states","SST","2009",310
-"South Asia","SAS","2009",239
-"South Asia (IDA & IBRD)","TSA","2009",239
-"Sub-Saharan Africa","SSF","2009",642
-"Sub-Saharan Africa (excluding high income)","SSA","2009",642
-"Sub-Saharan Africa (IDA & IBRD)","TSS","2009",642
-"Upper middle income","UMC","2009",52
-"World","WLD","2009",254
 "Afghanistan","AFG","2009",631
 "Albania","ALB","2009",30
 "Algeria","DZA","2009",148
@@ -5259,52 +4359,7 @@
 "Yemen, Rep.","YEM","2009",417
 "Zambia","ZMB","2009",274
 "Zimbabwe","ZWE","2009",485
-"Arab World","ARB","2010",174
-"Caribbean small states","CSS","2010",104
-"Central Europe and the Baltics","CEB","2010",11
-"Early-demographic dividend","EAR","2010",197
-"East Asia & Pacific","EAS","2010",74
-"East Asia & Pacific (excluding high income)","EAP","2010",79
-"East Asia & Pacific (IDA & IBRD)","TEA","2010",79
-"Euro area","EMU","2010",7
-"Europe & Central Asia","ECS","2010",19
-"Europe & Central Asia (excluding high income)","ECA","2010",29
-"Europe & Central Asia (IDA & IBRD)","TEC","2010",27
-"European Union","EUU","2010",8
-"Fragile and conflict affected situations","FCS","2010",554
-"Heavily indebted poor countries (HIPC)","HPC","2010",574
-"High income","HIC","2010",10
-"IBRD only","IBD","2010",123
-"IDA & IBRD total","IBT","2010",270
-"IDA blend","IDB","2010",549
-"IDA only","IDX","2010",501
-"IDA total","IDA","2010",517
-"Late-demographic dividend","LTE","2010",43
-"Latin America & Caribbean","LCN","2010",81
-"Latin America & Caribbean (excluding high income)","LAC","2010",83
-"Latin America & Caribbean (IDA & IBRD)","TLA","2010",81
-"Least developed countries: UN classification","LDC","2010",519
-"Low & middle income","LMY","2010",271
-"Low income","LIC","2010",594
-"Lower middle income","LMC","2010",288
-"Middle East & North Africa","MEA","2010",89
-"Middle East & North Africa (excluding high income)","MNA","2010",99
-"Middle East & North Africa (IDA & IBRD)","TMN","2010",99
-"Middle income","MIC","2010",204
-"North America","NAC","2010",14
-"OECD members","OED","2010",17
-"Other small states","OSS","2010",354
 "Pacific island small states","PSS","2010",88
-"Post-demographic dividend","PST","2010",11
-"Pre-demographic dividend","PRE","2010",646
-"Small states","SST","2010",301
-"South Asia","SAS","2010",228
-"South Asia (IDA & IBRD)","TSA","2010",228
-"Sub-Saharan Africa","SSF","2010",625
-"Sub-Saharan Africa (excluding high income)","SSA","2010",625
-"Sub-Saharan Africa (IDA & IBRD)","TSS","2010",625
-"Upper middle income","UMC","2010",49
-"World","WLD","2010",246
 "Afghanistan","AFG","2010",584
 "Albania","ALB","2010",30
 "Algeria","DZA","2010",147
@@ -5522,52 +4577,7 @@
 "Yemen, Rep.","YEM","2010",416
 "Zambia","ZMB","2010",262
 "Zimbabwe","ZWE","2010",446
-"Arab World","ARB","2011",170
-"Caribbean small states","CSS","2011",102
-"Central Europe and the Baltics","CEB","2011",11
-"Early-demographic dividend","EAR","2011",188
-"East Asia & Pacific","EAS","2011",71
-"East Asia & Pacific (excluding high income)","EAP","2011",75
-"East Asia & Pacific (IDA & IBRD)","TEA","2011",74
-"Euro area","EMU","2011",7
-"Europe & Central Asia","ECS","2011",18
-"Europe & Central Asia (excluding high income)","ECA","2011",27
-"Europe & Central Asia (IDA & IBRD)","TEC","2011",26
-"European Union","EUU","2011",8
-"Fragile and conflict affected situations","FCS","2011",540
-"Heavily indebted poor countries (HIPC)","HPC","2011",553
-"High income","HIC","2011",10
-"IBRD only","IBD","2011",118
-"IDA & IBRD total","IBT","2011",260
-"IDA blend","IDB","2011",525
-"IDA only","IDX","2011",484
-"IDA total","IDA","2011",498
-"Late-demographic dividend","LTE","2011",40
-"Latin America & Caribbean","LCN","2011",78
-"Latin America & Caribbean (excluding high income)","LAC","2011",79
-"Latin America & Caribbean (IDA & IBRD)","TLA","2011",78
-"Least developed countries: UN classification","LDC","2011",501
-"Low & middle income","LMY","2011",261
-"Low income","LIC","2011",571
-"Lower middle income","LMC","2011",277
-"Middle East & North Africa","MEA","2011",87
-"Middle East & North Africa (excluding high income)","MNA","2011",97
-"Middle East & North Africa (IDA & IBRD)","TMN","2011",97
-"Middle income","MIC","2011",196
-"North America","NAC","2011",14
-"OECD members","OED","2011",16
-"Other small states","OSS","2011",345
 "Pacific island small states","PSS","2011",85
-"Post-demographic dividend","PST","2011",11
-"Pre-demographic dividend","PRE","2011",623
-"Small states","SST","2011",294
-"South Asia","SAS","2011",218
-"South Asia (IDA & IBRD)","TSA","2011",218
-"Sub-Saharan Africa","SSF","2011",601
-"Sub-Saharan Africa (excluding high income)","SSA","2011",601
-"Sub-Saharan Africa (IDA & IBRD)","TSS","2011",601
-"Upper middle income","UMC","2011",47
-"World","WLD","2011",237
 "Afghanistan","AFG","2011",536
 "Albania","ALB","2011",30
 "Algeria","DZA","2011",147
@@ -5785,52 +4795,7 @@
 "Yemen, Rep.","YEM","2011",413
 "Zambia","ZMB","2011",251
 "Zimbabwe","ZWE","2011",409
-"Arab World","ARB","2012",166
-"Caribbean small states","CSS","2012",101
-"Central Europe and the Baltics","CEB","2012",11
-"Early-demographic dividend","EAR","2012",180
-"East Asia & Pacific","EAS","2012",67
-"East Asia & Pacific (excluding high income)","EAP","2012",71
-"East Asia & Pacific (IDA & IBRD)","TEA","2012",71
-"Euro area","EMU","2012",7
-"Europe & Central Asia","ECS","2012",17
-"Europe & Central Asia (excluding high income)","ECA","2012",26
-"Europe & Central Asia (IDA & IBRD)","TEC","2012",25
-"European Union","EUU","2012",8
-"Fragile and conflict affected situations","FCS","2012",529
-"Heavily indebted poor countries (HIPC)","HPC","2012",537
-"High income","HIC","2012",10
-"IBRD only","IBD","2012",113
-"IDA & IBRD total","IBT","2012",254
-"IDA blend","IDB","2012",516
-"IDA only","IDX","2012",470
-"IDA total","IDA","2012",486
-"Late-demographic dividend","LTE","2012",39
-"Latin America & Caribbean","LCN","2012",75
-"Latin America & Caribbean (excluding high income)","LAC","2012",77
-"Latin America & Caribbean (IDA & IBRD)","TLA","2012",76
-"Least developed countries: UN classification","LDC","2012",485
-"Low & middle income","LMY","2012",254
-"Low income","LIC","2012",552
-"Lower middle income","LMC","2012",271
-"Middle East & North Africa","MEA","2012",86
-"Middle East & North Africa (excluding high income)","MNA","2012",95
-"Middle East & North Africa (IDA & IBRD)","TMN","2012",96
-"Middle income","MIC","2012",192
-"North America","NAC","2012",14
-"OECD members","OED","2012",16
-"Other small states","OSS","2012",337
 "Pacific island small states","PSS","2012",83
-"Post-demographic dividend","PST","2012",11
-"Pre-demographic dividend","PRE","2012",610
-"Small states","SST","2012",288
-"South Asia","SAS","2012",208
-"South Asia (IDA & IBRD)","TSA","2012",208
-"Sub-Saharan Africa","SSF","2012",587
-"Sub-Saharan Africa (excluding high income)","SSA","2012",587
-"Sub-Saharan Africa (IDA & IBRD)","TSS","2012",587
-"Upper middle income","UMC","2012",46
-"World","WLD","2012",232
 "Afghanistan","AFG","2012",496
 "Albania","ALB","2012",30
 "Algeria","DZA","2012",145
@@ -6048,52 +5013,7 @@
 "Yemen, Rep.","YEM","2012",410
 "Zambia","ZMB","2012",243
 "Zimbabwe","ZWE","2012",379
-"Arab World","ARB","2013",163
-"Caribbean small states","CSS","2013",101
-"Central Europe and the Baltics","CEB","2013",11
-"Early-demographic dividend","EAR","2013",172
-"East Asia & Pacific","EAS","2013",64
-"East Asia & Pacific (excluding high income)","EAP","2013",68
-"East Asia & Pacific (IDA & IBRD)","TEA","2013",68
-"Euro area","EMU","2013",7
-"Europe & Central Asia","ECS","2013",17
-"Europe & Central Asia (excluding high income)","ECA","2013",26
-"Europe & Central Asia (IDA & IBRD)","TEC","2013",24
-"European Union","EUU","2013",8
-"Fragile and conflict affected situations","FCS","2013",514
-"Heavily indebted poor countries (HIPC)","HPC","2013",517
-"High income","HIC","2013",10
-"IBRD only","IBD","2013",108
-"IDA & IBRD total","IBT","2013",247
-"IDA blend","IDB","2013",513
-"IDA only","IDX","2013",454
-"IDA total","IDA","2013",474
-"Late-demographic dividend","LTE","2013",36
-"Latin America & Caribbean","LCN","2013",72
-"Latin America & Caribbean (excluding high income)","LAC","2013",74
-"Latin America & Caribbean (IDA & IBRD)","TLA","2013",72
-"Least developed countries: UN classification","LDC","2013",468
-"Low & middle income","LMY","2013",248
-"Low income","LIC","2013",531
-"Lower middle income","LMC","2013",265
-"Middle East & North Africa","MEA","2013",84
-"Middle East & North Africa (excluding high income)","MNA","2013",94
-"Middle East & North Africa (IDA & IBRD)","TMN","2013",94
-"Middle income","MIC","2013",187
-"North America","NAC","2013",14
-"OECD members","OED","2013",15
-"Other small states","OSS","2013",331
 "Pacific island small states","PSS","2013",80
-"Post-demographic dividend","PST","2013",11
-"Pre-demographic dividend","PRE","2013",596
-"Small states","SST","2013",283
-"South Asia","SAS","2013",198
-"South Asia (IDA & IBRD)","TSA","2013",198
-"Sub-Saharan Africa","SSF","2013",573
-"Sub-Saharan Africa (excluding high income)","SSA","2013",573
-"Sub-Saharan Africa (IDA & IBRD)","TSS","2013",573
-"Upper middle income","UMC","2013",44
-"World","WLD","2013",226
 "Afghanistan","AFG","2013",459
 "Albania","ALB","2013",29
 "Algeria","DZA","2013",144
@@ -6311,52 +5231,7 @@
 "Yemen, Rep.","YEM","2013",406
 "Zambia","ZMB","2013",237
 "Zimbabwe","ZWE","2013",369
-"Arab World","ARB","2014",159
-"Caribbean small states","CSS","2014",100
-"Central Europe and the Baltics","CEB","2014",11
-"Early-demographic dividend","EAR","2014",165
-"East Asia & Pacific","EAS","2014",62
-"East Asia & Pacific (excluding high income)","EAP","2014",65
-"East Asia & Pacific (IDA & IBRD)","TEA","2014",65
-"Euro area","EMU","2014",6
-"Europe & Central Asia","ECS","2014",17
-"Europe & Central Asia (excluding high income)","ECA","2014",25
-"Europe & Central Asia (IDA & IBRD)","TEC","2014",24
-"European Union","EUU","2014",8
-"Fragile and conflict affected situations","FCS","2014",501
-"Heavily indebted poor countries (HIPC)","HPC","2014",499
-"High income","HIC","2014",10
-"IBRD only","IBD","2014",104
-"IDA & IBRD total","IBT","2014",242
-"IDA blend","IDB","2014",510
-"IDA only","IDX","2014",438
-"IDA total","IDA","2014",463
-"Late-demographic dividend","LTE","2014",35
-"Latin America & Caribbean","LCN","2014",69
-"Latin America & Caribbean (excluding high income)","LAC","2014",71
-"Latin America & Caribbean (IDA & IBRD)","TLA","2014",70
-"Least developed countries: UN classification","LDC","2014",451
-"Low & middle income","LMY","2014",242
-"Low income","LIC","2014",513
-"Lower middle income","LMC","2014",260
-"Middle East & North Africa","MEA","2014",83
-"Middle East & North Africa (excluding high income)","MNA","2014",92
-"Middle East & North Africa (IDA & IBRD)","TMN","2014",93
-"Middle income","MIC","2014",184
-"North America","NAC","2014",13
-"OECD members","OED","2014",15
-"Other small states","OSS","2014",324
 "Pacific island small states","PSS","2014",78
-"Post-demographic dividend","PST","2014",11
-"Pre-demographic dividend","PRE","2014",582
-"Small states","SST","2014",278
-"South Asia","SAS","2014",189
-"South Asia (IDA & IBRD)","TSA","2014",189
-"Sub-Saharan Africa","SSF","2014",560
-"Sub-Saharan Africa (excluding high income)","SSA","2014",560
-"Sub-Saharan Africa (IDA & IBRD)","TSS","2014",560
-"Upper middle income","UMC","2014",42
-"World","WLD","2014",221
 "Afghanistan","AFG","2014",425
 "Albania","ALB","2014",29
 "Algeria","DZA","2014",141
@@ -6574,52 +5449,7 @@
 "Yemen, Rep.","YEM","2014",398
 "Zambia","ZMB","2014",231
 "Zimbabwe","ZWE","2014",401
-"Arab World","ARB","2015",156
-"Caribbean small states","CSS","2015",99
-"Central Europe and the Baltics","CEB","2015",11
-"Early-demographic dividend","EAR","2015",159
-"East Asia & Pacific","EAS","2015",59
-"East Asia & Pacific (excluding high income)","EAP","2015",63
-"East Asia & Pacific (IDA & IBRD)","TEA","2015",63
-"Euro area","EMU","2015",6
-"Europe & Central Asia","ECS","2015",16
-"Europe & Central Asia (excluding high income)","ECA","2015",25
-"Europe & Central Asia (IDA & IBRD)","TEC","2015",23
-"European Union","EUU","2015",8
-"Fragile and conflict affected situations","FCS","2015",488
-"Heavily indebted poor countries (HIPC)","HPC","2015",482
-"High income","HIC","2015",10
-"IBRD only","IBD","2015",100
-"IDA & IBRD total","IBT","2015",236
-"IDA blend","IDB","2015",506
-"IDA only","IDX","2015",424
-"IDA total","IDA","2015",452
-"Late-demographic dividend","LTE","2015",34
-"Latin America & Caribbean","LCN","2015",67
-"Latin America & Caribbean (excluding high income)","LAC","2015",69
-"Latin America & Caribbean (IDA & IBRD)","TLA","2015",68
-"Least developed countries: UN classification","LDC","2015",436
-"Low & middle income","LMY","2015",237
-"Low income","LIC","2015",496
-"Lower middle income","LMC","2015",254
-"Middle East & North Africa","MEA","2015",81
-"Middle East & North Africa (excluding high income)","MNA","2015",90
-"Middle East & North Africa (IDA & IBRD)","TMN","2015",91
-"Middle income","MIC","2015",180
-"North America","NAC","2015",13
-"OECD members","OED","2015",14
-"Other small states","OSS","2015",316
 "Pacific island small states","PSS","2015",75
-"Post-demographic dividend","PST","2015",10
-"Pre-demographic dividend","PRE","2015",568
-"Small states","SST","2015",272
-"South Asia","SAS","2015",182
-"South Asia (IDA & IBRD)","TSA","2015",182
-"Sub-Saharan Africa","SSF","2015",547
-"Sub-Saharan Africa (excluding high income)","SSA","2015",547
-"Sub-Saharan Africa (IDA & IBRD)","TSS","2015",547
-"Upper middle income","UMC","2015",41
-"World","WLD","2015",216
 "Afghanistan","AFG","2015",396
 "Albania","ALB","2015",29
 "Algeria","DZA","2015",140
