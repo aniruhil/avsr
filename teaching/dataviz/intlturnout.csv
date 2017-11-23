@@ -1,0 +1,97 @@
+"Country","Region","Income group","Year","Compulsory voting","turnout","vapturnout","popn","vappopn","regdvoters","civilliberties","politicalrights"
+"Afghanistan","South Asia","Low income",2014,"No",38.9,50.03,31822848,16208255,20845988,6,6
+"Algeria","Middle East & North Africa","Upper middle income",2014,"No",49.42,43.57,38813722,25951372,22880678,5,6
+"Angola","Sub-Saharan Africa","Lower middle income",1992,"No",90.37,87.51,10609000,4986230,4828626,6,6
+"Argentina","Latin America & Caribbean","Upper middle income",2015,"Yes",80.77,81.11,43431886,31996332,32130853,2,2
+"Armenia","Europe & Central Asia","Lower middle income",2013,"No",60.18,74.21,3064267,2050655,2528773,4,5
+"Austria","Europe & Central Asia","High income",2016,"No",72.75,62.69,8711770,7406128,6382507,1,1
+"Azerbaijan","Europe & Central Asia","Upper middle income",2013,"No",71.63,58.56,9590159,6378974,5214787,5,6
+"Bangladesh","South Asia","Lower middle income",1986,"No",54.09,53.1,101673000,48803040,47912443,5,4
+"Belarus","Europe & Central Asia","Upper middle income",2015,"No",87.22,78.08,9589689,7828768,7008682,6,7
+"Benin","Sub-Saharan Africa","Low income",2016,"No",66.13,58.35,10741458,5378554,4746348,2,2
+"Bolivia","Latin America & Caribbean","Lower middle income",2014,"Yes",91.86,90.54,10631486,6060980,5973901,3,3
+"Bosnia and Herzegovina","Europe & Central Asia","Upper middle income",2014,"No",54.54,59.32,3871643,3014585,3278908,3,3
+"Brazil","Latin America & Caribbean","Upper middle income",2014,"Yes",78.9,74.72,202658788,150803268,142821358,2,2
+"Bulgaria","Europe & Central Asia","Upper middle income",2016,"Yes",56.28,66.87,7144653,5903575,7014723,2,2
+"Burkina Faso","Sub-Saharan Africa","Low income",2015,"No",60,36.37,18931686,9100031,5517015,3,6
+"Burundi","Sub-Saharan Africa","Low income",2015,"No",73.44,54.94,10742276,5143633,3848119,5,6
+"Cameroon","Sub-Saharan Africa","Lower middle income",2011,"No",68.28,50.25,20129878,9854578,7251651,6,6
+"Central African Republic","Sub-Saharan Africa","Low income",2016,"No",59.01,57.49,4950027,2005942,1954433,7,7
+"Chad","Sub-Saharan Africa","Low income",2016,"No",65.95,70.98,11852462,5809346,6252548,6,7
+"Chile","Latin America & Caribbean","High income",2013,"No",41.98,45.74,17216945,12456705,13573143,1,1
+"Colombia","Latin America & Caribbean","Upper middle income",2014,"No",47.9,52.42,46245297,30134194,32975158,4,3
+"Comoros","Sub-Saharan Africa","Low income",2016,"No",67.81,48.29,794678,422725,301006,4,3
+"Costa Rica","Latin America & Caribbean","Upper middle income",2014,"Yes",55.64,52.57,4695942,3257662,3078321,1,1
+"Croatia","Europe & Central Asia","Upper middle income",2015,"No",59.05,62.7,4470534,3602781,3825242,2,1
+"Cyprus","Europe & Central Asia","High income",2013,"Yes",81.58,49.57,1138071,897824,545493,1,1
+"Czech Republic","Europe & Central Asia","High income",2013,"No",59.08,59,10177300,8446141,8434941,1,1
+"Djibouti","Middle East & North Africa","Lower middle income",2016,"No",69.26,24.73,846687,523746,187000,5,6
+"Dominican Republic","Latin America & Caribbean","Upper middle income",2016,"Yes",69.6,65.99,10606865,7135287,6765245,3,3
+"Ecuador","Latin America & Caribbean","Upper middle income",2017,"Yes",81.69,90.42,16290913,11579443,12816698,4,3
+"El Salvador","Latin America & Caribbean","Lower middle income",2014,"No",60.17,80.13,6108590,3720870,4955107,3,2
+"Equatorial Guinea","Sub-Saharan Africa","Upper middle income",2016,"No",92.7,74.55,759451,404850,325548,7,7
+"Finland","Europe & Central Asia","High income",2012,"No",68.86,70.91,5262930,4051121,4172200,1,1
+"France","Europe & Central Asia","High income",2017,"No",74.56,67.93,67106161,52211196,47568588,2,1
+"Gabon","Sub-Saharan Africa","Upper middle income",2016,"Yes",59.46,41.89,1738541,891075,627805,5,6
+"Georgia","Europe & Central Asia","Lower middle income",2013,"No",46.96,47.34,4555911,3509601,3537719,3,4
+"Ghana","Sub-Saharan Africa","Lower middle income",2016,"No",68.62,72,26908262,14974531,15712499,2,1
+"Guatemala","Latin America & Caribbean","Lower middle income",2015,"No",56.32,49.57,14918999,8586238,7556873,4,3
+"Guinea","Sub-Saharan Africa","Low income",2015,"No",68.36,68.03,11780162,6072571,6042634,5,5
+"Guinea-Bissau","Sub-Saharan Africa","Low income",2014,"No",89.29,79.71,1693398,868713,775508,5,6
+"Haiti","Latin America & Caribbean","Low income",2016,"No",18.11,17.82,10485800,6287831,6189253,5,5
+"Honduras","Latin America & Caribbean","Lower middle income",2013,"Yes",59.14,66.31,8448465,4735081,5308781,4,4
+"Iceland","Europe & Central Asia","High income",2016,"No",75.67,72.93,335878,254202,245004,1,1
+"Indonesia","East Asia & Pacific","Lower middle income",2014,"No",69.58,80.19,253609643,168300873,193944150,4,2
+"Ireland","Europe & Central Asia","High income",2011,"No",56.11,50.72,4670976,3529938,3191157,1,1
+"Kazakhstan","Europe & Central Asia","Upper middle income",2015,"No",95.21,70.8,18157122,12839925,9547864,5,6
+"Kenya","Sub-Saharan Africa","Lower middle income",2017,"No",79.49,61.44,47615739,25374082,19611423,4,4
+"Kiribati","East Asia & Pacific","Lower middle income",2016,"No",83.12,49.27,106925,67481,40000,1,1
+"Liberia","Sub-Saharan Africa","Low income",2017,"No",75.19,70.79,4689021,2319382,2183629,4,3
+"Lithuania","Europe & Central Asia","High income",2014,"No",47.37,43.19,3505738,2807195,2559398,1,1
+"Madagascar","Sub-Saharan Africa","Low income",2013,"No",50.72,35.29,22599098,11458381,7971790,4,6
+"Malawi","Sub-Saharan Africa","Low income",2014,"No",70.75,64.66,17377468,8173669,7470806,4,3
+"Maldives","South Asia","Upper middle income",2013,"No",91.43,83.44,393988,262023,239105,4,5
+"Mali","Sub-Saharan Africa","Low income",2013,"No",45.78,41.75,15968882,7487808,6829696,3,2
+"Mauritania","Sub-Saharan Africa","Lower middle income",2014,"No",56.46,40.32,3516806,1859595,1328168,5,6
+"Mexico","Latin America & Caribbean","Upper middle income",2012,"Yes",63.14,64.58,114975406,76008240,77738494,3,3
+"Mongolia","East Asia & Pacific","Lower middle income",2017,"No",60.67,57.47,3068243,2101431,1990797,2,1
+"Montenegro","Europe & Central Asia","Upper middle income",2013,"No",63.9,64.36,653474,507749,511405,2,3
+"Mozambique","Sub-Saharan Africa","Low income",2014,"No",48.64,45.01,24692144,11850615,10964978,3,4
+"Namibia","Sub-Saharan Africa","Upper middle income",2014,"No",71.76,73.75,2198406,1207703,1241194,2,2
+"Nicaragua","Latin America & Caribbean","Lower middle income",2016,"No",65.63,59.67,5966798,4179566,3800000,3,4
+"Niger","Sub-Saharan Africa","Low income",2016,"No",59.79,55.31,18638600,8196838,7581486,4,3
+"Nigeria","Sub-Saharan Africa","Lower middle income",2015,"No",43.65,32.11,181562056,91669312,67422005,4,4
+"Palau","East Asia & Pacific","High income",2016,"No",62.7,62.06,21347,16054,15890,1,1
+"Panama","Latin America & Caribbean","Upper middle income",2014,"Yes",76.76,80.67,3608431,2338207,2457401,2,2
+"Paraguay","Latin America & Caribbean","Upper middle income",2013,"Yes",68.02,57.96,6623252,4126948,3516275,3,3
+"Peru","Latin America & Caribbean","Upper middle income",2016,"Yes",80.09,87.73,30741062,20909390,22901954,3,2
+"Philippines","East Asia & Pacific","Lower middle income",2016,"No",81.95,72.17,102624209,61728990,54363844,3,3
+"Poland","Europe & Central Asia","High income",2015,"No",55.34,53.83,38301885,31568464,30709281,1,1
+"Portugal","Europe & Central Asia","High income",2016,"No",48.7,53.98,10833816,8781766,9732123,1,1
+"Romania","Europe & Central Asia","Upper middle income",2014,"No",64.11,66.42,21729871,17645517,18280994,2,2
+"Russian Federation","Europe & Central Asia","Upper middle income",2012,"No",65.27,63.37,138082178,113140987,109860331,5,6
+"Rwanda","Sub-Saharan Africa","Low income",2017,"No",98.15,109.1,11901484,6203204,6897076,6,6
+"Senegal","Sub-Saharan Africa","Low income",2012,"No",57.12,44.83,12969606,6504093,5105033,3,3
+"Serbia","Europe & Central Asia","Upper middle income",2017,"No",54.36,62.45,7111024,5852924,6724949,2,3
+"Seychelles","Sub-Saharan Africa","High income",2015,"No",90.06,91.4,92430,69904,70943,3,3
+"Sierra Leone","Sub-Saharan Africa","Low income",2012,"No",91.05,88.25,5485998,2786886,2701299,3,3
+"Singapore","East Asia & Pacific","High income",2011,"Yes",94.65,55.33,5183700,3891370,2274773,4,5
+"Slovenia","Europe & Central Asia","High income",2017,"No",44.24,45.78,1972126,1656072,1713762,1,1
+"Somalia","Sub-Saharan Africa","Low income",1986,"No",NA,NA,6714927,3200602,NA,7,7
+"South Sudan","Sub-Saharan Africa","Low income",2010,"No",58.62,63.34,9584299,4442454,4800000,NA,NA
+"Sri Lanka","South Asia","Lower middle income",2015,"No",81.52,80.35,21866445,15262770,15044490,4,5
+"Sudan","Sub-Saharan Africa","Lower middle income",2015,"No",46.4,30.97,38435252,19667400,13126989,7,7
+"Syrian Arab Republic","Middle East & North Africa","Lower middle income",2014,"No",73.42,107.21,17951639,10852241,15845575,7,7
+"Tajikistan","Europe & Central Asia","Lower middle income",2013,"No",90.16,79.13,7910041,4786581,4201156,6,6
+"Timor-Leste","East Asia & Pacific","Lower middle income",2017,"No",71.16,75.4,1291358,701368,743150,3,3
+"Togo","Sub-Saharan Africa","Low income",2015,"No",60.94,53.21,7552318,4019183,3509258,4,4
+"Tunisia","Middle East & North Africa","Lower middle income",2014,"No",60.35,40.45,10937521,7885952,5285625,5,7
+"Turkey","Europe & Central Asia","Upper middle income",2014,"Yes",74.13,74.37,81619392,55509734,55692841,4,3
+"Turkmenistan","Europe & Central Asia","Upper middle income",2017,"No",97.28,85.47,5351277,3701607,3252243,7,7
+"Uganda","Sub-Saharan Africa","Low income",2016,"No",67.61,60.37,38319241,17110660,15277198,5,6
+"Ukraine","Europe & Central Asia","Lower middle income",2014,"No",60.82,49.55,44291413,36363250,29625200,3,4
+"United States","North America","High income",2016,"No",65.44,55.98,323995528,250293421,214109367,1,1
+"Uruguay","Latin America & Caribbean","High income",2014,"Yes",88.57,97.14,3332972,2389639,2620791,1,1
+"Uzbekistan","Europe & Central Asia","Lower middle income",2016,"No",87.73,86.17,29473614,20833306,20461805,7,7
+"Zambia","Sub-Saharan Africa","Lower middle income",2016,"No",56.45,51.58,15510711,7331669,6698372,4,3
+"Zimbabwe","Sub-Saharan Africa","Low income",2013,"No",54.38,61.09,13182908,5696780,6400000,6,6
